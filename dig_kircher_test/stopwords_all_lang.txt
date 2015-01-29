@@ -1,0 +1,5338 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#stopwords_ar.txt
+
+ومن
+منها
+منه
+في
+وفي
+فيها
+فيه
+و
+ف
+ثم
+او
+أو
+ب
+بها
+به
+ا
+أ
+اى
+اي
+أي
+أى
+لا
+ولا
+الا
+ألا
+إلا
+لكن
+ما
+وما
+كما
+فما
+عن
+مع
+اذا
+إذا
+ان
+أن
+إن
+انها
+أنها
+إنها
+انه
+أنه
+إنه
+بان
+بأن
+فان
+فأن
+وان
+وأن
+وإن
+التى
+التي
+الذى
+الذي
+الذين
+الى
+الي
+إلى
+إلي
+على
+عليها
+عليه
+اما
+أما
+إما
+ايضا
+أيضا
+كل
+وكل
+لم
+ولم
+لن
+ولن
+هى
+هي
+هو
+وهى
+وهي
+وهو
+فهى
+فهي
+فهو
+انت
+أنت
+لك
+لها
+له
+هذه
+هذا
+تلك
+ذلك
+هناك
+كانت
+كان
+يكون
+تكون
+وكانت
+وكان
+غير
+بعض
+قد
+نحو
+بين
+بينما
+منذ
+ضمن
+حيث
+الان
+الآن
+خلال
+بعد
+قبل
+حتى
+عند
+عندما
+لدى
+جميع
+
+#stopwords_bg.txt
+а
+аз
+ако
+ала
+бе
+без
+беше
+би
+бил
+била
+били
+било
+близо
+бъдат
+бъде
+бяха
+в
+вас
+ваш
+ваша
+вероятно
+вече
+взема
+ви
+вие
+винаги
+все
+всеки
+всички
+всичко
+всяка
+във
+въпреки
+върху
+г
+ги
+главно
+го
+д
+да
+дали
+до
+докато
+докога
+дори
+досега
+доста
+е
+едва
+един
+ето
+за
+зад
+заедно
+заради
+засега
+затова
+защо
+защото
+и
+из
+или
+им
+има
+имат
+иска
+й
+каза
+как
+каква
+какво
+както
+какъв
+като
+кога
+когато
+което
+които
+кой
+който
+колко
+която
+къде
+където
+към
+ли
+м
+ме
+между
+мен
+ми
+мнозина
+мога
+могат
+може
+моля
+момента
+му
+н
+на
+над
+назад
+най
+направи
+напред
+например
+нас
+не
+него
+нея
+ни
+ние
+никой
+нито
+но
+някои
+някой
+няма
+обаче
+около
+освен
+особено
+от
+отгоре
+отново
+още
+пак
+по
+повече
+повечето
+под
+поне
+поради
+после
+почти
+прави
+пред
+преди
+през
+при
+пък
+първо
+с
+са
+само
+се
+сега
+си
+скоро
+след
+сме
+според
+сред
+срещу
+сте
+съм
+със
+също
+т
+тази
+така
+такива
+такъв
+там
+твой
+те
+тези
+ти
+тн
+то
+това
+тогава
+този
+той
+толкова
+точно
+трябва
+тук
+тъй
+тя
+тях
+у
+харесва
+ч
+че
+често
+чрез
+ще
+щом
+я
+
+#stopwords_ca.txt
+a
+abans
+ací
+ah
+així
+això
+al
+als
+aleshores
+algun
+alguna
+algunes
+alguns
+alhora
+allà
+allí
+allò
+altra
+altre
+altres
+amb
+ambdós
+ambdues
+apa
+aquell
+aquella
+aquelles
+aquells
+aquest
+aquesta
+aquestes
+aquests
+aquí
+baix
+cada
+cadascú
+cadascuna
+cadascunes
+cadascuns
+com
+contra
+d'un
+d'una
+d'unes
+d'uns
+dalt
+de
+del
+dels
+des
+després
+dins
+dintre
+donat
+doncs
+durant
+e
+eh
+el
+els
+em
+en
+encara
+ens
+entre
+érem
+eren
+éreu
+es
+és
+esta
+està
+estàvem
+estaven
+estàveu
+esteu
+et
+etc
+ets
+fins
+fora
+gairebé
+ha
+han
+has
+havia
+he
+hem
+heu
+hi 
+ho
+i
+igual
+iguals
+ja
+l'hi
+la
+les
+li
+li'n
+llavors
+m'he
+ma
+mal
+malgrat
+mateix
+mateixa
+mateixes
+mateixos
+me
+mentre
+més
+meu
+meus
+meva
+meves
+molt
+molta
+moltes
+molts
+mon
+mons
+n'he
+n'hi
+ne
+ni
+no
+nogensmenys
+només
+nosaltres
+nostra
+nostre
+nostres
+o
+oh
+oi
+on
+pas
+pel
+pels
+per
+però
+perquè
+poc 
+poca
+pocs
+poques
+potser
+propi
+qual
+quals
+quan
+quant 
+que
+què
+quelcom
+qui
+quin
+quina
+quines
+quins
+s'ha
+s'han
+sa
+semblant
+semblants
+ses
+seu 
+seus
+seva
+seva
+seves
+si
+sobre
+sobretot
+sóc
+solament
+sols
+son 
+són
+sons 
+sota
+sou
+t'ha
+t'han
+t'he
+ta
+tal
+també
+tampoc
+tan
+tant
+tanta
+tantes
+teu
+teus
+teva
+teves
+ton
+tons
+tot
+tota
+totes
+tots
+un
+una
+unes
+uns
+us
+va
+vaig
+vam
+van
+vas
+veu
+vosaltres
+vostra
+vostre
+vostres
+
+#stopwords.cz.txt
+a
+s
+k
+o
+i
+u
+v
+z
+dnes
+cz
+tímto
+budeš
+budem
+byli
+jseš
+můj
+svým
+ta
+tomto
+tohle
+tuto
+tyto
+jej
+zda
+proč
+máte
+tato
+kam
+tohoto
+kdo
+kteří
+mi
+nám
+tom
+tomuto
+mít
+nic
+proto
+kterou
+byla
+toho
+protože
+asi
+ho
+naši
+napište
+re
+což
+tím
+takže
+svých
+její
+svými
+jste
+aj
+tu
+tedy
+teto
+bylo
+kde
+ke
+pravé
+ji
+nad
+nejsou
+či
+pod
+téma
+mezi
+přes
+ty
+pak
+vám
+ani
+když
+však
+neg
+jsem
+tento
+článku
+články
+aby
+jsme
+před
+pta
+jejich
+byl
+ještě
+až
+bez
+také
+pouze
+první
+vaše
+která
+nás
+nový
+tipy
+pokud
+může
+strana
+jeho
+své
+jiné
+zprávy
+nové
+není
+vás
+jen
+podle
+zde
+už
+být
+více
+bude
+již
+než
+který
+by
+které
+co
+nebo
+ten
+tak
+má
+při
+od
+po
+jsou
+jak
+další
+ale
+si
+se
+ve
+to
+jako
+za
+zpět
+ze
+do
+pro
+je
+na
+atd
+atp
+jakmile
+přičemž
+já
+on
+ona
+ono
+oni
+ony
+my
+vy
+jí
+ji
+mě
+mne
+jemu
+tomu
+těm
+těmu
+němu
+němuž
+jehož
+jíž
+jelikož
+jež
+jakož
+načež
+
+#stopwords_da.txt
+og           | and
+i            | in
+jeg          | I
+det          | that (dem. pronoun)/it (pers. pronoun)
+at           | that (in front of a sentence)/to (with infinitive)
+en           | a/an
+den          | it (pers. pronoun)/that (dem. pronoun)
+til          | to/at/for/until/against/by/of/into, more
+er           | present tense of "to be"
+som          | who, as
+på           | on/upon/in/on/at/to/after/of/with/for, on
+de           | they
+med          | with/by/in, along
+han          | he
+af           | of/by/from/off/for/in/with/on, off
+for          | at/for/to/from/by/of/ago, in front/before, because
+ikke         | not
+der          | who/which, there/those
+var          | past tense of "to be"
+mig          | me/myself
+sig          | oneself/himself/herself/itself/themselves
+men          | but
+et           | a/an/one, one (number), someone/somebody/one
+har          | present tense of "to have"
+om           | round/about/for/in/a, about/around/down, if
+vi           | we
+min          | my
+havde        | past tense of "to have"
+ham          | him
+hun          | she
+nu           | now
+over         | over/above/across/by/beyond/past/on/about, over/past
+da           | then, when/as/since
+fra          | from/off/since, off, since
+du           | you
+ud           | out
+sin          | his/her/its/one's
+dem          | them
+os           | us/ourselves
+op           | up
+man          | you/one
+hans         | his
+hvor         | where
+eller        | or
+hvad         | what
+skal         | must/shall etc.
+selv         | myself/youself/herself/ourselves etc., even
+her          | here
+alle         | all/everyone/everybody etc.
+vil          | will (verb)
+blev         | past tense of "to stay/to remain/to get/to become"
+kunne        | could
+ind          | in
+når          | when
+være         | present tense of "to be"
+dog          | however/yet/after all
+noget        | something
+ville        | would
+jo           | you know/you see (adv), yes
+deres        | their/theirs
+efter        | after/behind/according to/for/by/from, later/afterwards
+ned          | down
+skulle       | should
+denne        | this
+end          | than
+dette        | this
+mit          | my/mine
+også         | also
+under        | under/beneath/below/during, below/underneath
+have         | have
+dig          | you
+anden        | other
+hende        | her
+mine         | my
+alt          | everything
+meget        | much/very, plenty of
+sit          | his, her, its, one's
+sine         | his, her, its, one's
+vor          | our
+mod          | against
+disse        | these
+hvis         | if
+din          | your/yours
+nogle        | some
+hos          | by/at
+blive        | be/become
+mange        | many
+ad           | by/through
+bliver       | present tense of "to be/to become"
+hendes       | her/hers
+været        | be
+thi          | for (conj)
+jer          | you
+sådan        | such, like this/like that
+
+#stopwords_de.txt
+
+aber           |  but
+
+alle           |  all
+allem
+allen
+aller
+alles
+
+als            |  than, as
+also           |  so
+am             |  an + dem
+an             |  at
+
+ander          |  other
+andere
+anderem
+anderen
+anderer
+anderes
+anderm
+andern
+anderr
+anders
+
+auch           |  also
+auf            |  on
+aus            |  out of
+bei            |  by
+bin            |  am
+bis            |  until
+bist           |  art
+da             |  there
+damit          |  with it
+dann           |  then
+
+der            |  the
+den
+des
+dem
+die
+das
+
+daß            |  that
+
+derselbe       |  the same
+derselben
+denselben
+desselben
+demselben
+dieselbe
+dieselben
+dasselbe
+
+dazu           |  to that
+
+dein           |  thy
+deine
+deinem
+deinen
+deiner
+deines
+
+denn           |  because
+
+derer          |  of those
+dessen         |  of him
+
+dich           |  thee
+dir            |  to thee
+du             |  thou
+
+dies           |  this
+diese
+diesem
+diesen
+dieser
+dieses
+
+
+doch           |  (several meanings)
+dort           |  (over) there
+
+
+durch          |  through
+
+ein            |  a
+eine
+einem
+einen
+einer
+eines
+
+einig          |  some
+einige
+einigem
+einigen
+einiger
+einiges
+
+einmal         |  once
+
+er             |  he
+ihn            |  him
+ihm            |  to him
+
+es             |  it
+etwas          |  something
+
+euer           |  your
+eure
+eurem
+euren
+eurer
+eures
+
+für            |  for
+gegen          |  towards
+gewesen        |  p.p. of sein
+hab            |  have
+habe           |  have
+haben          |  have
+hat            |  has
+hatte          |  had
+hatten         |  had
+hier           |  here
+hin            |  there
+hinter         |  behind
+
+ich            |  I
+mich           |  me
+mir            |  to me
+
+
+ihr            |  you, to her
+ihre
+ihrem
+ihren
+ihrer
+ihres
+euch           |  to you
+
+im             |  in + dem
+in             |  in
+indem          |  while
+ins            |  in + das
+ist            |  is
+
+jede           |  each, every
+jedem
+jeden
+jeder
+jedes
+
+jene           |  that
+jenem
+jenen
+jener
+jenes
+
+jetzt          |  now
+kann           |  can
+
+kein           |  no
+keine
+keinem
+keinen
+keiner
+keines
+
+können         |  can
+könnte         |  could
+machen         |  do
+man            |  one
+
+manche         |  some, many a
+manchem
+manchen
+mancher
+manches
+
+mein           |  my
+meine
+meinem
+meinen
+meiner
+meines
+
+mit            |  with
+muss           |  must
+musste         |  had to
+nach           |  to(wards)
+nicht          |  not
+nichts         |  nothing
+noch           |  still, yet
+nun            |  now
+nur            |  only
+ob             |  whether
+oder           |  or
+ohne           |  without
+sehr           |  very
+
+sein           |  his
+seine
+seinem
+seinen
+seiner
+seines
+
+selbst         |  self
+sich           |  herself
+
+sie            |  they, she
+ihnen          |  to them
+
+sind           |  are
+so             |  so
+
+solche         |  such
+solchem
+solchen
+solcher
+solches
+
+soll           |  shall
+sollte         |  should
+sondern        |  but
+sonst          |  else
+über           |  over
+um             |  about, around
+und            |  and
+
+uns            |  us
+unse
+unsem
+unsen
+unser
+unses
+
+unter          |  under
+viel           |  much
+vom            |  von + dem
+von            |  from
+vor            |  before
+während        |  while
+war            |  was
+waren          |  were
+warst          |  wast
+was            |  what
+weg            |  away, off
+weil           |  because
+weiter         |  further
+
+welche         |  which
+welchem
+welchen
+welcher
+welches
+
+wenn           |  when
+werde          |  will
+werden         |  will
+wie            |  how
+wieder         |  again
+will           |  want
+wir            |  we
+wird           |  will
+wirst          |  willst
+wo             |  where
+wollen         |  want
+wollte         |  wanted
+würde          |  would
+würden         |  would
+zu             |  to
+zum            |  zu + dem
+zur            |  zu + der
+zwar           |  indeed
+zwischen       |  between
+
+#stopwords_el.txt
+ο
+η
+το
+οι
+τα
+του
+τησ
+των
+τον
+την
+και 
+κι
+κ
+ειμαι
+εισαι
+ειναι
+ειμαστε
+ειστε
+στο
+στον
+στη
+στην
+μα
+αλλα
+απο
+για
+προσ
+με
+σε
+ωσ
+παρα
+αντι
+κατα
+μετα
+θα
+να
+δε
+δεν
+μη
+μην
+επι
+ενω
+εαν
+αν
+τοτε
+που
+πωσ
+ποιοσ
+ποια
+ποιο
+ποιοι
+ποιεσ
+ποιων
+ποιουσ
+αυτοσ
+αυτη
+αυτο
+αυτοι
+αυτων
+αυτουσ
+αυτεσ
+αυτα
+εκεινοσ
+εκεινη
+εκεινο
+εκεινοι
+εκεινεσ
+εκεινα
+εκεινων
+εκεινουσ
+οπωσ
+ομωσ
+ισωσ
+οσο
+οτι
+
+#stopwords_en.txt
+a
+an
+and
+are
+as
+at
+be
+but
+by
+for
+if
+in
+into
+is
+it
+no
+not
+of
+on
+or
+such
+that
+the
+their
+then
+there
+these
+they
+this
+to
+was
+will
+with
+
+#stopwords_es.txt
+
+de             |  from, of
+la             |  the, her
+que            |  who, that
+el             |  the
+en             |  in
+y              |  and
+a              |  to
+los            |  the, them
+del            |  de + el
+se             |  himself, from him etc
+las            |  the, them
+por            |  for, by, etc
+un             |  a
+para           |  for
+con            |  with
+no             |  no
+una            |  a
+su             |  his, her
+al             |  a + el
+  | es         from SER
+lo             |  him
+como           |  how
+más            |  more
+pero           |  pero
+sus            |  su plural
+le             |  to him, her
+ya             |  already
+o              |  or
+  | fue        from SER
+este           |  this
+  | ha         from HABER
+sí             |  himself etc
+porque         |  because
+esta           |  this
+  | son        from SER
+entre          |  between
+  | está     from ESTAR
+cuando         |  when
+muy            |  very
+sin            |  without
+sobre          |  on
+  | ser        from SER
+  | tiene      from TENER
+también        |  also
+me             |  me
+hasta          |  until
+hay            |  there is/are
+donde          |  where
+  | han        from HABER
+quien          |  whom, that
+  | están      from ESTAR
+  | estado     from ESTAR
+desde          |  from
+todo           |  all
+nos            |  us
+durante        |  during
+  | estados    from ESTAR
+todos          |  all
+uno            |  a
+les            |  to them
+ni             |  nor
+contra         |  against
+otros          |  other
+  | fueron     from SER
+ese            |  that
+eso            |  that
+  | había      from HABER
+ante           |  before
+ellos          |  they
+e              |  and (variant of y)
+esto           |  this
+mí             |  me
+antes          |  before
+algunos        |  some
+qué            |  what?
+unos           |  a
+yo             |  I
+otro           |  other
+otras          |  other
+otra           |  other
+él             |  he
+tanto          |  so much, many
+esa            |  that
+estos          |  these
+mucho          |  much, many
+quienes        |  who
+nada           |  nothing
+muchos         |  many
+cual           |  who
+  | sea        from SER
+poco           |  few
+ella           |  she
+estar          |  to be
+  | haber      from HABER
+estas          |  these
+  | estaba     from ESTAR
+  | estamos    from ESTAR
+algunas        |  some
+algo           |  something
+nosotros       |  we
+
+      | other forms
+
+mi             |  me
+mis            |  mi plural
+tú             |  thou
+te             |  thee
+ti             |  thee
+tu             |  thy
+tus            |  tu plural
+ellas          |  they
+nosotras       |  we
+vosotros       |  you
+vosotras       |  you
+os             |  you
+mío            |  mine
+mía            |
+míos           |
+mías           |
+tuyo           |  thine
+tuya           |
+tuyos          |
+tuyas          |
+suyo           |  his, hers, theirs
+suya           |
+suyos          |
+suyas          |
+nuestro        |  ours
+nuestra        |
+nuestros       |
+nuestras       |
+vuestro        |  yours
+vuestra        |
+vuestros       |
+vuestras       |
+esos           |  those
+esas           |  those
+
+               | forms of estar, to be (not including the infinitive):
+estoy
+estás
+está
+estamos
+estáis
+están
+esté
+estés
+estemos
+estéis
+estén
+estaré
+estarás
+estará
+estaremos
+estaréis
+estarán
+estaría
+estarías
+estaríamos
+estaríais
+estarían
+estaba
+estabas
+estábamos
+estabais
+estaban
+estuve
+estuviste
+estuvo
+estuvimos
+estuvisteis
+estuvieron
+estuviera
+estuvieras
+estuviéramos
+estuvierais
+estuvieran
+estuviese
+estuvieses
+estuviésemos
+estuvieseis
+estuviesen
+estando
+estado
+estada
+estados
+estadas
+estad
+
+               | forms of haber, to have (not including the infinitive):
+he
+has
+ha
+hemos
+habéis
+han
+haya
+hayas
+hayamos
+hayáis
+hayan
+habré
+habrás
+habrá
+habremos
+habréis
+habrán
+habría
+habrías
+habríamos
+habríais
+habrían
+había
+habías
+habíamos
+habíais
+habían
+hube
+hubiste
+hubo
+hubimos
+hubisteis
+hubieron
+hubiera
+hubieras
+hubiéramos
+hubierais
+hubieran
+hubiese
+hubieses
+hubiésemos
+hubieseis
+hubiesen
+habiendo
+habido
+habida
+habidos
+habidas
+
+               | forms of ser, to be (not including the infinitive):
+soy
+eres
+es
+somos
+sois
+son
+sea
+seas
+seamos
+seáis
+sean
+seré
+serás
+será
+seremos
+seréis
+serán
+sería
+serías
+seríamos
+seríais
+serían
+era
+eras
+éramos
+erais
+eran
+fui
+fuiste
+fue
+fuimos
+fuisteis
+fueron
+fuera
+fueras
+fuéramos
+fuerais
+fueran
+fuese
+fueses
+fuésemos
+fueseis
+fuesen
+siendo
+sido
+  |  sed also means 'thirst'
+
+               | forms of tener, to have (not including the infinitive):
+tengo
+tienes
+tiene
+tenemos
+tenéis
+tienen
+tenga
+tengas
+tengamos
+tengáis
+tengan
+tendré
+tendrás
+tendrá
+tendremos
+tendréis
+tendrán
+tendría
+tendrías
+tendríamos
+tendríais
+tendrían
+tenía
+tenías
+teníamos
+teníais
+tenían
+tuve
+tuviste
+tuvo
+tuvimos
+tuvisteis
+tuvieron
+tuviera
+tuvieras
+tuviéramos
+tuvierais
+tuvieran
+tuviese
+tuvieses
+tuviésemos
+tuvieseis
+tuviesen
+teniendo
+tenido
+tenida
+tenidos
+tenidas
+tened
+
+#stopwords_eu.txt
+al
+anitz
+arabera
+asko
+baina
+bat
+batean
+batek
+bati
+batzuei
+batzuek
+batzuetan
+batzuk
+bera
+beraiek
+berau
+berauek
+bere
+berori
+beroriek
+beste
+bezala
+da
+dago
+dira
+ditu
+du
+dute
+edo
+egin
+ere
+eta
+eurak
+ez
+gainera
+gu
+gutxi
+guzti
+haiei
+haiek
+haietan
+hainbeste
+hala
+han
+handik
+hango
+hara
+hari
+hark
+hartan
+hau
+hauei
+hauek
+hauetan
+hemen
+hemendik
+hemengo
+hi
+hona
+honek
+honela
+honetan
+honi
+hor
+hori
+horiei
+horiek
+horietan
+horko
+horra
+horrek
+horrela
+horretan
+horri
+hortik
+hura
+izan
+ni
+noiz
+nola
+non
+nondik
+nongo
+nor
+nora
+ze
+zein
+zen
+zenbait
+zenbat
+zer
+zergatik
+ziren
+zituen
+zu
+zuek
+zuen
+zuten
+
+#stopwords_fa.txt
+
+نداشته
+سراسر
+خياه
+ايشان
+وي
+تاكنون
+بيشتري
+دوم
+پس
+ناشي
+وگو
+يا
+داشتند
+سپس
+هنگام
+هرگز
+پنج
+نشان
+امسال
+ديگر
+گروهي
+شدند
+چطور
+ده
+و
+دو
+نخستين
+ولي
+چرا
+چه
+وسط
+ه
+كدام
+قابل
+يك
+رفت
+هفت
+همچنين
+در
+هزار
+بله
+بلي
+شايد
+اما
+شناسي
+گرفته
+دهد
+داشته
+دانست
+داشتن
+خواهيم
+ميليارد
+وقتيكه
+امد
+خواهد
+جز
+اورده
+شده
+بلكه
+خدمات
+شدن
+برخي
+نبود
+بسياري
+جلوگيري
+حق
+كردند
+نوعي
+بعري
+نكرده
+نظير
+نبايد
+بوده
+بودن
+داد
+اورد
+هست
+جايي
+شود
+دنبال
+داده
+بايد
+سابق
+هيچ
+همان
+انجا
+كمتر
+كجاست
+گردد
+كسي
+تر
+مردم
+تان
+دادن
+بودند
+سري
+جدا
+ندارند
+مگر
+يكديگر
+دارد
+دهند
+بنابراين
+هنگامي
+سمت
+جا
+انچه
+خود
+دادند
+زياد
+دارند
+اثر
+بدون
+بهترين
+بيشتر
+البته
+به
+براساس
+بيرون
+كرد
+بعضي
+گرفت
+توي
+اي
+ميليون
+او
+جريان
+تول
+بر
+مانند
+برابر
+باشيم
+مدتي
+گويند
+اكنون
+تا
+تنها
+جديد
+چند
+بي
+نشده
+كردن
+كردم
+گويد
+كرده
+كنيم
+نمي
+نزد
+روي
+قصد
+فقط
+بالاي
+ديگران
+اين
+ديروز
+توسط
+سوم
+ايم
+دانند
+سوي
+استفاده
+شما
+كنار
+داريم
+ساخته
+طور
+امده
+رفته
+نخست
+بيست
+نزديك
+طي
+كنيد
+از
+انها
+تمامي
+داشت
+يكي
+طريق
+اش
+چيست
+روب
+نمايد
+گفت
+چندين
+چيزي
+تواند
+ام
+ايا
+با
+ان
+ايد
+ترين
+اينكه
+ديگري
+راه
+هايي
+بروز
+همچنان
+پاعين
+كس
+حدود
+مختلف
+مقابل
+چيز
+گيرد
+ندارد
+ضد
+همچون
+سازي
+شان
+مورد
+باره
+مرسي
+خويش
+برخوردار
+چون
+خارج
+شش
+هنوز
+تحت
+ضمن
+هستيم
+گفته
+فكر
+بسيار
+پيش
+براي
+روزهاي
+انكه
+نخواهد
+بالا
+كل
+وقتي
+كي
+چنين
+كه
+گيري
+نيست
+است
+كجا
+كند
+نيز
+يابد
+بندي
+حتي
+توانند
+عقب
+خواست
+كنند
+بين
+تمام
+همه
+ما
+باشند
+مثل
+شد
+اري
+باشد
+اره
+طبق
+بعد
+اگر
+صورت
+غير
+جاي
+بيش
+ريزي
+اند
+زيرا
+چگونه
+بار
+لطفا
+مي
+درباره
+من
+ديده
+همين
+گذاري
+برداري
+علت
+گذاشته
+هم
+فوق
+نه
+ها
+شوند
+اباد
+همواره
+هر
+اول
+خواهند
+چهار
+نام
+امروز
+مان
+هاي
+قبل
+كنم
+سعي
+تازه
+را
+هستند
+زير
+جلوي
+عنوان
+بود
+
+#stopwords_fi.txt
+
+olla
+olen
+olet
+on
+olemme
+olette
+ovat
+ole        | negative form
+
+oli
+olisi
+olisit
+olisin
+olisimme
+olisitte
+olisivat
+olit
+olin
+olimme
+olitte
+olivat
+ollut
+olleet
+
+en         | negation
+et
+ei
+emme
+ette
+eivät
+
+|Nom   Gen    Acc    Part   Iness   Elat    Illat  Adess   Ablat   Allat   Ess    Trans
+minä   minun  minut  minua  minussa minusta minuun minulla minulta minulle               | I
+sinä   sinun  sinut  sinua  sinussa sinusta sinuun sinulla sinulta sinulle               | you
+hän    hänen  hänet  häntä  hänessä hänestä häneen hänellä häneltä hänelle               | he she
+me     meidän meidät meitä  meissä  meistä  meihin meillä  meiltä  meille                | we
+te     teidän teidät teitä  teissä  teistä  teihin teillä  teiltä  teille                | you
+he     heidän heidät heitä  heissä  heistä  heihin heillä  heiltä  heille                | they
+
+tämä   tämän         tätä   tässä   tästä   tähän  tallä   tältä   tälle   tänä   täksi  | this
+tuo    tuon          tuotä  tuossa  tuosta  tuohon tuolla  tuolta  tuolle  tuona  tuoksi | that
+se     sen           sitä   siinä   siitä   siihen sillä   siltä   sille   sinä   siksi  | it
+nämä   näiden        näitä  näissä  näistä  näihin näillä  näiltä  näille  näinä  näiksi | these
+nuo    noiden        noita  noissa  noista  noihin noilla  noilta  noille  noina  noiksi | those
+ne     niiden        niitä  niissä  niistä  niihin niillä  niiltä  niille  niinä  niiksi | they
+
+kuka   kenen kenet   ketä   kenessä kenestä keneen kenellä keneltä kenelle kenenä keneksi| who
+ketkä  keiden ketkä  keitä  keissä  keistä  keihin keillä  keiltä  keille  keinä  keiksi | (pl)
+mikä   minkä minkä   mitä   missä   mistä   mihin  millä   miltä   mille   minä   miksi  | which what
+mitkä                                                                                    | (pl)
+
+joka   jonka         jota   jossa   josta   johon  jolla   jolta   jolle   jona   joksi  | who which
+jotka  joiden        joita  joissa  joista  joihin joilla  joilta  joille  joina  joiksi | (pl)
+
+| conjunctions
+
+että   | that
+ja     | and
+jos    | if
+koska  | because
+kuin   | than
+mutta  | but
+niin   | so
+sekä   | and
+sillä  | for
+tai    | or
+vaan   | but
+vai    | or
+vaikka | although
+
+
+| prepositions
+
+kanssa  | with
+mukaan  | according to
+noin    | about
+poikki  | across
+yli     | over, across
+
+| other
+
+kun    | when
+niin   | so
+nyt    | now
+itse   | self
+
+#stopwords_fr.txt
+
+au             |  a + le
+aux            |  a + les
+avec           |  with
+ce             |  this
+ces            |  these
+dans           |  with
+de             |  of
+des            |  de + les
+du             |  de + le
+elle           |  she
+en             |  `of them' etc
+et             |  and
+eux            |  them
+il             |  he
+je             |  I
+la             |  the
+le             |  the
+leur           |  their
+lui            |  him
+ma             |  my (fem)
+mais           |  but
+me             |  me
+même           |  same; as in moi-même (myself) etc
+mes            |  me (pl)
+moi            |  me
+mon            |  my (masc)
+ne             |  not
+nos            |  our (pl)
+notre          |  our
+nous           |  we
+on             |  one
+ou             |  where
+par            |  by
+pas            |  not
+pour           |  for
+qu             |  que before vowel
+que            |  that
+qui            |  who
+sa             |  his, her (fem)
+se             |  oneself
+ses            |  his (pl)
+son            |  his, her (masc)
+sur            |  on
+ta             |  thy (fem)
+te             |  thee
+tes            |  thy (pl)
+toi            |  thee
+ton            |  thy (masc)
+tu             |  thou
+un             |  a
+une            |  a
+vos            |  your (pl)
+votre          |  your
+vous           |  you
+
+               |  single letter forms
+
+c              |  c'
+d              |  d'
+j              |  j'
+l              |  l'
+à              |  to, at
+m              |  m'
+n              |  n'
+s              |  s'
+t              |  t'
+y              |  there
+
+               | forms of être (not including the infinitive):
+été
+étée
+étées
+étés
+étant
+suis
+es
+est
+sommes
+êtes
+sont
+serai
+seras
+sera
+serons
+serez
+seront
+serais
+serait
+serions
+seriez
+seraient
+étais
+était
+étions
+étiez
+étaient
+fus
+fut
+fûmes
+fûtes
+furent
+sois
+soit
+soyons
+soyez
+soient
+fusse
+fusses
+fût
+fussions
+fussiez
+fussent
+
+               | forms of avoir (not including the infinitive):
+ayant
+eu
+eue
+eues
+eus
+ai
+as
+avons
+avez
+ont
+aurai
+auras
+aura
+aurons
+aurez
+auront
+aurais
+aurait
+aurions
+auriez
+auraient
+avais
+avait
+avions
+aviez
+avaient
+eut
+eûmes
+eûtes
+eurent
+aie
+aies
+ait
+ayons
+ayez
+aient
+eusse
+eusses
+eût
+eussions
+eussiez
+eussent
+
+               | Later additions (from Jean-Christophe Deschamps)
+ceci           |  this
+celà           |  that
+cet            |  this
+cette          |  this
+ici            |  here
+ils            |  they
+les            |  the (pl)
+leurs          |  their (pl)
+quel           |  which
+quels          |  which
+quelle         |  which
+quelles        |  which
+sans           |  without
+soi            |  oneself
+
+#stopwords_ga.txt
+
+a
+ach
+ag
+agus
+an
+aon
+ar
+arna
+as
+b'
+ba
+beirt
+bhúr
+caoga
+ceathair
+ceathrar
+chomh
+chtó
+chuig
+chun
+cois
+céad
+cúig
+cúigear
+d'
+daichead
+dar
+de
+deich
+deichniúr
+den
+dhá
+do
+don
+dtí
+dá
+dár
+dó
+faoi
+faoin
+faoina
+faoinár
+fara
+fiche
+gach
+gan
+go
+gur
+haon
+hocht
+i
+iad
+idir
+in
+ina
+ins
+inár
+is
+le
+leis
+lena
+lenár
+m'
+mar
+mo
+mé
+na
+nach
+naoi
+naonúr
+ná
+ní
+níor
+nó
+nócha
+ocht
+ochtar
+os
+roimh
+sa
+seacht
+seachtar
+seachtó
+seasca
+seisear
+siad
+sibh
+sinn
+sna
+sé
+sí
+tar
+thar
+thú
+triúr
+trí
+trína
+trínár
+tríocha
+tú
+um
+ár
+é
+éis
+í
+ó
+ón
+óna
+ónár
+
+#stopwords_gl.txt
+a
+aínda
+alí
+aquel
+aquela
+aquelas
+aqueles
+aquilo
+aquí
+ao
+aos
+as
+así
+á
+ben
+cando
+che
+co
+coa
+comigo
+con
+connosco
+contigo
+convosco
+coas
+cos
+cun
+cuns
+cunha
+cunhas
+da
+dalgunha
+dalgunhas
+dalgún
+dalgúns
+das
+de
+del
+dela
+delas
+deles
+desde
+deste
+do
+dos
+dun
+duns
+dunha
+dunhas
+e
+el
+ela
+elas
+eles
+en
+era
+eran
+esa
+esas
+ese
+eses
+esta
+estar
+estaba
+está
+están
+este
+estes
+estiven
+estou
+eu
+é
+facer
+foi
+foron
+fun
+había
+hai
+iso
+isto
+la
+las
+lle
+lles
+lo
+los
+mais
+me
+meu
+meus
+min
+miña
+miñas
+moi
+na
+nas
+neste
+nin
+no
+non
+nos
+nosa
+nosas
+noso
+nosos
+nós
+nun
+nunha
+nuns
+nunhas
+o
+os
+ou
+ó
+ós
+para
+pero
+pode
+pois
+pola
+polas
+polo
+polos
+por
+que
+se
+senón
+ser
+seu
+seus
+sexa
+sido
+sobre
+súa
+súas
+tamén
+tan
+te
+ten
+teñen
+teño
+ter
+teu
+teus
+ti
+tido
+tiña
+tiven
+túa
+túas
+un
+unha
+unhas
+uns
+vos
+vosa
+vosas
+voso
+vosos
+vós
+
+#stopwords_hi.txt
+अंदर
+अत
+अपना
+अपनी
+अपने
+अभी
+आदि
+आप
+इत्यादि
+इन 
+इनका
+इन्हीं
+इन्हें
+इन्हों
+इस
+इसका
+इसकी
+इसके
+इसमें
+इसी
+इसे
+उन
+उनका
+उनकी
+उनके
+उनको
+उन्हीं
+उन्हें
+उन्हों
+उस
+उसके
+उसी
+उसे
+एक
+एवं
+एस
+ऐसे
+और
+कई
+कर
+करता
+करते
+करना
+करने
+करें
+कहते
+कहा
+का
+काफ़ी
+कि
+कितना
+किन्हें
+किन्हों
+किया
+किर
+किस
+किसी
+किसे
+की
+कुछ
+कुल
+के
+को
+कोई
+कौन
+कौनसा
+गया
+घर
+जब
+जहाँ
+जा
+जितना
+जिन
+जिन्हें
+जिन्हों
+जिस
+जिसे
+जीधर
+जैसा
+जैसे
+जो
+तक
+तब
+तरह
+तिन
+तिन्हें
+तिन्हों
+तिस
+तिसे
+तो
+था
+थी
+थे
+दबारा
+दिया
+दुसरा
+दूसरे
+दो
+द्वारा
+न
+नहीं
+ना
+निहायत
+नीचे
+ने
+पर
+पर  
+पहले
+पूरा
+पे
+फिर
+बनी
+बही
+बहुत
+बाद
+बाला
+बिलकुल
+भी
+भीतर
+मगर
+मानो
+मे
+में
+यदि
+यह
+यहाँ
+यही
+या
+यिह 
+ये
+रखें
+रहा
+रहे
+ऱ्वासा
+लिए
+लिये
+लेकिन
+व
+वर्ग
+वह
+वह 
+वहाँ
+वहीं
+वाले
+वुह 
+वे
+वग़ैरह
+संग
+सकता
+सकते
+सबसे
+सभी
+साथ
+साबुत
+साभ
+सारा
+से
+सो
+ही
+हुआ
+हुई
+हुए
+है
+हैं
+हो
+होता
+होती
+होते
+होना
+होने
+# additional normalized forms of the above
+अपनि
+जेसे
+होति
+सभि
+तिंहों
+इंहों
+दवारा
+इसि
+किंहें
+थि
+उंहों
+ओर
+जिंहें
+वहिं
+अभि
+बनि
+हि
+उंहिं
+उंहें
+हें
+वगेरह
+एसे
+रवासा
+कोन
+निचे
+काफि
+उसि
+पुरा
+भितर
+हे
+बहि
+वहां
+कोइ
+यहां
+जिंहों
+तिंहें
+किसि
+कइ
+यहि
+इंहिं
+जिधर
+इंहें
+अदि
+इतयादि
+हुइ
+कोनसा
+इसकि
+दुसरे
+जहां
+अप
+किंहों
+उनकि
+भि
+वरग
+हुअ
+जेसा
+नहिं
+
+#stopwords_hu.txt
+a
+ahogy
+ahoy
+aki
+akin
+akkor
+alatt
+által
+általában
+amely
+amelyek
+amelyekben
+amelyeket
+amelyet
+amelynek
+ami
+amit
+amolyan
+amíg
+amikor
+át
+abban
+ahhoz
+annak
+arra
+arról
+az
+azok
+azon
+azt
+azzal
+azért
+aztán
+azután
+azonban
+bár
+be
+belül
+benne
+cikk
+cikkek
+cikkeket
+csak
+de
+e
+eddig
+egész
+egy
+egyes
+egyetlen
+egyéb
+egyik
+egyre
+ekkor
+el
+elég
+ellen
+elő
+először
+előtt
+első
+én
+éppen
+ebben
+ehhez
+emilyen
+ennek
+erre
+ez
+ezt
+ezek
+ezen
+ezzel
+ezért
+és
+fel
+felé
+hanem
+hiszen
+hogy
+hogyan
+igen
+így
+illetve
+ill.
+ill
+ilyen
+ilyenkor
+ison
+ismét
+itt
+jó
+jól
+jobban
+kell
+kellett
+keresztül
+keressünk
+ki
+kívül
+között
+közül
+legalább
+lehet
+lehetett
+legyen
+lenne
+lenni
+lesz
+lett
+maga
+magát
+majd
+majd
+már
+más
+másik
+meg
+még
+mellett
+mert
+mely
+melyek
+mi
+mit
+míg
+miért
+milyen
+mikor
+minden
+mindent
+mindenki
+mindig
+mint
+mintha
+mivel
+most
+nagy
+nagyobb
+nagyon
+ne
+néha
+nekem
+neki
+nem
+néhány
+nélkül
+nincs
+olyan
+ott
+össze
+ő
+ők
+őket
+pedig
+persze
+rá
+s
+saját
+sem
+semmi
+sok
+sokat
+sokkal
+számára
+szemben
+szerint
+szinte
+talán
+tehát
+teljes
+tovább
+továbbá
+több
+úgy
+ugyanis
+új
+újabb
+újra
+után
+utána
+utolsó
+vagy
+vagyis
+valaki
+valami
+valamint
+való
+vagyok
+van
+vannak
+volt
+voltam
+voltak
+voltunk
+vissza
+vele
+viszont
+volna
+
+#stopwords_hy.txt
+այդ
+այլ
+այն
+այս
+դու
+դուք
+եմ
+են
+ենք
+ես
+եք
+է
+էի
+էին
+էինք
+էիր
+էիք
+էր
+ըստ
+թ
+ի
+ին
+իսկ
+իր
+կամ
+համար
+հետ
+հետո
+մենք
+մեջ
+մի
+ն
+նա
+նաև
+նրա
+նրանք
+որ
+որը
+որոնք
+որպես
+ու
+ում
+պիտի
+վրա
+և
+
+#stopwords_id.txt
+ada
+adanya
+adalah
+adapun
+agak
+agaknya
+agar
+akan
+akankah
+akhirnya
+aku
+akulah
+amat
+amatlah
+anda
+andalah
+antar
+diantaranya
+antara
+antaranya
+diantara
+apa
+apaan
+mengapa
+apabila
+apakah
+apalagi
+apatah
+atau
+ataukah
+ataupun
+bagai
+bagaikan
+sebagai
+sebagainya
+bagaimana
+bagaimanapun
+sebagaimana
+bagaimanakah
+bagi
+bahkan
+bahwa
+bahwasanya
+sebaliknya
+banyak
+sebanyak
+beberapa
+seberapa
+begini
+beginian
+beginikah
+beginilah
+sebegini
+begitu
+begitukah
+begitulah
+begitupun
+sebegitu
+belum
+belumlah
+sebelum
+sebelumnya
+sebenarnya
+berapa
+berapakah
+berapalah
+berapapun
+betulkah
+sebetulnya
+biasa
+biasanya
+bila
+bilakah
+bisa
+bisakah
+sebisanya
+boleh
+bolehkah
+bolehlah
+buat
+bukan
+bukankah
+bukanlah
+bukannya
+cuma
+percuma
+dahulu
+dalam
+dan
+dapat
+dari
+daripada
+dekat
+demi
+demikian
+demikianlah
+sedemikian
+dengan
+depan
+di
+dia
+dialah
+dini
+diri
+dirinya
+terdiri
+dong
+dulu
+enggak
+enggaknya
+entah
+entahlah
+terhadap
+terhadapnya
+hal
+hampir
+hanya
+hanyalah
+harus
+haruslah
+harusnya
+seharusnya
+hendak
+hendaklah
+hendaknya
+hingga
+sehingga
+ia
+ialah
+ibarat
+ingin
+inginkah
+inginkan
+ini
+inikah
+inilah
+itu
+itukah
+itulah
+jangan
+jangankan
+janganlah
+jika
+jikalau
+juga
+justru
+kala
+kalau
+kalaulah
+kalaupun
+kalian
+kami
+kamilah
+kamu
+kamulah
+kan
+kapan
+kapankah
+kapanpun
+dikarenakan
+karena
+karenanya
+ke
+kecil
+kemudian
+kenapa
+kepada
+kepadanya
+ketika
+seketika
+khususnya
+kini
+kinilah
+kiranya
+sekiranya
+kita
+kitalah
+kok
+lagi
+lagian
+selagi
+lah
+lain
+lainnya
+melainkan
+selaku
+lalu
+melalui
+terlalu
+lama
+lamanya
+selama
+selama
+selamanya
+lebih
+terlebih
+bermacam
+macam
+semacam
+maka
+makanya
+makin
+malah
+malahan
+mampu
+mampukah
+mana
+manakala
+manalagi
+masih
+masihkah
+semasih
+masing
+mau
+maupun
+semaunya
+memang
+mereka
+merekalah
+meski
+meskipun
+semula
+mungkin
+mungkinkah
+nah
+namun
+nanti
+nantinya
+nyaris
+oleh
+olehnya
+seorang
+seseorang
+pada
+padanya
+padahal
+paling
+sepanjang
+pantas
+sepantasnya
+sepantasnyalah
+para
+pasti
+pastilah
+per
+pernah
+pula
+pun
+merupakan
+rupanya
+serupa
+saat
+saatnya
+sesaat
+saja
+sajalah
+saling
+bersama
+sama
+sesama
+sambil
+sampai
+sana
+sangat
+sangatlah
+saya
+sayalah
+se
+sebab
+sebabnya
+sebuah
+tersebut
+tersebutlah
+sedang
+sedangkan
+sedikit
+sedikitnya
+segala
+segalanya
+segera
+sesegera
+sejak
+sejenak
+sekali
+sekalian
+sekalipun
+sesekali
+sekaligus
+sekarang
+sekarang
+sekitar
+sekitarnya
+sela
+selain
+selalu
+seluruh
+seluruhnya
+semakin
+sementara
+sempat
+semua
+semuanya
+sendiri
+sendirinya
+seolah
+seperti
+sepertinya
+sering
+seringnya
+serta
+siapa
+siapakah
+siapapun
+disini
+disinilah
+sini
+sinilah
+sesuatu
+sesuatunya
+suatu
+sesudah
+sesudahnya
+sudah
+sudahkah
+sudahlah
+supaya
+tadi
+tadinya
+tak
+tanpa
+setelah
+telah
+tentang
+tentu
+tentulah
+tentunya
+tertentu
+seterusnya
+tapi
+tetapi
+setiap
+tiap
+setidaknya
+tidak
+tidakkah
+tidaklah
+toh
+waduh
+wah
+wahai
+sewaktu
+walau
+walaupun
+wong
+yaitu
+yakni
+yang
+
+#stopwords_it.txt
+ad             |  a (to) before vowel
+al             |  a + il
+allo           |  a + lo
+ai             |  a + i
+agli           |  a + gli
+all            |  a + l'
+agl            |  a + gl'
+alla           |  a + la
+alle           |  a + le
+con            |  with
+col            |  con + il
+coi            |  con + i (forms collo, cogli etc are now very rare)
+da             |  from
+dal            |  da + il
+dallo          |  da + lo
+dai            |  da + i
+dagli          |  da + gli
+dall           |  da + l'
+dagl           |  da + gll'
+dalla          |  da + la
+dalle          |  da + le
+di             |  of
+del            |  di + il
+dello          |  di + lo
+dei            |  di + i
+degli          |  di + gli
+dell           |  di + l'
+degl           |  di + gl'
+della          |  di + la
+delle          |  di + le
+in             |  in
+nel            |  in + el
+nello          |  in + lo
+nei            |  in + i
+negli          |  in + gli
+nell           |  in + l'
+negl           |  in + gl'
+nella          |  in + la
+nelle          |  in + le
+su             |  on
+sul            |  su + il
+sullo          |  su + lo
+sui            |  su + i
+sugli          |  su + gli
+sull           |  su + l'
+sugl           |  su + gl'
+sulla          |  su + la
+sulle          |  su + le
+per            |  through, by
+tra            |  among
+contro         |  against
+io             |  I
+tu             |  thou
+lui            |  he
+lei            |  she
+noi            |  we
+voi            |  you
+loro           |  they
+mio            |  my
+mia            |
+miei           |
+mie            |
+tuo            |
+tua            |
+tuoi           |  thy
+tue            |
+suo            |
+sua            |
+suoi           |  his, her
+sue            |
+nostro         |  our
+nostra         |
+nostri         |
+nostre         |
+vostro         |  your
+vostra         |
+vostri         |
+vostre         |
+mi             |  me
+ti             |  thee
+ci             |  us, there
+vi             |  you, there
+lo             |  him, the
+la             |  her, the
+li             |  them
+le             |  them, the
+gli            |  to him, the
+ne             |  from there etc
+il             |  the
+un             |  a
+uno            |  a
+una            |  a
+ma             |  but
+ed             |  and
+se             |  if
+perché         |  why, because
+anche          |  also
+come           |  how
+dov            |  where (as dov')
+dove           |  where
+che            |  who, that
+chi            |  who
+cui            |  whom
+non            |  not
+più            |  more
+quale          |  who, that
+quanto         |  how much
+quanti         |
+quanta         |
+quante         |
+quello         |  that
+quelli         |
+quella         |
+quelle         |
+questo         |  this
+questi         |
+questa         |
+queste         |
+si             |  yes
+tutto          |  all
+tutti          |  all
+
+               |  single letter forms:
+
+a              |  at
+c              |  as c' for ce or ci
+e              |  and
+i              |  the
+l              |  as l'
+o              |  or
+
+               | forms of avere, to have (not including the infinitive):
+
+ho
+hai
+ha
+abbiamo
+avete
+hanno
+abbia
+abbiate
+abbiano
+avrò
+avrai
+avrà
+avremo
+avrete
+avranno
+avrei
+avresti
+avrebbe
+avremmo
+avreste
+avrebbero
+avevo
+avevi
+aveva
+avevamo
+avevate
+avevano
+ebbi
+avesti
+ebbe
+avemmo
+aveste
+ebbero
+avessi
+avesse
+avessimo
+avessero
+avendo
+avuto
+avuta
+avuti
+avute
+
+               | forms of essere, to be (not including the infinitive):
+sono
+sei
+è
+siamo
+siete
+sia
+siate
+siano
+sarò
+sarai
+sarà
+saremo
+sarete
+saranno
+sarei
+saresti
+sarebbe
+saremmo
+sareste
+sarebbero
+ero
+eri
+era
+eravamo
+eravate
+erano
+fui
+fosti
+fu
+fummo
+foste
+furono
+fossi
+fosse
+fossimo
+fossero
+essendo
+
+               | forms of fare, to do (not including the infinitive, fa, fat-):
+faccio
+fai
+facciamo
+fanno
+faccia
+facciate
+facciano
+farò
+farai
+farà
+faremo
+farete
+faranno
+farei
+faresti
+farebbe
+faremmo
+fareste
+farebbero
+facevo
+facevi
+faceva
+facevamo
+facevate
+facevano
+feci
+facesti
+fece
+facemmo
+faceste
+fecero
+facessi
+facesse
+facessimo
+facessero
+facendo
+
+               | forms of stare, to be (not including the infinitive):
+sto
+stai
+sta
+stiamo
+stanno
+stia
+stiate
+stiano
+starò
+starai
+starà
+staremo
+starete
+staranno
+starei
+staresti
+starebbe
+staremmo
+stareste
+starebbero
+stavo
+stavi
+stava
+stavamo
+stavate
+stavano
+stetti
+stesti
+stette
+stemmo
+steste
+stettero
+stessi
+stesse
+stessimo
+stessero
+stando
+
+#stopwords_ja.txt
+の
+に
+は
+を
+た
+が
+で
+て
+と
+し
+れ
+さ
+ある
+いる
+も
+する
+から
+な
+こと
+として
+い
+や
+れる
+など
+なっ
+ない
+この
+ため
+その
+あっ
+よう
+また
+もの
+という
+あり
+まで
+られ
+なる
+へ
+か
+だ
+これ
+によって
+により
+おり
+より
+による
+ず
+なり
+られる
+において
+ば
+なかっ
+なく
+しかし
+について
+せ
+だっ
+その後
+できる
+それ
+う
+ので
+なお
+のみ
+でき
+き
+つ
+における
+および
+いう
+さらに
+でも
+ら
+たり
+その他
+に関する
+たち
+ます
+ん
+なら
+に対して
+特に
+せる
+及び
+これら
+とき
+では
+にて
+ほか
+ながら
+うち
+そして
+とともに
+ただし
+かつて
+それぞれ
+または
+お
+ほど
+ものの
+に対する
+ほとんど
+と共に
+といった
+です
+とも
+ところ
+ここ
+
+#stopwords_lv.txt
+aiz
+ap
+ar
+apakš
+ārpus
+augšpus
+bez
+caur
+dēļ
+gar
+iekš
+iz
+kopš
+labad
+lejpus
+līdz
+no
+otrpus
+pa
+par
+pār
+pēc
+pie
+pirms
+pret
+priekš
+starp
+šaipus
+uz
+viņpus
+virs
+virspus
+zem
+apakšpus
+# Conjunctions
+un
+bet
+jo
+ja
+ka
+lai
+tomēr
+tikko
+turpretī
+arī
+kaut
+gan
+tādēļ
+tā
+ne
+tikvien
+vien
+kā
+ir
+te
+vai
+kamēr
+# Particles
+ar
+diezin
+droši
+diemžēl
+nebūt
+ik
+it
+taču
+nu
+pat
+tiklab
+iekšpus
+nedz
+tik
+nevis
+turpretim
+jeb
+iekam
+iekām
+iekāms
+kolīdz
+līdzko
+tiklīdz
+jebšu
+tālab
+tāpēc
+nekā
+itin
+jā
+jau
+jel
+nē
+nezin
+tad
+tikai
+vis
+tak
+iekams
+vien
+# modal verbs
+būt  
+biju 
+biji
+bija
+bijām
+bijāt
+esmu
+esi
+esam
+esat 
+būšu     
+būsi
+būs
+būsim
+būsiet
+tikt
+tiku
+tiki
+tika
+tikām
+tikāt
+tieku
+tiec
+tiek
+tiekam
+tiekat
+tikšu
+tiks
+tiksim
+tiksiet
+tapt
+tapi
+tapāt
+topat
+tapšu
+tapsi
+taps
+tapsim
+tapsiet
+kļūt
+kļuvu
+kļuvi
+kļuva
+kļuvām
+kļuvāt
+kļūstu
+kļūsti
+kļūst
+kļūstam
+kļūstat
+kļūšu
+kļūsi
+kļūs
+kļūsim
+kļūsiet
+# verbs
+varēt
+varēju
+varējām
+varēšu
+varēsim
+var
+varēji
+varējāt
+varēsi
+varēsiet
+varat
+varēja
+varēs
+
+#stopwords_nl.txt
+
+de             |  the
+en             |  and
+van            |  of, from
+ik             |  I, the ego
+te             |  (1) chez, at etc, (2) to, (3) too
+dat            |  that, which
+die            |  that, those, who, which
+in             |  in, inside
+een            |  a, an, one
+hij            |  he
+het            |  the, it
+niet           |  not, nothing, naught
+zijn           |  (1) to be, being, (2) his, one's, its
+is             |  is
+was            |  (1) was, past tense of all persons sing. of 'zijn' (to be) (2) wax, (3) the washing, (4) rise of river
+op             |  on, upon, at, in, up, used up
+aan            |  on, upon, to (as dative)
+met            |  with, by
+als            |  like, such as, when
+voor           |  (1) before, in front of, (2) furrow
+had            |  had, past tense all persons sing. of 'hebben' (have)
+er             |  there
+maar           |  but, only
+om             |  round, about, for etc
+hem            |  him
+dan            |  then
+zou            |  should/would, past tense all persons sing. of 'zullen'
+of             |  or, whether, if
+wat            |  what, something, anything
+mijn           |  possessive and noun 'mine'
+men            |  people, 'one'
+dit            |  this
+zo             |  so, thus, in this way
+door           |  through by
+over           |  over, across
+ze             |  she, her, they, them
+zich           |  oneself
+bij            |  (1) a bee, (2) by, near, at
+ook            |  also, too
+tot            |  till, until
+je             |  you
+mij            |  me
+uit            |  out of, from
+der            |  Old Dutch form of 'van der' still found in surnames
+daar           |  (1) there, (2) because
+haar           |  (1) her, their, them, (2) hair
+naar           |  (1) unpleasant, unwell etc, (2) towards, (3) as
+heb            |  present first person sing. of 'to have'
+hoe            |  how, why
+heeft          |  present third person sing. of 'to have'
+hebben         |  'to have' and various parts thereof
+deze           |  this
+u              |  you
+want           |  (1) for, (2) mitten, (3) rigging
+nog            |  yet, still
+zal            |  'shall', first and third person sing. of verb 'zullen' (will)
+me             |  me
+zij            |  she, they
+nu             |  now
+ge             |  'thou', still used in Belgium and south Netherlands
+geen           |  none
+omdat          |  because
+iets           |  something, somewhat
+worden         |  to become, grow, get
+toch           |  yet, still
+al             |  all, every, each
+waren          |  (1) 'were' (2) to wander, (3) wares, (3)
+veel           |  much, many
+meer           |  (1) more, (2) lake
+doen           |  to do, to make
+toen           |  then, when
+moet           |  noun 'spot/mote' and present form of 'to must'
+ben            |  (1) am, (2) 'are' in interrogative second person singular of 'to be'
+zonder         |  without
+kan            |  noun 'can' and present form of 'to be able'
+hun            |  their, them
+dus            |  so, consequently
+alles          |  all, everything, anything
+onder          |  under, beneath
+ja             |  yes, of course
+eens           |  once, one day
+hier           |  here
+wie            |  who
+werd           |  imperfect third person sing. of 'become'
+altijd         |  always
+doch           |  yet, but etc
+wordt          |  present third person sing. of 'become'
+wezen          |  (1) to be, (2) 'been' as in 'been fishing', (3) orphans
+kunnen         |  to be able
+ons            |  us/our
+zelf           |  self
+tegen          |  against, towards, at
+na             |  after, near
+reeds          |  already
+wil            |  (1) present tense of 'want', (2) 'will', noun, (3) fender
+kon            |  could; past tense of 'to be able'
+niets          |  nothing
+uw             |  your
+iemand         |  somebody
+geweest        |  been; past participle of 'be'
+andere         |  other
+
+#stopwords_no.txt
+
+og             | and
+i              | in
+jeg            | I
+det            | it/this/that
+at             | to (w. inf.)
+en             | a/an
+et             | a/an
+den            | it/this/that
+til            | to
+er             | is/am/are
+som            | who/that
+på             | on
+de             | they / you(formal)
+med            | with
+han            | he
+av             | of
+ikke           | not
+ikkje          | not *
+der            | there
+så             | so
+var            | was/were
+meg            | me
+seg            | you
+men            | but
+ett            | one
+har            | have
+om             | about
+vi             | we
+min            | my
+mitt           | my
+ha             | have
+hadde          | had
+hun            | she
+nå             | now
+over           | over
+da             | when/as
+ved            | by/know
+fra            | from
+du             | you
+ut             | out
+sin            | your
+dem            | them
+oss            | us
+opp            | up
+man            | you/one
+kan            | can
+hans           | his
+hvor           | where
+eller          | or
+hva            | what
+skal           | shall/must
+selv           | self (reflective)
+sjøl           | self (reflective)
+her            | here
+alle           | all
+vil            | will
+bli            | become
+ble            | became
+blei           | became *
+blitt          | have become
+kunne          | could
+inn            | in
+når            | when
+være           | be
+kom            | come
+noen           | some
+noe            | some
+ville          | would
+dere           | you
+som            | who/which/that
+deres          | their/theirs
+kun            | only/just
+ja             | yes
+etter          | after
+ned            | down
+skulle         | should
+denne          | this
+for            | for/because
+deg            | you
+si             | hers/his
+sine           | hers/his
+sitt           | hers/his
+mot            | against
+å              | to
+meget          | much
+hvorfor        | why
+dette          | this
+disse          | these/those
+uten           | without
+hvordan        | how
+ingen          | none
+din            | your
+ditt           | your
+blir           | become
+samme          | same
+hvilken        | which
+hvilke         | which (plural)
+sånn           | such a
+inni           | inside/within
+mellom         | between
+vår            | our
+hver           | each
+hvem           | who
+vors           | us/ours
+hvis           | whose
+både           | both
+bare           | only/just
+enn            | than
+fordi          | as/because
+før            | before
+mange          | many
+også           | also
+slik           | just
+vært           | been
+være           | to be
+båe            | both *
+begge          | both
+siden          | since
+dykk           | your *
+dykkar         | yours *
+dei            | they *
+deira          | them *
+deires         | theirs *
+deim           | them *
+di             | your (fem.) *
+då             | as/when *
+eg             | I *
+ein            | a/an *
+eit            | a/an *
+eitt           | a/an *
+elles          | or *
+honom          | he *
+hjå            | at *
+ho             | she *
+hoe            | she *
+henne          | her
+hennar         | her/hers
+hennes         | hers
+hoss           | how *
+hossen         | how *
+ikkje          | not *
+ingi           | noone *
+inkje          | noone *
+korleis        | how *
+korso          | how *
+kva            | what/which *
+kvar           | where *
+kvarhelst      | where *
+kven           | who/whom *
+kvi            | why *
+kvifor         | why *
+me             | we *
+medan          | while *
+mi             | my *
+mine           | my *
+mykje          | much *
+no             | now *
+nokon          | some (masc./neut.) *
+noka           | some (fem.) *
+nokor          | some *
+noko           | some *
+nokre          | some *
+si             | his/hers *
+sia            | since *
+sidan          | since *
+so             | so *
+somt           | some *
+somme          | some *
+um             | about*
+upp            | up *
+vere           | be *
+vore           | was *
+verte          | become *
+vort           | become *
+varte          | became *
+vart           | became *
+
+
+#stopwords_pt.txt
+
+de             |  of, from
+a              |  the; to, at; her
+o              |  the; him
+que            |  who, that
+e              |  and
+do             |  de + o
+da             |  de + a
+em             |  in
+um             |  a
+para           |  for
+  | é          from SER
+com            |  with
+não            |  not, no
+uma            |  a
+os             |  the; them
+no             |  em + o
+se             |  himself etc
+na             |  em + a
+por            |  for
+mais           |  more
+as             |  the; them
+dos            |  de + os
+como           |  as, like
+mas            |  but
+  | foi        from SER
+ao             |  a + o
+ele            |  he
+das            |  de + as
+  | tem        from TER
+à              |  a + a
+seu            |  his
+sua            |  her
+ou             |  or
+  | ser        from SER
+quando         |  when
+muito          |  much
+  | há         from HAV
+nos            |  em + os; us
+já             |  already, now
+  | está       from EST
+eu             |  I
+também         |  also
+só             |  only, just
+pelo           |  per + o
+pela           |  per + a
+até            |  up to
+isso           |  that
+ela            |  he
+entre          |  between
+  | era        from SER
+depois         |  after
+sem            |  without
+mesmo          |  same
+aos            |  a + os
+  | ter        from TER
+seus           |  his
+quem           |  whom
+nas            |  em + as
+me             |  me
+esse           |  that
+eles           |  they
+  | estão      from EST
+você           |  you
+  | tinha      from TER
+  | foram      from SER
+essa           |  that
+num            |  em + um
+nem            |  nor
+suas           |  her
+meu            |  my
+às             |  a + as
+minha          |  my
+  | têm        from TER
+numa           |  em + uma
+pelos          |  per + os
+elas           |  they
+  | havia      from HAV
+  | seja       from SER
+qual           |  which
+  | será       from SER
+nós            |  we
+  | tenho      from TER
+lhe            |  to him, her
+deles          |  of them
+essas          |  those
+esses          |  those
+pelas          |  per + as
+este           |  this
+  | fosse      from SER
+dele           |  of him
+
+ | other words. There are many contractions such as naquele = em+aquele,
+ | mo = me+o, but they are rare.
+ | Indefinite article plural forms are also rare.
+
+tu             |  thou
+te             |  thee
+vocês          |  you (plural)
+vos            |  you
+lhes           |  to them
+meus           |  my
+minhas
+teu            |  thy
+tua
+teus
+tuas
+nosso          | our
+nossa
+nossos
+nossas
+
+dela           |  of her
+delas          |  of them
+
+esta           |  this
+estes          |  these
+estas          |  these
+aquele         |  that
+aquela         |  that
+aqueles        |  those
+aquelas        |  those
+isto           |  this
+aquilo         |  that
+
+               | forms of estar, to be (not including the infinitive):
+estou
+está
+estamos
+estão
+estive
+esteve
+estivemos
+estiveram
+estava
+estávamos
+estavam
+estivera
+estivéramos
+esteja
+estejamos
+estejam
+estivesse
+estivéssemos
+estivessem
+estiver
+estivermos
+estiverem
+
+               | forms of haver, to have (not including the infinitive):
+hei
+há
+havemos
+hão
+houve
+houvemos
+houveram
+houvera
+houvéramos
+haja
+hajamos
+hajam
+houvesse
+houvéssemos
+houvessem
+houver
+houvermos
+houverem
+houverei
+houverá
+houveremos
+houverão
+houveria
+houveríamos
+houveriam
+
+               | forms of ser, to be (not including the infinitive):
+sou
+somos
+são
+era
+éramos
+eram
+fui
+foi
+fomos
+foram
+fora
+fôramos
+seja
+sejamos
+sejam
+fosse
+fôssemos
+fossem
+for
+formos
+forem
+serei
+será
+seremos
+serão
+seria
+seríamos
+seriam
+
+               | forms of ter, to have (not including the infinitive):
+tenho
+tem
+temos
+tém
+tinha
+tínhamos
+tinham
+tive
+teve
+tivemos
+tiveram
+tivera
+tivéramos
+tenha
+tenhamos
+tenham
+tivesse
+tivéssemos
+tivessem
+tiver
+tivermos
+tiverem
+terei
+terá
+teremos
+terão
+teria
+teríamos
+teriam
+
+#stopwords_ro.txt
+acea
+aceasta
+această
+aceea
+acei
+aceia
+acel
+acela
+acele
+acelea
+acest
+acesta
+aceste
+acestea
+aceşti
+aceştia
+acolo
+acum
+ai
+aia
+aibă
+aici
+al
+ăla
+ale
+alea
+ălea
+altceva
+altcineva
+am
+ar
+are
+aş
+aşadar
+asemenea
+asta
+ăsta
+astăzi
+astea
+ăstea
+ăştia
+asupra
+aţi
+au
+avea
+avem
+aveţi
+azi
+bine
+bucur
+bună
+ca
+că
+căci
+când
+care
+cărei
+căror
+cărui
+cât
+câte
+câţi
+către
+câtva
+ce
+cel
+ceva
+chiar
+cînd
+cine
+cineva
+cît
+cîte
+cîţi
+cîtva
+contra
+cu
+cum
+cumva
+curând
+curînd
+da
+dă
+dacă
+dar
+datorită
+de
+deci
+deja
+deoarece
+departe
+deşi
+din
+dinaintea
+dintr
+dintre
+drept
+după
+ea
+ei
+el
+ele
+eram
+este
+eşti
+eu
+face
+fără
+fi
+fie
+fiecare
+fii
+fim
+fiţi
+iar
+ieri
+îi
+îl
+îmi
+împotriva
+în 
+înainte
+înaintea
+încât
+încît
+încotro
+între
+întrucât
+întrucît
+îţi
+la
+lângă
+le
+li
+lîngă
+lor
+lui
+mă
+mâine
+mea
+mei
+mele
+mereu
+meu
+mi
+mine
+mult
+multă
+mulţi
+ne
+nicăieri
+nici
+nimeni
+nişte
+noastră
+noastre
+noi
+noştri
+nostru
+nu
+ori
+oricând
+oricare
+oricât
+orice
+oricînd
+oricine
+oricît
+oricum
+oriunde
+până
+pe
+pentru
+peste
+pînă
+poate
+pot
+prea
+prima
+primul
+prin
+printr
+sa
+să
+săi
+sale
+sau
+său
+se
+şi
+sînt
+sîntem
+sînteţi
+spre
+sub
+sunt
+suntem
+sunteţi
+ta
+tăi
+tale
+tău
+te
+ţi
+ţie
+tine
+toată
+toate
+tot
+toţi
+totuşi
+tu
+un
+una
+unde
+undeva
+unei
+unele
+uneori
+unor
+vă
+vi
+voastră
+voastre
+voi
+voştri
+vostru
+vouă
+vreo
+vreun
+
+#stopwords_ru.txt
+
+и              | and
+в              | in/into
+во             | alternative form
+не             | not
+что            | what/that
+он             | he
+на             | on/onto
+я              | i
+с              | from
+со             | alternative form
+как            | how
+а              | milder form of `no' (but)
+то             | conjunction and form of `that'
+все            | all
+она            | she
+так            | so, thus
+его            | him
+но             | but
+да             | yes/and
+ты             | thou
+к              | towards, by
+у              | around, chez
+же             | intensifier particle
+вы             | you
+за             | beyond, behind
+бы             | conditional/subj. particle
+по             | up to, along
+только         | only
+ее             | her
+мне            | to me
+было           | it was
+вот            | here is/are, particle
+от             | away from
+меня           | me
+еще            | still, yet, more
+нет            | no, there isnt/arent
+о              | about
+из             | out of
+ему            | to him
+теперь         | now
+когда          | when
+даже           | even
+ну             | so, well
+вдруг          | suddenly
+ли             | interrogative particle
+если           | if
+уже            | already, but homonym of `narrower'
+или            | or
+ни             | neither
+быть           | to be
+был            | he was
+него           | prepositional form of его
+до             | up to
+вас            | you accusative
+нибудь         | indef. suffix preceded by hyphen
+опять          | again
+уж             | already, but homonym of `adder'
+вам            | to you
+сказал         | he said
+ведь           | particle `after all'
+там            | there
+потом          | then
+себя           | oneself
+ничего         | nothing
+ей             | to her
+может          | usually with `быть' as `maybe'
+они            | they
+тут            | here
+где            | where
+есть           | there is/are
+надо           | got to, must
+ней            | prepositional form of  ей
+для            | for
+мы             | we
+тебя           | thee
+их             | them, their
+чем            | than
+была           | she was
+сам            | self
+чтоб           | in order to
+без            | without
+будто          | as if
+человек        | man, person, one
+чего           | genitive form of `what'
+раз            | once
+тоже           | also
+себе           | to oneself
+под            | beneath
+жизнь          | life
+будет          | will be
+ж              | short form of intensifer particle `же'
+тогда          | then
+кто            | who
+этот           | this
+говорил        | was saying
+того           | genitive form of `that'
+потому         | for that reason
+этого          | genitive form of `this'
+какой          | which
+совсем         | altogether
+ним            | prepositional form of `его', `они'
+здесь          | here
+этом           | prepositional form of `этот'
+один           | one
+почти          | almost
+мой            | my
+тем            | instrumental/dative plural of `тот', `то'
+чтобы          | full form of `in order that'
+нее            | her (acc.)
+кажется        | it seems
+сейчас         | now
+были           | they were
+куда           | where to
+зачем          | why
+сказать        | to say
+всех           | all (acc., gen. preposn. plural)
+никогда        | never
+сегодня        | today
+можно          | possible, one can
+при            | by
+наконец        | finally
+два            | two
+об             | alternative form of `о', about
+другой         | another
+хоть           | even
+после          | after
+над            | above
+больше         | more
+тот            | that one (masc.)
+через          | across, in
+эти            | these
+нас            | us
+про            | about
+всего          | in all, only, of all
+них            | prepositional form of `они' (they)
+какая          | which, feminine
+много          | lots
+разве          | interrogative particle
+сказала        | she said
+три            | three
+эту            | this, acc. fem. sing.
+моя            | my, feminine
+впрочем        | moreover, besides
+хорошо         | good
+свою           | ones own, acc. fem. sing.
+этой           | oblique form of `эта', fem. `this'
+перед          | in front of
+иногда         | sometimes
+лучше          | better
+чуть           | a little
+том            | preposn. form of `that one'
+нельзя         | one must not
+такой          | such a one
+им             | to them
+более          | more
+всегда         | always
+конечно        | of course
+всю            | acc. fem. sing of `all'
+между          | between
+
+
+  | b: some paradigms
+  |
+  | personal pronouns
+  |
+  | я  меня  мне  мной  [мною]
+  | ты  тебя  тебе  тобой  [тобою]
+  | он  его  ему  им  [него, нему, ним]
+  | она  ее  эи  ею  [нее, нэи, нею]
+  | оно  его  ему  им  [него, нему, ним]
+  |
+  | мы  нас  нам  нами
+  | вы  вас  вам  вами
+  | они  их  им  ими  [них, ним, ними]
+  |
+  |   себя  себе  собой   [собою]
+  |
+  | demonstrative pronouns: этот (this), тот (that)
+  |
+  | этот  эта  это  эти
+  | этого  эты  это  эти
+  | этого  этой  этого  этих
+  | этому  этой  этому  этим
+  | этим  этой  этим  [этою]  этими
+  | этом  этой  этом  этих
+  |
+  | тот  та  то  те
+  | того  ту  то  те
+  | того  той  того  тех
+  | тому  той  тому  тем
+  | тем  той  тем  [тою]  теми
+  | том  той  том  тех
+  |
+  | determinative pronouns
+  |
+  | (a) весь (all)
+  |
+  | весь  вся  все  все
+  | всего  всю  все  все
+  | всего  всей  всего  всех
+  | всему  всей  всему  всем
+  | всем  всей  всем  [всею]  всеми
+  | всем  всей  всем  всех
+  |
+  | (b) сам (himself etc)
+  |
+  | сам  сама  само  сами
+  | самого саму  само  самих
+  | самого самой самого  самих
+  | самому самой самому  самим
+  | самим  самой  самим  [самою]  самими
+  | самом самой самом  самих
+  |
+  | stems of verbs `to be', `to have', `to do' and modal
+  |
+  | быть  бы  буд  быв  есть  суть
+  | име
+  | дел
+  | мог   мож  мочь
+  | уме
+  | хоч  хот
+  | долж
+  | можн
+  | нужн
+  | нельзя
+
+
+#stopwords_sv.txt
+och            | and
+det            | it, this/that
+att            | to (with infinitive)
+i              | in, at
+en             | a
+jag            | I
+hon            | she
+som            | who, that
+han            | he
+på             | on
+den            | it, this/that
+med            | with
+var            | where, each
+sig            | him(self) etc
+för            | for
+så             | so (also: seed)
+till           | to
+är             | is
+men            | but
+ett            | a
+om             | if; around, about
+hade           | had
+de             | they, these/those
+av             | of
+icke           | not, no
+mig            | me
+du             | you
+henne          | her
+då             | then, when
+sin            | his
+nu             | now
+har            | have
+inte           | inte någon = no one
+hans           | his
+honom          | him
+skulle         | 'sake'
+hennes         | her
+där            | there
+min            | my
+man            | one (pronoun)
+ej             | nor
+vid            | at, by, on (also: vast)
+kunde          | could
+något          | some etc
+från           | from, off
+ut             | out
+när            | when
+efter          | after, behind
+upp            | up
+vi             | we
+dem            | them
+vara           | be
+vad            | what
+över           | over
+än             | than
+dig            | you
+kan            | can
+sina           | his
+här            | here
+ha             | have
+mot            | towards
+alla           | all
+under          | under (also: wonder)
+någon          | some etc
+eller          | or (else)
+allt           | all
+mycket         | much
+sedan          | since
+ju             | why
+denna          | this/that
+själv          | myself, yourself etc
+detta          | this/that
+åt             | to
+utan           | without
+varit          | was
+hur            | how
+ingen          | no
+mitt           | my
+ni             | you
+bli            | to be, become
+blev           | from bli
+oss            | us
+din            | thy
+dessa          | these/those
+några          | some etc
+deras          | their
+blir           | from bli
+mina           | my
+samma          | (the) same
+vilken         | who, that
+er             | you, your
+sådan          | such a
+vår            | our
+blivit         | from bli
+dess           | its
+inom           | within
+mellan         | between
+sådant         | such a
+varför         | why
+varje          | each
+vilka          | who, that
+ditt           | thy
+vem            | who
+vilket         | who, that
+sitta          | his
+sådana         | such a
+vart           | each
+dina           | thy
+vars           | whose
+vårt           | our
+våra           | our
+ert            | your
+era            | your
+vilkas         | whose
+
+
+
+
+
+#stopwords_th.txt
+ไว้
+ไม่
+ไป
+ได้
+ให้
+ใน
+โดย
+แห่ง
+แล้ว
+และ
+แรก
+แบบ
+แต่
+เอง
+เห็น
+เลย
+เริ่ม
+เรา
+เมื่อ
+เพื่อ
+เพราะ
+เป็นการ
+เป็น
+เปิดเผย
+เปิด
+เนื่องจาก
+เดียวกัน
+เดียว
+เช่น
+เฉพาะ
+เคย
+เข้า
+เขา
+อีก
+อาจ
+อะไร
+ออก
+อย่าง
+อยู่
+อยาก
+หาก
+หลาย
+หลังจาก
+หลัง
+หรือ
+หนึ่ง
+ส่วน
+ส่ง
+สุด
+สําหรับ
+ว่า
+วัน
+ลง
+ร่วม
+ราย
+รับ
+ระหว่าง
+รวม
+ยัง
+มี
+มาก
+มา
+พร้อม
+พบ
+ผ่าน
+ผล
+บาง
+น่า
+นี้
+นํา
+นั้น
+นัก
+นอกจาก
+ทุก
+ที่สุด
+ที่
+ทําให้
+ทํา
+ทาง
+ทั้งนี้
+ทั้ง
+ถ้า
+ถูก
+ถึง
+ต้อง
+ต่างๆ
+ต่าง
+ต่อ
+ตาม
+ตั้งแต่
+ตั้ง
+ด้าน
+ด้วย
+ดัง
+ซึ่ง
+ช่วง
+จึง
+จาก
+จัด
+จะ
+คือ
+ความ
+ครั้ง
+คง
+ขึ้น
+ของ
+ขอ
+ขณะ
+ก่อน
+ก็
+การ
+กับ
+กัน
+กว่า
+กล่าว
+
+#stopwords_tr.txt
+acaba
+altmış
+altı
+ama
+ancak
+arada
+aslında
+ayrıca
+bana
+bazı
+belki
+ben
+benden
+beni
+benim
+beri
+beş
+bile
+bin
+bir
+birçok
+biri
+birkaç
+birkez
+birşey
+birşeyi
+biz
+bize
+bizden
+bizi
+bizim
+böyle
+böylece
+bu
+buna
+bunda
+bundan
+bunlar
+bunları
+bunların
+bunu
+bunun
+burada
+çok
+çünkü
+da
+daha
+dahi
+de
+defa
+değil
+diğer
+diye
+doksan
+dokuz
+dolayı
+dolayısıyla
+dört
+edecek
+eden
+ederek
+edilecek
+ediliyor
+edilmesi
+ediyor
+eğer
+elli
+en
+etmesi
+etti
+ettiği
+ettiğini
+gibi
+göre
+halen
+hangi
+hatta
+hem
+henüz
+hep
+hepsi
+her
+herhangi
+herkesin
+hiç
+hiçbir
+için
+iki
+ile
+ilgili
+ise
+işte
+itibaren
+itibariyle
+kadar
+karşın
+katrilyon
+kendi
+kendilerine
+kendini
+kendisi
+kendisine
+kendisini
+kez
+ki
+kim
+kimden
+kime
+kimi
+kimse
+kırk
+milyar
+milyon
+mu
+mü
+mı
+nasıl
+ne
+neden
+nedenle
+nerde
+nerede
+nereye
+niye
+niçin
+o
+olan
+olarak
+oldu
+olduğu
+olduğunu
+olduklarını
+olmadı
+olmadığı
+olmak
+olması
+olmayan
+olmaz
+olsa
+olsun
+olup
+olur
+olursa
+oluyor
+on
+ona
+ondan
+onlar
+onlardan
+onları
+onların
+onu
+onun
+otuz
+oysa
+öyle
+pek
+rağmen
+sadece
+sanki
+sekiz
+seksen
+sen
+senden
+seni
+senin
+siz
+sizden
+sizi
+sizin
+şey
+şeyden
+şeyi
+şeyler
+şöyle
+şu
+şuna
+şunda
+şundan
+şunları
+şunu
+tarafından
+trilyon
+tüm
+üç
+üzere
+var
+vardı
+ve
+veya
+ya
+yani
+yapacak
+yapılan
+yapılması
+yapıyor
+yapmak
+yaptı
+yaptığı
+yaptığını
+yaptıkları
+yedi
+yerine
+yetmiş
+yine
+yirmi
+yoksa
+yüz
+zaten
