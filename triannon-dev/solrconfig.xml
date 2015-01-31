@@ -190,7 +190,7 @@
   <requestHandler name="/doc" class="solr.SearchHandler" >
     <lst name="defaults">
       <str name="echoParams">explicit</str>
-      <str name="fl">anno_jsonld</str>
+      <str name="fl">*</str>
       <int name="rows">1</int>
       <str name="q">{!raw f=id v=$id}</str> <!-- use id=666 instead of q=id:666 -->
       <str name="wt">ruby</str>
