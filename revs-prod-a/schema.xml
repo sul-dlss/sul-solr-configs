@@ -78,6 +78,8 @@
     <dynamicField name="*_llsm" type="location" stored="true" indexed="false" multiValued="true"/>
     <dynamicField name="*_llsi" type="location" stored="true" indexed="true" multiValued="false"/>
     <dynamicField name="*_llsim" type="location" stored="true" indexed="true" multiValued="true"/>
+
+    <dynamicField name="random_*" type="random" indexed="true" stored="false"/>
   </fields>
 
 
@@ -85,7 +87,8 @@
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>    
     <fieldType name="rand" class="solr.RandomSortField" omitNorms="true"/>
-    
+    <fieldType name="random" class="solr.RandomSortField" indexed="true" />
+
     <!-- Default numeric field types.  -->
     <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
     <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
@@ -128,13 +131,20 @@
     -->
     <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
       geo="true" distErrPct="0.025" maxDistErr="0.000009" units="degrees" />
-    
-    <fieldType name="text" class="solr.TextField" omitNorms="false">
-      <analyzer>
-        <tokenizer class="solr.ICUTokenizerFactory"/>
-        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
-      </analyzer>
-    </fieldType>
+
+      <fieldtype name="text" class="solr.TextField" autoGeneratePhraseQueries="false" positionIncrementGap="100">
+        <analyzer>
+          <tokenizer class="solr.WhitespaceTokenizerFactory" />
+          <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+          <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+          <filter class="solr.WordDelimiterFilterFactory"
+            splitOnCaseChange="0" generateWordParts="1" catenateWords="1"
+            splitOnNumerics="1" generateNumberParts="1" catenateNumbers="1"
+            catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
+          <filter class="solr.SnowballPorterFilterFactory" language="English"/>
+          <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+        </analyzer>
+      </fieldtype>
     
     <!-- A text field that only splits on whitespace for exact matching of words -->
     <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
@@ -188,5 +198,21 @@
     </fieldType>
     
   </types>
+  
+  <copyField source = "people_ssim" dest="people_tim"/>
+  <copyField source = "photographer_ssi" dest="photographer_ti"/>
+  <copyField source = "marque_ssim" dest="marque_tim"/>
+  <copyField source = "model_ssim" dest="model_tim"/>
+  <copyField source = "model_year_ssim" dest="model_year_tim"/>
+  <copyField source = "entrant_ssim" dest="entrant_tim"/>
+  <copyField source = "current_owner_tsi" dest="current_owner_ti"/>
+  <copyField source = "venue_ssi" dest="venue_ti"/>
+  <copyField source = "track_ssi" dest="track_ti"/>
+  <copyField source = "event_ssi" dest="event_ti"/>
+  <copyField source = "cities_ssi" dest="cities_ti"/>
+  <copyField source = "countries_ssi" dest="countries_ti"/>
+  <copyField source = "states_ssi" dest="states_ti"/>
+  <copyField source = "city_sections_ssi" dest="city_sections_ti"/>
+  <copyField source = "pub_year_isim" dest="pub_year_tim"/>
   
 </schema>
