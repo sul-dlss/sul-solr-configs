@@ -52,27 +52,7 @@
             those searches. You may also be interested in:
             http://wiki.apache.org/solr/LocalParams
        -->
-        <str name="qf">
-          id
-          all_text_timv
-          active_fedora_model_ssi
-          object_type_si
-        </str>
-        <str name="pf">
-          all_text_timv^10
-        </str>
-       
-       <str name="fl">
-         *, 
-         score
-       </str>
 
-       <str name="facet">true</str>
-       <str name="facet.mincount">1</str>
-       <str name="facet.limit">10</str>
-       <str name="facet.field">active_fedora_model_ssi</str>
-       <str name="facet.field">object_type_si</str>
-       
        <str name="spellcheck">true</str>
        <str name="spellcheck.dictionary">default</str>
        <str name="spellcheck.onlyMorePopular">true</str>
@@ -85,6 +65,12 @@
       <str>spellcheck</str>
     </arr>
   </requestHandler>
+  
+  <requestHandler name="/get" class="solr.RealTimeGetHandler">
+      <lst name="defaults">
+        <str name="omitHeader">true</str>
+      </lst>
+  </requestHandler> 
 
   <requestHandler name="permissions" class="solr.SearchHandler" >
     <lst name="defaults">
@@ -128,13 +114,7 @@
     </lst>
   </searchComponent>
   
-  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
-  
-  <requestHandler name="/get">
-    <lst name="defaults">
-      <str name="omitHeader">true</str>
-    </lst>
-  </requestHandler> 
+  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" /> 
   
   <requestDispatcher handleSelect="true" >
     <requestParsers enableRemoteStreaming="true" multipartUploadLimitInKB="2048" />
@@ -142,7 +122,7 @@
   
   <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
   <requestHandler name="/update" class="solr.UpdateRequestHandler"  />
-  <requestHandler name="/admin/" class="solr.admin.AdminHandlers" />
+  <requestHandler name="/admin/" class="org.apache.solr.handler.admin.AdminHandlers" />
   
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
     <lst name="invariants">
