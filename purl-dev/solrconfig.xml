@@ -19,7 +19,7 @@
   <updateHandler class="solr.DirectUpdateHandler2">
 
     <updateLog>
-      <str name="dir">${solr.data.dir:}</str>
+      <str name="dir">${solr.ulog.dir:}</str>
     </updateLog>
 
     <autoCommit> 
@@ -61,6 +61,19 @@
         <str name="pf">
           all_text_timv^10
         </str>
+
+       <str name="author_qf">
+       </str>
+       <str name="author_pf">
+       </str>
+       <str name="title_qf">
+       </str>
+       <str name="title_pf">
+       </str>
+       <str name="subject_qf">
+       </str>
+       <str name="subject_pf">
+       </str>
        
        <str name="fl">
          *, 
@@ -93,7 +106,18 @@
       <str name="rows">1</str>
       <str name="q">{!raw f=id v=$id}</str> <!-- use id=666 instead of q=id:666 -->
       <str name="fl">
-        id
+        id,
+        access_ssim,
+        discover_access_group_ssim,discover_access_person_ssim,
+        read_access_group_ssim,read_access_person_ssim,
+        edit_access_group_ssim,edit_access_person_ssim,
+        depositor_ti,
+        embargo_release_date_dtsi
+        inheritable_access_ssim,
+        inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+        inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+        inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+        inheritable_embargo_release_date_dtsi
       </str>
     </lst>
   </requestHandler>
@@ -128,13 +152,7 @@
     </lst>
   </searchComponent>
   
-  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
-  
-  <requestHandler name="/get">
-    <lst name="defaults">
-      <str name="omitHeader">true</str>
-    </lst>
-  </requestHandler> 
+  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" /> 
   
   <requestDispatcher handleSelect="true" >
     <requestParsers enableRemoteStreaming="true" multipartUploadLimitInKB="2048" />
@@ -142,7 +160,7 @@
   
   <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
   <requestHandler name="/update" class="solr.UpdateRequestHandler"  />
-  <requestHandler name="/admin/" class="solr.admin.AdminHandlers" />
+  <requestHandler name="/admin/" class="org.apache.solr.handler.admin.AdminHandlers" />
   
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
     <lst name="invariants">
