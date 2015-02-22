@@ -124,7 +124,7 @@
     <lst name="defaults">
       <str name="echoParams">explicit</str>
 	  <str name="sort">score desc, annotated_at_tdate desc</str>
-      <int name="rows">20</int>
+      <int name="rows">100</int>
 	  <str name="fl">* score</str>
       <str name="wt">ruby</str>
       <str name="indent">true</str>
