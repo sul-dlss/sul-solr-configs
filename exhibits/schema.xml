@@ -324,9 +324,11 @@
   <copyField source="vern_summary_search" dest="cjk_summary_search" />
   <copyField source="vern_all_search" dest="cjk_all_search" />
 
+  <!-- Spotlight fields -->
   <copyField source="id" dest="id_ng" maxChars="3000"/>
   <copyField source="title_full_display" dest="full_title_ng" maxChars="3000"/>
-
+  <copyField source="*_tesim" dest="all_search" />
+  <copyField source="*_tesim" dest="all_unstem_search" />
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
