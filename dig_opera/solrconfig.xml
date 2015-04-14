@@ -66,6 +66,14 @@
        configuration.
     -->
   <dataDir>${solr.blacklight-core.data.dir:}</dataDir>
+  
+    
+  <updateHandler class="solr.DirectUpdateHandler2">
+    <updateLog>
+      <str name="dir">${solr.core1.data.dir:}</str>
+    </updateLog>
+  </updateHandler>
+
 <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
 
   <!-- realtime get handler, guaranteed to return the latest stored fields 
