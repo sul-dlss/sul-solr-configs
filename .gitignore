@@ -1,0 +1,10 @@
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+.rvmrc
+/.bundle
+/vendor/bundle
+Gemfile.lock
+jetty
