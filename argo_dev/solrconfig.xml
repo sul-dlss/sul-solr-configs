@@ -15,6 +15,12 @@
   <lib dir="../lib/contrib/analysis-extras/lucene-libs" />
 
   <dataDir>${solr.data.dir:}</dataDir>
+    
+  <updateHandler class="solr.DirectUpdateHandler2">
+    <updateLog>
+      <str name="dir">${solr.core1.data.dir:}</str>
+    </updateLog>
+  </updateHandler>
 
   <requestHandler name="search" class="solr.SearchHandler" default="true">
     <!-- default values for query parameters can be specified, these
@@ -164,6 +170,12 @@
   </searchComponent>
 
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
+  
+  <requestHandler name="/get" class="solr.RealTimeGetHandler">
+    <lst name="defaults">
+      <str name="omitHeader">true</str>
+    </lst>
+  </requestHandler>
 
   <requestDispatcher handleSelect="true" >
     <requestParsers enableRemoteStreaming="true" multipartUploadLimitInKB="2048" />

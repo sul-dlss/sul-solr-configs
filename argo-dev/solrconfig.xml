@@ -60,7 +60,13 @@
     -->
   <dataDir>${solr.data.dir:}</dataDir>
 
-
+  
+  <updateHandler class="solr.DirectUpdateHandler2">
+    <updateLog>
+      <str name="dir">${solr.core1.data.dir:}</str>
+    </updateLog>
+  </updateHandler>
+  
   <!-- The DirectoryFactory to use for indexes.
        
        solr.StandardDirectoryFactory, the default, is filesystem
@@ -976,10 +982,10 @@
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
 
   <requestHandler name="/get" class="solr.RealTimeGetHandler">
-      <lst name="defaults">
-            <str name="omitHeader">true</str>
-                </lst>
-                  </requestHandler>
+    <lst name="defaults">
+      <str name="omitHeader">true</str>
+    </lst>
+  </requestHandler>
 
   <!-- Response Writers
 
