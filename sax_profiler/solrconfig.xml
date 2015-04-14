@@ -39,6 +39,9 @@
     </updateLog>
   </updateHandler>
 
+  <jmx />
+
+
   <query>
     <maxBooleanClauses>1024</maxBooleanClauses>
     <filterCache class="solr.FastLRUCache" size="512" initialSize="512" autowarmCount="0"/>

@@ -16,6 +16,9 @@
     </updateLog>
   </updateHandler>
 
+  <jmx />
+
+
   <dataDir>${solr.data.dir:}</dataDir>
 
   <requestHandler name="search" class="solr.SearchHandler" default="true">
