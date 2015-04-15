@@ -12,9 +12,7 @@ This copy of the solr schema is only used in the context of testing hydra-head. 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true"/>
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
-    <fieldType name="integer" class="solr.IntField" omitNorms="true"/>
     <fieldType name="long" class="solr.LongField" omitNorms="true"/>
-    <fieldType name="float" class="solr.FloatField" omitNorms="true"/>
     <fieldType name="double" class="solr.DoubleField" omitNorms="true"/>
     <fieldType name="sint" class="solr.SortableIntField" sortMissingLast="true" omitNorms="true"/>
     <fieldType name="slong" class="solr.SortableLongField" sortMissingLast="true" omitNorms="true"/>
