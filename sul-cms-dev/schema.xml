@@ -118,10 +118,7 @@
 
          Consult the DateField javadocs for more information.
       -->
-    <fieldType name="date" class="solr.DateField" sortMissingLast="true" omitNorms="true"/>
-
-    <!-- A Trie based date field for faster date range queries and date faceting. -->
-    <fieldType name="tdate" class="solr.TrieDateField" omitNorms="true" precisionStep="6" positionIncrementGap="0"/>
+    <fieldType name="tdate" class="solr.TrieDateField" sortMissingLast="true" omitNorms="true" precisionStep="6" positionIncrementGap="0"/>
 
     <!-- solr.TextField allows the specification of custom text analyzers
          specified as a tokenizer and a list of token filters. Different
@@ -475,9 +472,8 @@
          a small image in a search result using the data URI scheme -->
     <dynamicField name="xs_*"  type="binary"  indexed="false" stored="true" multiValued="false"/>
     <dynamicField name="xm_*"  type="binary"  indexed="false" stored="true" multiValued="true"/>
-    <!-- In rare cases a date rather than tdate is needed for sortMissingLast -->
-    <dynamicField name="dds_*" type="date"    indexed="true"  stored="true" multiValued="false"/>
-    <dynamicField name="ddm_*" type="date"    indexed="true"  stored="true" multiValued="true"/>
+    <dynamicField name="dds_*" type="tdate"    indexed="true"  stored="true" multiValued="false"/>
+    <dynamicField name="ddm_*" type="tdate"    indexed="true"  stored="true" multiValued="true"/>
     <!-- Sortable fields, good for sortMissingLast support &
          We use long for integer since 64 bit ints are now common in PHP. -->
     <dynamicField name="iss_*" type="slong"   indexed="true"  stored="true" multiValued="false"/>
