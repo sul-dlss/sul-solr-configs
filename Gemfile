@@ -5,4 +5,6 @@ group :test do
   gem 'nokogiri'
   gem 'rake'
   gem 'rubocop'
+  gem 'solr_wrapper'
+  gem 'hurley'
 end

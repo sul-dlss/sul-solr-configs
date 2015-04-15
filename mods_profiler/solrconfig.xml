@@ -8,9 +8,9 @@
 
   <luceneMatchVersion>LUCENE_40</luceneMatchVersion>
 
-  <lib dir="/usr/lib/solr/4.0.0/" />
   
-  <dataDir>${solr.core1.data.dir:/data/mods_profiler/data}</dataDir>
+  
+  <dataDir>${solr.core1.data.dir:}</dataDir>
 
   <indexConfig>
 <!-- from sw-solr   
@@ -35,7 +35,7 @@
          "dir" - the target directory for transaction logs, defaults to the
          solr data directory.  -->
     <updateLog>
-      <str name="dir">${solr.core1.data.dir:/data/mods_profiler/data}</str>
+      <str name="dir">${solr.core1.data.dir:}</str>
     </updateLog>
   </updateHandler>
 
