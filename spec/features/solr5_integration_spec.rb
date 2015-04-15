@@ -66,6 +66,7 @@ describe "integration with solr" do
   solr_collections.each do |name|
     describe name do
       let(:dir) { name }
+      pending if name =~ /hydrus/
       include_examples "works in solr"
     end
   end
