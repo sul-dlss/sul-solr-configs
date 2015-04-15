@@ -8,7 +8,7 @@
 
   <luceneMatchVersion>LUCENE_40</luceneMatchVersion>
 
-  <lib dir="/usr/lib/solr/4.0.0/" />
+  
   
   <dataDir>${solr.data.dir:}</dataDir>
 

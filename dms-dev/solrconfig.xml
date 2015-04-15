@@ -22,8 +22,6 @@
         solr.StandardDirectoryFactory, the default, is filesystem based.
         solr.RAMDirectoryFactory is memory based, not persistent, and doesn't work with replication. -->
   <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.StandardDirectoryFactory}"/>
-
-  <lib dir="/usr/lib/solr/4.x/" /> 
   
   <updateHandler class="solr.DirectUpdateHandler2">
     <updateLog>
