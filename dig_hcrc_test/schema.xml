@@ -408,8 +408,7 @@ or to add multiple fields to the same field for easier/faster searching. -->
         <filter class="solr.SynonymFilterFactory" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
         -->
         <filter class="solr.LowerCaseFilterFactory"/>
-        <filter class="solr.EdgeNGramFilterFactory" minGramSize="3" maxGramSize="50" side="front"/>
-        <filter class="solr.EdgeNGramFilterFactory" minGramSize="3" maxGramSize="50" side="back"/>
+        <filter class="solr.NGramFilterFactory" minGramSize="3" maxGramSize="50"/>
       </analyzer>
       <analyzer type="query">
         <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-FoldToASCII.txt"/>
