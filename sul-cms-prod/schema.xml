@@ -358,7 +358,6 @@
         The format used is $document->id = $site_hash . '/' . $entity_type . '/' . $entity->id;
     -->
     <field name="id" type="string" indexed="true" stored="true" required="true" />
-    <field name="_version_" type="long" indexed="true" stored="true" multiValued="false"/>
 
     <!-- Search Api specific fields -->
     <!-- item_id contains the entity ID, e.g. a node's nid. -->
