@@ -13,7 +13,11 @@ describe "schema.xml" do
 
   solr_collections.each do |name|
     describe name do
-      subject { Nokogiri::XML(File.read(File.join(name, "schema.xml"))) }
+      subject do
+        Dir.chdir(name) do
+          Nokogiri::XML(File.read(File.join("schema.xml")), &:xinclude)
+        end
+      end
       include_examples "a solr cloud-ready schema"
     end
   end
