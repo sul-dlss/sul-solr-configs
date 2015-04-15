@@ -12,13 +12,11 @@ This copy of the solr schema is only used in the context of testing hydra-head. 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true"/>
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
-    <fieldType name="long" class="solr.LongField" omitNorms="true"/>
-    <fieldType name="double" class="solr.DoubleField" omitNorms="true"/>
-    <fieldType name="sint" class="solr.SortableIntField" sortMissingLast="true" omitNorms="true"/>
-    <fieldType name="slong" class="solr.SortableLongField" sortMissingLast="true" omitNorms="true"/>
-    <fieldType name="sfloat" class="solr.SortableFloatField" sortMissingLast="true" omitNorms="true"/>
-    <fieldType name="sdouble" class="solr.SortableDoubleField" sortMissingLast="true" omitNorms="true"/>
-    <fieldType name="date" class="solr.DateField" sortMissingLast="true" omitNorms="true"/>
+    <fieldType name="int" class="solr.TrieIntField" sortMissingLast="true" omitNorms="true"/>
+    <fieldType name="long" class="solr.TrieLongField" sortMissingLast="true" omitNorms="true"/>
+    <fieldType name="float" class="solr.TrieFloatField" sortMissingLast="true" omitNorms="true"/>
+    <fieldType name="double" class="solr.TrieDoubleField" sortMissingLast="true" omitNorms="true"/>
+    <fieldType name="date" class="solr.TrieDateField" sortMissingLast="true" omitNorms="true"/>
     <fieldType name="random" class="solr.RandomSortField" indexed="true" />
     
     <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
@@ -87,13 +85,13 @@ This copy of the solr schema is only used in the context of testing hydra-head. 
    <!-- pub_date is assumed by Blacklight's default configuration, so we must define it here to avoid errors -->
    <field name="pub_date" type="string" indexed="true" stored="true" multiValued="true"/>
    
-   <dynamicField name="*_i"  type="sint"    indexed="true"  stored="true"/>
+   <dynamicField name="*_i"  type="int"    indexed="true"  stored="true"/>
    <dynamicField name="*_s"  type="string"  indexed="true"  stored="true" multiValued="true"/>
-   <dynamicField name="*_l"  type="slong"   indexed="true"  stored="true"/>
+   <dynamicField name="*_l"  type="long"   indexed="true"  stored="true"/>
    <dynamicField name="*_t"  type="text"    indexed="true"  stored="true" multiValued="true"/>
    <dynamicField name="*_b"  type="boolean" indexed="true"  stored="true"/>
-   <dynamicField name="*_f"  type="sfloat"  indexed="true"  stored="true"/>
-   <dynamicField name="*_d"  type="sdouble" indexed="true"  stored="true"/>
+   <dynamicField name="*_f"  type="float"  indexed="true"  stored="true"/>
+   <dynamicField name="*_d"  type="double" indexed="true"  stored="true"/>
    <field name="system_create_dt" type="date" indexed="true" stored="true" multiValued="false" />
    <dynamicField name="*_dt" type="date"    indexed="true"  stored="true" multiValued="true"/>
    <dynamicField name="random*" type="random" />
