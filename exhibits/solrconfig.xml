@@ -15,6 +15,9 @@
       <str name="dir">${solr.core0.data.dir:}</str>
     </updateLog>
   </updateHandler>
+
+  <jmx />
+
   
   <dataDir>${solr.data.dir:}</dataDir>
 

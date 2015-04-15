@@ -21,6 +21,10 @@ describe "solrconfig.xml" do
     it "has admin handlers defined" do
       expect(subject.xpath('/config/requestHandler[@name="/admin/"]')).not_to be_empty
     end
+    
+    it "has jmx defined" do
+      expect(subject.xpath('/config/jmx')).not_to be_empty
+    end
   end
 
   solr_collections.each do |name|

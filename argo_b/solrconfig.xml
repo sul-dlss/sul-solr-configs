@@ -22,6 +22,8 @@
     </updateLog>
   </updateHandler>
   
+  <jmx />
+  
   <!-- Used by reports via queries that pass qt=search -->
   <requestHandler name="search" class="solr.SearchHandler" default="true">
     <!-- default values for query parameters can be specified, these

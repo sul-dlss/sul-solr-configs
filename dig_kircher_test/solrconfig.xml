@@ -71,7 +71,7 @@
       <str name="dir">${solr.data.dir:}</str>
     </updateLog>
     </updateHandler>
-    
+    <jmx />
     <requestHandler name="/get" class="solr.RealTimeGetHandler">
       <lst name="defaults">
         <str name="omitHeader">true</str>
