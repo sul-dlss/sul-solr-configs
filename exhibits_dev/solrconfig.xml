@@ -18,11 +18,6 @@
 
   <jmx />
 
-
-  <!-- solr lib dirs -->
-  <lib dir="../lib/contrib/analysis-extras/lib" />
-  <lib dir="../lib/contrib/analysis-extras/lucene-libs" />
-  
   <dataDir>${solr.data.dir:}</dataDir>
 
   <requestHandler name="search" class="solr.SearchHandler" default="true">
