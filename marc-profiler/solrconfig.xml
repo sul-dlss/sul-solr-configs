@@ -7,7 +7,7 @@
 
   <abortOnConfigurationError>${solr.abortOnConfigurationError:true}</abortOnConfigurationError>
 
-  <luceneMatchVersion>4.4</luceneMatchVersion>
+  <luceneMatchVersion>LUCENE_4_10_4</luceneMatchVersion>
 
   <dataDir>${solr.data.dir:}</dataDir>
 
