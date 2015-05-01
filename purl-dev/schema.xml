@@ -14,6 +14,8 @@
 
     <field name="id" type="string" stored="true" indexed="true" multiValued="false" required="true"/>
     <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" multiValued="false"/>
+    <copyField source="*_s" dest="*_ssim"/>
+    <copyField source="*_t" dest="*_tsim"/>
   
     <!-- Temporary Dynamic Fields that mimic the Argo schema to allow Purl-Fetcher fields to Match Dor-Fetcher fields -->
      <!-- Following the upgrade of Argo-prod these will be delated and _ssim/_tsim will be used -->
