@@ -154,10 +154,21 @@
     <!-- Temporary Fields that mimic the Argo schema to allow Purl-Fetcher fields to Match Dor-Fetcher fields -->
      <!-- Following the upgrade of Argo-prod these will be delated and _ssim/_tsim will be used -->
      <!--Temp Fields To Match Old Argo Schema-->
-     <field name="is_member_of_collection_s"  type="string"  indexed="true"  stored="true" multiValued="true"/>
-     <field name="identityMetadata_objectType_t"  type="text"    indexed="true"  stored="true" multiValued="true"/>
-     <copyField source="is_member_of_collection_s" dest="is_member_of_collection_ssim"/>
-     <copyField source="identityMetadata_objectType_t" dest="identityMetadata_objectType_tsim"/>
+     <!-- Temporary Fields that mimic the Argo schema to allow Purl-Fetcher fields to Match Dor-Fetcher fields -->
+      <!-- Following the upgrade of Argo-prod these will be delated and _ssim/_tsim will be used -->
+      <!--Temp Fields To Match Old Argo Schema-->
+      <field name="is_member_of_collection_s"  type="string"  indexed="true"  stored="true" multiValued="true"/>
+      <copyField source="is_member_of_collection_s" dest="is_member_of_collection_ssim"/>
+     
+      <field name="identityMetadata_objectType_t"  type="text"    indexed="true"  stored="true" multiValued="true"/>
+      <copyField source="identityMetadata_objectType_t" dest="identityMetadata_objectType_tsim"/>
+     
+      <field name="public_dc_title_t"  type="text"    indexed="true"  stored="true" multiValued="true"/>
+      <copyField source="title_tsi" dest="public_dc_title_t"/>
+     
+      <field name="published_dt"  type="date"    indexed="true"  stored="true" multiValued="false"/>
+      <copyField source="indexed_dtsi" dest="published_dt"/>
+     
 
   </fields>
 
