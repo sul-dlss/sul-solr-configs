@@ -27,16 +27,26 @@
         solr.RAMDirectoryFactory is memory based, not persistent, and doesn't work with replication. -->
   <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.StandardDirectoryFactory}"/>
 
+<lib dir="./lib" /> 
+
   <dataDir>${solr.core0.data.dir:}</dataDir>
 
   <updateHandler class="solr.DirectUpdateHandler2">
     <updateLog>
       <str name="dir">${solr.core0.data.dir:}</str>
     </updateLog>
+    <autoCommit>
+      <maxDocs>500</maxDocs> <!-- maximum uncommited docs before autocommit triggered -->
+      <maxTime>30000</maxTime> <!-- maximum time (in MS) after adding a doc before an autocommit is triggered -->
+      <openSearcher>true</openSearcher> <!-- SOLR 4.0.  Optionally don't open a searcher on hard commit.  This is useful to minimize the size of transaction logs that keep track of uncommitted updates. -->
+    </autoCommit>
+    <autoSoftCommit>
+      <maxDocs>50</maxDocs> <!-- maximum uncommited docs before autosoftcommit triggered -->
+      <maxTime>5000</maxTime> <!-- maximum time (in MS) after adding a doc before an autosoftcommit is triggered -->
+    </autoSoftCommit>
   </updateHandler>
 
   <jmx />
-
 
   <!-- realtime get handler, guaranteed to return the latest stored fields 
     of any document, without the need to commit or open a new searcher. The current 
