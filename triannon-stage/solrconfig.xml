@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
      For more details about configurations options that may appear in
-     this file, see http://wiki.apache.org/solr/SolrConfigXml. 
+     this file, see http://wiki.apache.org/solr/SolrConfigXml.
 -->
 <config>
   <luceneMatchVersion>LUCENE_4_10_4</luceneMatchVersion>
 
   <dataDir>${solr.data.dir:}</dataDir>
 
-  <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.NRTCachingDirectoryFactory}"/>
+  <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.StandardDirectoryFactory}"/>
   <codecFactory class="solr.SchemaCodecFactory"/>
   <schemaFactory class="ClassicIndexSchemaFactory"/>
 
@@ -24,7 +24,7 @@
       <str name="dir">${solr.data.dir:}</str>
     </updateLog>
     <autoCommit>
-      <maxTime>15000</maxTime>
+      <maxTime>2000</maxTime>
       <openSearcher>false</openSearcher>
     </autoCommit>
   </updateHandler>
@@ -48,6 +48,8 @@
           <str name="fl">score</str>
           <bool name="facet">true</bool>
           <int name="facet.mincount">1</int>
+          <str name="facet.field">root</str>
+            <str name="f.root.facet.method">enum</str>
           <str name="facet.field">motivation</str>
             <str name="f.motivation.facet.method">enum</str>
           <str name="facet.field">target_type</str>
@@ -64,6 +66,8 @@
           <str name="fl">score</str>
           <bool name="facet">true</bool>
           <int name="facet.mincount">1</int>
+          <str name="facet.field">root</str>
+            <str name="f.root.facet.method">enum</str>
           <str name="facet.field">motivation</str>
             <str name="f.motivation.facet.method">enum</str>
           <str name="facet.field">target_type</str>
@@ -84,6 +88,8 @@
           <str name="fl">score</str>
           <bool name="facet">true</bool>
           <int name="facet.mincount">1</int>
+          <str name="facet.field">root</str>
+            <str name="f.root.facet.method">enum</str>
           <str name="facet.field">motivation</str>
             <str name="f.motivation.facet.method">enum</str>
           <str name="facet.field">target_type</str>
@@ -99,6 +105,8 @@
           <str name="fl">score</str>
           <bool name="facet">true</bool>
           <int name="facet.mincount">1</int>
+          <str name="facet.field">root</str>
+            <str name="f.root.facet.method">enum</str>
           <str name="facet.field">motivation</str>
             <str name="f.motivation.facet.method">enum</str>
           <str name="facet.field">target_type</str>
@@ -141,9 +149,9 @@
       <str name="q.op">AND</str>
 
       <str name="qf">
-        body_chars_exact^3
-        body_chars_unstem^2
-        body_chars_stem
+  	    body_chars_exact^3
+  	    body_chars_unstem^2
+  	    body_chars_stem
         annotated_by_unstem^2
         annotated_by_stem
         target_url
@@ -155,8 +163,8 @@
         body_chars_exact^15
         body_chars_unstem^10
         body_chars_stem^5
-        annotated_by_unstem^10
-        annotated_by_stem^5
+  	    annotated_by_unstem^10
+  	    annotated_by_stem^5
       </str>
       <str name="pf3">  <!-- (token trigrams boost within result set) -->
       	body_chars_exact^9
@@ -166,15 +174,17 @@
         annotated_by_stem^3
       </str>
       <str name="pf2"> <!--(token bigrams boost within result set) -->
-        body_chars_exact^6
+      	body_chars_exact^6
         body_chars_unstem^4
         body_chars_stem^2
         annotated_by_unstem^4
         annotated_by_stem^2
       </str>
-      
+
       <bool name="facet">true</bool>
       <int name="facet.mincount">1</int>
+      <str name="facet.field">root</str>
+        <str name="f.root.facet.method">enum</str>
       <str name="facet.field">motivation</str>
         <str name="f.motivation.facet.method">enum</str>
       <str name="facet.field">target_type</str>
@@ -182,7 +192,7 @@
       <str name="facet.field">body_type</str>
         <str name="f.body_type.facet.method">enum</str>
       <str name="facet.field">annotated_at_tdate</str>
-      
+
     </lst>
   </requestHandler>
 
@@ -191,7 +201,7 @@
     <lst name="defaults">
       <str name="echoParams">explicit</str>
       <str name="fl">*</str>
-      <int name="rows">10</int> <!-- expecting 1, but just in case -->
+      <int name="rows">10</int> <!-- just in case;  expecting 1 -->
       <str name="q">{!raw f=id v=$id}</str> <!-- use id=666 instead of q=id:666 -->
       <str name="wt">ruby</str>
       <str name="indent">true</str>
@@ -236,4 +246,3 @@
   </admin>
 
 </config>
-
