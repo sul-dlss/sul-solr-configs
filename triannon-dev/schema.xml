@@ -10,6 +10,8 @@
     <field name="id" type="string" stored="true" indexed="true" multiValued="false" required="true"/>
     <field name="timestamp" type="date" stored="true" indexed="true" multiValued="false" default="NOW"/>
 
+    <field name="root" type="string" stored="true" indexed="true" multiValued="false"/>
+
     <field name="motivation" type="string" stored="true" indexed="true" multiValued="true"/>
     <!-- date field format: 1995-12-31T23:59:59Z; or w fractional seconds: 1995-12-31T23:59:59.999Z -->
     <field name="annotated_at" type="date" stored="true" indexed="true" multiValued="false"/>
@@ -25,7 +27,7 @@
     <field name="body_chars_unstem" type="text_ws_lc" stored="false" indexed="true" multiValued="true"/>
     <field name="body_chars_stem" type="text_en" stored="false" indexed="true" multiValued="true"/>
 	
-	<field name="anno_jsonld" type="string" stored="true" indexed="false" multiValued="false"/>
+    <field name="anno_jsonld" type="string" stored="true" indexed="false" multiValued="false"/>
   </fields>
 
   
