@@ -28,10 +28,7 @@
   <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.StandardDirectoryFactory}"/>
 
   <lib dir="./lib" /> 
-  <lib dir="../lib" /> 
-  <lib dir="../lib/contrib/analysis-extras/lib" />
-  <lib dir="../lib/contrib/analysis-extras/lucene-libs" />
-  
+
   <dataDir>${solr.core0.data.dir:}</dataDir>
 
   <updateHandler class="solr.DirectUpdateHandler2">
