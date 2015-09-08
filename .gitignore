@@ -6,5 +6,4 @@ capybara-*.html
 .rvmrc
 /.bundle
 /vendor/bundle
-Gemfile.lock
 jetty
