@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<schema name="Stanford Searchworks" version="1.5">
+<schema name="Stanford Exhibits based on SearchWorks" version="1.5">
   <uniqueKey>id</uniqueKey>
 
   <fields>
@@ -12,7 +12,7 @@
     <field name="last_updated" type="date" indexed="true" stored="true" default="NOW/SECOND" />
     <!-- entire marc bib record -->
     <field name="marcxml" type="string" indexed="false" stored="true" />
-    <!-- all_search: catch-all field for searchable text; stored for hit highlighting />-->
+    <!-- all_search: catch-all field for metadata text; stored for hit highlighting -->
     <field name="all_search" type="text" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true" multiValued="true" />
     <field name="all_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
     <field name="vern_all_search" type="text" indexed="true" stored="true" multiValued="true" />
@@ -235,8 +235,6 @@
     <dynamicField name="*_facet" type="string" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="*_display" type="string" stored="true" indexed="false" multiValued="true"/>
 -->
-    <dynamicField name="*_si" type="string" stored="true" indexed="true" omitNorms="true" />
-    <dynamicField name="*_sim" type="string" stored="true" indexed="true" multiValued="true" omitNorms="true" />
     <dynamicField name="*_ss" type="string" stored="true" indexed="false" omitNorms="true" />
     <dynamicField name="*_ssm" type="string" stored="true" indexed="false" multiValued="true" omitNorms="true" />
     <dynamicField name="*_ssi" type="string" stored="true" indexed="true" omitNorms="true" />
@@ -247,11 +245,18 @@
     <dynamicField name="*_xml" type="string" stored="true" indexed="false" omitNorms="true" />
     <dynamicField name="cjk_*" type="text_cjk" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="*_hsim" type="string_hierarch" stored="true" indexed="true" multiValued="true" />
+
+    <!-- exhibits fields -->
+    <field name="full_text_search" type="text" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true" multiValued="true" />
+    <field name="full_text_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <!-- NOTE:  *_tesim fields are copied into all_search which is meant for metadata, not full text.  Use _tesimv for full text -->
     <dynamicField name="*_tesim" type="text" stored="true" indexed="true" multiValued="true" omitNorms="true" />
+    <!-- NOTE:  *_tesimv fields are copied into full_text_search which is meant for full text, not metadata.  Use _tesim for metadata -->
+    <dynamicField name="*_tesimv" type="text" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
     <dynamicField name="*_bsi" type="boolean" stored="true" indexed="true" multiValued="true" omitNorms="true" />
     <dynamicField name="*_ng" type="text_en_ng" stored="false" indexed="true" multiValued="true"/>
-    <dynamicField name="*_pt"     type="location"     stored="true" indexed="true"/>
-    <dynamicField name="*_bbox"   type="location_rpt" stored="true" indexed="true" multiValued="true"/>
+    <dynamicField name="*_pt" type="location" stored="true" indexed="true"/>
+    <dynamicField name="*_bbox" type="location_rpt" stored="true" indexed="true" multiValued="true"/>
   </fields>
 
   <!-- copy fields -->
@@ -324,11 +329,15 @@
   <copyField source="vern_summary_search" dest="cjk_summary_search" />
   <copyField source="vern_all_search" dest="cjk_all_search" />
 
-  <!-- Spotlight fields -->
+  <!-- exhibits fields -->
   <copyField source="id" dest="id_ng" maxChars="3000"/>
   <copyField source="title_full_display" dest="full_title_ng" maxChars="3000"/>
+  <!-- NOTE:  all_search is meant for metadata -->
   <copyField source="*_tesim" dest="all_search" />
   <copyField source="*_tesim" dest="all_unstem_search" />
+  <!-- NOTE:  full_text_search is meant for full text -->
+  <copyField source="*_tesimv" dest="full_text_search" />
+  <copyField source="full_text_search" dest="full_text_unstem_search" />
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
@@ -479,7 +488,9 @@
     </fieldType>
 
 
-    <!-- A text field with defaults appropriate for English an NGrams -->
+    <!-- exhibits fieldTypes below -->
+
+    <!-- A text field with defaults appropriate for English and NGrams -->
     <fieldType name="text_en_ng" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
         <tokenizer class="solr.ICUTokenizerFactory"/>
@@ -490,12 +501,10 @@
         <filter class="solr.TrimFilterFactory"/>
         <filter class="solr.EdgeNGramFilterFactory" minGramSize="3" maxGramSize="15" />
       </analyzer>
-
-      <analyzer type="index">
+      <analyzer type="query">
         <tokenizer class="solr.ICUTokenizerFactory"/>
-        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.ICUFoldingFilterFactory"/>
         <filter class="solr.EnglishPossessiveFilterFactory"/>
-        <!-- EnglishMinimalStemFilterFactory is less aggressive than PorterStemFilterFactory: -->
         <filter class="solr.EnglishMinimalStemFilterFactory"/>
         <filter class="solr.TrimFilterFactory"/>
       </analyzer>
@@ -503,7 +512,7 @@
 
     <!-- This point type indexes the coordinates as separate fields (subFields)
       If subFieldType is defined, it references a type, and a dynamic field
-      definition is created matching *___<typename>.  Alternately, if 
+      definition is created matching *___<typename>.  Alternately, if
       subFieldSuffix is defined, that is used to create the subFields.
       Example: if subFieldType="double", then the coordinates would be
         indexed in fields myloc_0___double,myloc_1___double.
@@ -513,10 +522,10 @@
       users normally should not need to know about them.
      -->
     <fieldType name="point" class="solr.PointType" dimension="2" subFieldSuffix="_d"/>
-    
+
     <!-- A specialized field for geospatial search. If indexed, this fieldType must not be multivalued. -->
     <fieldType name="location" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
-    
+
     <!-- An alternative geospatial field type new to Solr 4.  It supports multiValued and polygon shapes.
       For more information about this and other Spatial fields new to Solr 4, see:
       http://wiki.apache.org/solr/SolrAdaptersForLuceneSpatial4
