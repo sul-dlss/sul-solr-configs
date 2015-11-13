@@ -247,7 +247,14 @@
     <dynamicField name="*_xml" type="string" stored="true" indexed="false" omitNorms="true" />
     <dynamicField name="cjk_*" type="text_cjk" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="*_hsim" type="string_hierarch" stored="true" indexed="true" multiValued="true" />
+
+    <!-- exhibits fields -->
+    <field name="full_text_search" type="text" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true" multiValued="true" />
+    <field name="full_text_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <!-- NOTE:  *_tesim fields are copied into all_search which is meant for metadata, not full text.  Use _tesimv for full text -->
     <dynamicField name="*_tesim" type="text" stored="true" indexed="true" multiValued="true" omitNorms="true" />
+    <!-- NOTE:  *_tesimv fields are copied into full_text_search which is meant for full text, not metadata.  Use _tesim for metadata -->
+    <dynamicField name="*_tesimv" type="text" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
     <dynamicField name="*_bsi" type="boolean" stored="true" indexed="true" multiValued="true" omitNorms="true" />
     <dynamicField name="*_ng" type="text_en_ng" stored="false" indexed="true" multiValued="true"/>
     <dynamicField name="*_pt" type="location" stored="true" indexed="true"/>
@@ -330,6 +337,9 @@
   <!-- NOTE:  all_search is meant for metadata -->
   <copyField source="*_tesim" dest="all_search" />
   <copyField source="*_tesim" dest="all_unstem_search" />
+  <!-- NOTE:  full_text_search is meant for full text -->
+  <copyField source="*_tesimv" dest="full_text_search" />
+  <copyField source="full_text_search" dest="full_text_unstem_search" />
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />

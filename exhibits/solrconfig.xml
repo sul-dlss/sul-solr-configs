@@ -3,9 +3,9 @@
   <!-- NOTE: various comments and unused configuration possibilities have been purged
      from this file.  Please refer to http://wiki.apache.org/solr/SolrConfigXml,
      as well as the default solrconfig file included with Solr -->
-  
+
   <abortOnConfigurationError>${solr.abortOnConfigurationError:true}</abortOnConfigurationError>
-  
+
   <luceneMatchVersion>LUCENE_4_10_4</luceneMatchVersion>
 
   <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.StandardDirectoryFactory}"/>
@@ -18,7 +18,7 @@
 
   <jmx />
 
-  
+
   <dataDir>${solr.data.dir:}</dataDir>
 
   <!-- for most searches, including Blacklight's pulldown menu for the single search box
@@ -103,6 +103,8 @@
         collection_search
         all_unstem_search^5
         all_search                     vern_all_search
+        full_text_unstem_search^2.5
+        full_text_search^0.5
       </str>
       <str name="pf"> <!-- (phrase boost within result set) -->
         title_245a_exact_search^5000
@@ -157,6 +159,8 @@
         collection_search^5
         all_unstem_search^25
         all_search^5                   vern_all_search^5
+        full_text_unstem_search^12.5
+        full_text_search^2.5
       </str>
       <str name="pf3">  <!-- (token trigrams boost within result set) -->
         title_245a_search^1500         vern_title_245a_search^1500
@@ -186,6 +190,7 @@
         award_search^3
         collection_search^3
         all_search^3                   vern_all_search^3
+        full_text_search^1.5
       </str>
       <str name="pf2"> <!--(token bigrams boost within result set) -->
         title_245a_search^1000         vern_title_245a_search^1000
@@ -215,6 +220,7 @@
         award_search^2
         collection_search^2
         all_search^2                   vern_all_search^2
+        full_text_search
       </str>
 
       <str name="qf_cjk">
@@ -714,6 +720,26 @@
       <str name="pf3_number">callnum_search^3</str>
       <str name="pf2_number">callnum_search^2</str>
 
+
+      <!-- for exhibits -->
+      <str name="qf_full_text">
+        full_text_unstem_search^5
+        full_text_search
+      </str>
+      <str name="pf_full_text">
+        full_text_unstem_search^25
+        full_text_search^5
+      </str>
+      <str name="pf3_full_text">
+        full_text_unstem_search^15
+        full_text_search^3
+      </str>
+      <str name="pf2_full_text">
+        full_text_unstem_search^10
+        full_text_search^2
+      </str>
+
+
       <bool name="facet">true</bool>
       <int name="facet.mincount">1</int>
       <int name="facet.limit">21</int>
@@ -753,7 +779,7 @@
       <str name="facet.field">topic_facet</str>
 
       <!-- Highlighting defaults -->
-      <str name="hl.fl">all_search</str>
+      <str name="hl.fl">all_search full_text_search</str>
 
       <str name="fl">
         score,
@@ -809,7 +835,7 @@
       </str>
     </lst>
   </requestHandler>
-  
+
   <requestHandler name="standard" class="solr.SearchHandler">
      <lst name="defaults">
        <str name="echoParams">explicit</str>
@@ -840,26 +866,26 @@
       <str name="buildOnOptimize">true</str>
     </lst>
   </searchComponent>
-  
-  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" /> 
-  
+
+  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
+
   <requestDispatcher handleSelect="true" >
     <requestParsers enableRemoteStreaming="true" multipartUploadLimitInKB="2048" />
   </requestDispatcher>
 
-  <!-- realtime get handler, guaranteed to return the latest stored fields 
-    of any document, without the need to commit or open a new searcher. The current 
+  <!-- realtime get handler, guaranteed to return the latest stored fields
+    of any document, without the need to commit or open a new searcher. The current
     implementation relies on the updateLog feature being enabled. -->
   <requestHandler name="/get" class="solr.RealTimeGetHandler">
     <lst name="defaults">
       <str name="omitHeader">true</str>
     </lst>
-  </requestHandler>  
-  
+  </requestHandler>
+
   <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
   <requestHandler name="/update" class="solr.UpdateRequestHandler"  />
   <requestHandler name="/admin/" class="org.apache.solr.handler.admin.AdminHandlers" />
-  
+
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
     <lst name="invariants">
       <str name="q">solrpingquery</str>
@@ -868,10 +894,10 @@
       <str name="echoParams">all</str>
     </lst>
   </requestHandler>
-  
-  <!-- config for the admin interface --> 
+
+  <!-- config for the admin interface -->
   <admin>
     <defaultQuery>search</defaultQuery>
   </admin>
-  
+
 </config>
