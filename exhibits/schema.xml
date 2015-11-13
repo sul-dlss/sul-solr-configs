@@ -235,8 +235,6 @@
     <dynamicField name="*_facet" type="string" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="*_display" type="string" stored="true" indexed="false" multiValued="true"/>
 -->
-    <dynamicField name="*_si" type="string" stored="true" indexed="true" omitNorms="true" />
-    <dynamicField name="*_sim" type="string" stored="true" indexed="true" multiValued="true" omitNorms="true" />
     <dynamicField name="*_ss" type="string" stored="true" indexed="false" omitNorms="true" />
     <dynamicField name="*_ssm" type="string" stored="true" indexed="false" multiValued="true" omitNorms="true" />
     <dynamicField name="*_ssi" type="string" stored="true" indexed="true" omitNorms="true" />
