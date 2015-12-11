@@ -40,7 +40,7 @@ describe "integration with solr" do
     end
 
     let(:log) do
-      JSON.parse(client.get("/solr/admin/info/logging?wt=json&since=0").body)['history']['docs'].drop_while { |x| x !~ /#{collection}/ }
+      JSON.parse(client.get("/solr/admin/info/logging?wt=json&since=0").body)['history']['docs'].drop_while { |x| x['message'] !~ /#{collection}/ }
     end
 
     describe "x" do
@@ -51,7 +51,7 @@ describe "integration with solr" do
 
       it "logs no serious warnings" do
         salient_lines = log.reject { |x| x['message'] =~ /Creating new index/ }
-        expect(salient_lines.reject { |x| x['message'] =~ /deprecated/ }).to be_empty
+        expect(salient_lines.reject { |x| x['message'] =~ /deprecated/ || x['message'] =~ /no default request handler is registered/ }).to be_empty
       end
 
       it "logs no deprecations" do
