@@ -636,9 +636,10 @@
   </requestHandler>
 
   <!-- Legacy config for the admin interface -->
-  <!-- KG: edit appears to break in Travis -->
-  <!-- <admin>
-    <defaultQuery>*:*</defaultQuery>
-  </admin> -->
+  <!-- KG: edit sunspot's value fails Travis -->
+  <admin>
+    <defaultQuery>search</defaultQuery>
+    <!-- <defaultQuery>*:*</defaultQuery> -->
+  </admin>
 
 </config>
