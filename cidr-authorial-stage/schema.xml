@@ -79,7 +79,8 @@
     <fieldType name="tdate" class="solr.TrieDateField"
                omitNorms="true"/>
 
-    <fieldType name="daterange" class="solr.DateRangeField" omitNorms="true" />
+    <!-- KG:edit commented per Erin -->
+    <!-- <fieldType name="daterange" class="solr.DateRangeField" omitNorms="true" /> -->
 
     <!-- Special field type for spell correction. Be careful about
          adding filters here, as they apply *before* your values go in
