@@ -12,7 +12,7 @@ describe "integration with solr" do
   before(:all) do
     @solr = SolrWrapper::Instance.new
     @solr.send(:extract)
-    solr_dir = @solr.send(:solr_dir)
+    solr_dir = @solr.instance_dir
     test_solr_xml = File.expand_path("../../solr/solr.xml", __FILE__)
     solr_xml = File.join(solr_dir, "server/solr/solr.xml")
     contrib_dir = File.join(solr_dir, "solr-contrib")
