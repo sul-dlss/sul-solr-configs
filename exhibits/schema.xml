@@ -17,8 +17,7 @@
     <field name="all_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
     <field name="vern_all_search" type="text" indexed="true" stored="true" multiValued="true" />
 
-    <!-- Format Field: facet and display -->
-    <field name="format" type="string" indexed="true" stored="true" multiValued="true" />
+    <!-- Format Field is now format_main_ssim: facet and display -->
 
     <!-- Language Field: facet and display -->
     <field name="language" type="string" indexed="true" stored="true" multiValued="true" />
@@ -151,7 +150,6 @@
     <field name="pub_date" type="string" indexed="true" stored="true" />
     <field name="pub_year_tisim" type="tint" indexed="true" stored="true" multiValued="true" />
     <field name="pub_display" type="string" indexed="false" stored="true" multiValued="true"/>
-    <field name="pub_date_display" type="string" indexed="false" stored="true"/>
     <field name="imprint_display" type="string" indexed="false" stored="true" multiValued="true"/>
 
     <!-- URL Fields -->
