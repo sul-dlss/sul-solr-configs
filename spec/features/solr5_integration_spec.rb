@@ -56,8 +56,6 @@ describe "integration with solr" do
 
       it "logs no deprecations" do
         salient_lines = log.select { |x| x['message'] =~ /deprecated/ }
-        pending unless salient_lines.empty?
-
         expect(salient_lines).to be_empty
       end
     end
