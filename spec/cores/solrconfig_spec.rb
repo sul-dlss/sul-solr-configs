@@ -18,10 +18,6 @@ describe "solrconfig.xml" do
       expect(subject.xpath('/config/requestHandler[@name="/replication"][@class="solr.ReplicationHandler"]')).not_to be_empty
     end
 
-    it "has admin handlers defined" do
-      expect(subject.xpath('/config/requestHandler[@name="/admin/"]')).not_to be_empty
-    end
-    
     it "has jmx defined" do
       expect(subject.xpath('/config/jmx')).not_to be_empty
     end
@@ -30,8 +26,7 @@ describe "solrconfig.xml" do
       version = subject.xpath("/config/luceneMatchVersion").text
       expect(version).not_to be_empty
       expect(version).to match /LUCENE/
-      expect(version).to match /LUCENE_4/
-      expect(version).to match(/LUCENE_4[4-9]/).or match(/LUCENE_4_[4-9]/).or match(/LUCENE_4_10/)
+      expect(version).to match(/LUCENE_4[4-9]/).or match(/LUCENE_4_[4-9]/).or match(/LUCENE_4_10/).or match(/LUCENE_5/)
     end
   end
 

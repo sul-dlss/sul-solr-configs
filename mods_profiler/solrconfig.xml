@@ -2833,7 +2833,7 @@
 
   <requestHandler name="/update" class="solr.UpdateRequestHandler" startup="lazy" />
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />  
-  <requestHandler name="/admin/" class="org.apache.solr.handler.admin.AdminHandlers" />
+
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
     <lst name="invariants">
       <str name="q">ping test query</str>
