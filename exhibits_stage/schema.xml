@@ -144,10 +144,9 @@
     <field name="pub_country" type="text" indexed="true" stored="true" omitNorms="true"/>
     <!-- TODO: should pub_date_search be a date or a text field? -->
     <field name="pub_date_search" type="text" indexed="true" stored="true" omitNorms="true"/>
+    <!-- pub_date_sort deprecated; replaced by pub_year_isi -->
     <field name="pub_date_sort" type="alphaSort" indexed="true" stored="true" />
-    <!-- Pub Date Facet Fields -->
-    <!-- pub_date was facet and display, now deprecated -->
-    <field name="pub_date" type="string" indexed="true" stored="true" />
+    <!-- pub_year_tisim is for date slider;  pub_year_w_approx_isi/pub_year_no_approx_isi are other facets -->
     <field name="pub_year_tisim" type="tint" indexed="true" stored="true" multiValued="true" />
     <field name="pub_display" type="string" indexed="false" stored="true" multiValued="true"/>
     <field name="imprint_display" type="string" indexed="false" stored="true" multiValued="true"/>
@@ -196,19 +195,6 @@
 
     <!-- lib -|- location -|- note -|- holdings summary -|- last received  -->
     <field name="mhld_display" type="string" indexed="false" stored="true" multiValued="true" />
-
-    <!-- Course Reserve Fields -->
-    <field name="crez_course_id_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="crez_course_name_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="crez_instructor_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <!--  instructor, course facet field names are exposed to end users in SW -->
-    <field name="instructor" type="string" indexed="true" stored="true" multiValued="true" />
-    <field name="course" type="string" indexed="true" stored="true" multiValued="true" />
-    <!-- crez_course_info is a facet and display field at this time (2012-03-21) -->
-    <field name="crez_course_info" type="string" indexed="true" stored="true" multiValued="true" />
-    <!-- the next two facets are not used in SW at this time -->
-    <field name="crez_dept_facet" type="string" indexed="true" stored="true" multiValued="true" />
-    <field name="crez_desk_facet" type="string" indexed="true" stored="true" multiValued="true" />
 
     <!-- *************** additional fields for DOR objects  ****************** -->
     <field name="druid" type="string_punct_stop" indexed="true" stored="true" />
@@ -259,7 +245,7 @@
 
   <!-- copy fields -->
   <copyField source="collection" dest="collection_search" />
-  <copyField source="pub_date" dest="pub_date_search" />
+  <copyField source="pub_year_w_approx_isi" dest="pub_date_search" />
   <copyField source="db_az_subject" dest="db_az_subject_search" />
 
   <!-- unstemmed and anchored search fields: title -->
@@ -288,10 +274,6 @@
   <!--  other unstemmed search fields -->
   <copyField source="series_search" dest="series_unstem_search" />
   <copyField source="all_search" dest="all_unstem_search" />
-
-  <!-- course reserve fields -->
-  <copyField source="crez_instructor_search" dest="instructor" />
-  <copyField source="crez_course_id_search" dest="course" />
 
   <!-- image fields -->
   <copyField source="topic_search" dest="topic_display" />

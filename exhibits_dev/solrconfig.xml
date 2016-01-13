@@ -33,7 +33,7 @@
     <lst name="defaults">
       <str name="defType">edismax</str>
       <str name="echoParams">explicit</str>
-      <str name="sort">score desc, pub_date_sort desc, title_sort asc</str>
+      <str name="sort">score desc, pub_year_isi desc, title_sort asc</str>
       <int name="rows">20</int>
       <str name="q.alt">*:*</str>
       <str name="mm">6&lt;-1 6&lt;90%</str>
@@ -667,19 +667,6 @@
       </str>
 
 
-      <!-- for course reserves searches -->
-      <str name="qf_crez">
-        crez_instructor_search
-        crez_course_name_search
-        crez_course_id_search
-      </str>
-      <str name="pf_crez">
-        crez_instructor_search^2
-        crez_course_name_search^2
-      </str>
-      <str name="sort_crez">score desc, title_sort asc, pub_date_sort desc</str>
-
-
       <!-- for advanced search publisher text box -->
       <str name="qf_pub_info">
         pub_search                     vern_pub_search
@@ -772,7 +759,6 @@
         <str name="f.genre_ssim.facet.method">enum</str>
       <str name="facet.field">geographic_facet</str>
       <str name="facet.field">language</str>
-      <str name="facet.field">pub_date</str> <!-- deprecated -->
       <str name="facet.field">pub_year_no_approx_isi</str>
       <str name="facet.field">pub_year_w_approx_isi</str>
       <str name="facet.field">pub_year_tisim</str>
@@ -791,7 +777,6 @@
         collection,
         collection_type,
         collection_with_title,
-        crez_course_info,
         db_az_subject,
         display_type,
         file_id,
@@ -807,7 +792,6 @@
         modsxml,
         oclc,
         physical,                     vern_physical,
-        pub_date,
         publication_year_isi,
         beginning_year_isi,
         earliest_year_isi,
