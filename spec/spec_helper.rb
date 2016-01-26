@@ -18,7 +18,9 @@
 require 'nokogiri'
 
 def solr_collections
-  @collections ||= Dir.glob(File.expand_path("../../*", __FILE__)).select { |dir| File.exist? File.join(dir, "solrconfig.xml") }
+  directories = Dir.glob(File.expand_path('../../*', __FILE__))
+
+  @collections ||= directories.select { |dir| File.exist? File.join(dir, 'solrconfig.xml') }
 end
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration

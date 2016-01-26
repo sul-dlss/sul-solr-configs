@@ -5,7 +5,7 @@ require 'json'
 require 'fileutils'
 require 'securerandom'
 
-describe "integration with solr" do
+describe 'integration with solr' do
   let(:solr) { @solr }
   let(:collection) { @collection }
 
@@ -13,12 +13,12 @@ describe "integration with solr" do
     @solr = SolrWrapper::Instance.new
     @solr.send(:extract)
     solr_dir = @solr.instance_dir
-    test_solr_xml = File.expand_path("../../solr/solr.xml", __FILE__)
-    solr_xml = File.join(solr_dir, "server/solr/solr.xml")
-    contrib_dir = File.join(solr_dir, "solr-contrib")
+    test_solr_xml = File.expand_path('../../solr/solr.xml', __FILE__)
+    solr_xml = File.join(solr_dir, 'server/solr/solr.xml')
+    contrib_dir = File.join(solr_dir, 'solr-contrib')
     FileUtils.cp test_solr_xml, solr_xml
     FileUtils.mkdir contrib_dir unless File.exist? contrib_dir
-    FileUtils.cp Dir.glob(File.join(solr_dir, "contrib", "analysis-extras", "**", "*.jar")), contrib_dir
+    FileUtils.cp Dir.glob(File.join(solr_dir, 'contrib', 'analysis-extras', '**', '*.jar')), contrib_dir
 
     @solr.start
   end
@@ -34,27 +34,33 @@ describe "integration with solr" do
     end
   end
 
-  shared_examples "works in solr" do
+  shared_examples 'works in solr' do
     let(:client) do
       Hurley::Client.new("http://127.0.0.1:#{solr.port}/solr/#{collection}/")
     end
 
-    let(:log) do
-      JSON.parse(client.get("/solr/admin/info/logging?wt=json&since=0").body)['history']['docs'].drop_while { |x| x['message'] !~ /#{collection}/ }
+    let(:log_response) do
+      client.get('/solr/admin/info/logging?wt=json&since=0').body
     end
 
-    describe "x" do
-      it "has a /select" do
-        response = client.get "select?q=*:*"
+    let(:log) do
+      JSON.parse(log_response)['history']['docs'].drop_while { |x| x['message'] !~ /#{collection}/ }
+    end
+
+    describe 'x' do
+      it 'has a /select' do
+        response = client.get 'select?q=*:*'
         expect(response).to be_success
       end
 
-      it "logs no serious warnings" do
+      it 'logs no serious warnings' do
         salient_lines = log.reject { |x| x['message'] =~ /Creating new index/ }
-        expect(salient_lines.reject { |x| x['message'] =~ /deprecated/ || x['message'] =~ /no default request handler is registered/ }).to be_empty
+                           .reject { |x| x['message'] =~ /deprecated/ }
+                           .reject { |x| x['message'] =~ /no default request handler is registered/ }
+        expect(salient_lines).to be_empty
       end
 
-      it "logs no deprecations" do
+      it 'logs no deprecations' do
         salient_lines = log.select { |x| x['message'] =~ /deprecated/ }
         expect(salient_lines).to be_empty
       end
@@ -64,7 +70,7 @@ describe "integration with solr" do
   solr_collections.each do |name|
     describe name do
       let(:dir) { name }
-      include_examples "works in solr"
+      include_examples 'works in solr'
     end
   end
 end
