@@ -47,7 +47,7 @@ DEPENDENCIES
   rake
   rspec
   rubocop
-  solr_wrapper
+  solr_wrapper (~> 0.5)
 
 BUNDLED WITH
    1.11.2

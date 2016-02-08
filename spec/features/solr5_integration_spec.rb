@@ -10,7 +10,7 @@ describe 'integration with solr' do
   let(:collection) { @collection }
 
   before(:all) do
-    @solr = SolrWrapper::Instance.new
+    @solr = SolrWrapper::Instance.new port: nil
     @solr.send(:extract)
     solr_dir = @solr.instance_dir
     test_solr_xml = File.expand_path('../../solr/solr.xml', __FILE__)
@@ -36,7 +36,7 @@ describe 'integration with solr' do
 
   shared_examples 'works in solr' do
     let(:client) do
-      Hurley::Client.new("http://127.0.0.1:#{solr.port}/solr/#{collection}/")
+      Hurley::Client.new("#{solr.url}#{collection}/")
     end
 
     let(:log_response) do
