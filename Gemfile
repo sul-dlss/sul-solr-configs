@@ -5,6 +5,6 @@ group :test do
   gem 'nokogiri'
   gem 'rake'
   gem 'rubocop'
-  gem 'solr_wrapper'
+  gem 'solr_wrapper', '~> 0.5'
   gem 'hurley'
 end
