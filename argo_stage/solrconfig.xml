@@ -17,9 +17,9 @@
       <str name="dir">${solr.core1.data.dir:}</str>
     </updateLog>
   </updateHandler>
-  
+
   <jmx />
-  
+
   <!-- Used by reports via queries that pass qt=search -->
   <requestHandler name="search" class="solr.SearchHandler" default="true">
     <!-- default values for query parameters can be specified, these
@@ -29,7 +29,7 @@
       <str name="defType">edismax</str>
       <str name="echoParams">explicit</str>
       <str name="q.alt">*:*</str>
-      <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
+      <str name="mm">6&lt;-1 6&lt;90%</str>
       <int name="qs">1</int>
       <int name="ps">2</int>
       <float name="tie">0.01</float>
@@ -131,7 +131,7 @@
       <str name="omitHeader">true</str>
     </lst>
   </requestHandler>
-                  
+
   <requestDispatcher handleSelect="true" >
     <requestParsers enableRemoteStreaming="true" multipartUploadLimitInKB="2048" />
   </requestDispatcher>
