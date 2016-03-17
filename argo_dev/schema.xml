@@ -155,46 +155,11 @@
          alternately, change the type="ignored" to some other type e.g. "text" if you want
          unknown fields indexed and/or stored by default -->
     <!--dynamicField name="*" type="ignored" multiValued="true" /-->
-
-    <!-- END hydra deprecated items -->
-
-    <!-- START argo customization artifacts -->
-    <field name="text"        type="text_ws" indexed="true" stored="false" multiValued="true"/>
-    <field name="text_search" type="text"    indexed="true" stored="false" multiValued="true"/>
-    <field name="text_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true"/>
-    <field name="date"        type="date"    indexed="true" stored="true" multiValued="true"/>
-
-    <dynamicField name="*_i"  type="tint"    indexed="true"  stored="true"/>
-    <dynamicField name="*_s"  type="string"  indexed="true"  stored="true" multiValued="true"/>
-    <dynamicField name="*_l"  type="tlong"   indexed="true"  stored="true"/>
-    <dynamicField name="*_b"  type="boolean" indexed="true"  stored="true"/>
-    <dynamicField name="*_f"  type="tfloat"  indexed="true"  stored="true"/>
-    <dynamicField name="*_d"  type="tdouble" indexed="true"  stored="true"/>
-    <dynamicField name="*_dt" type="date"    indexed="true"  stored="true" multiValued="true"/>
-    <dynamicField name="*_t"  type="text"    indexed="true"  stored="true" multiValued="true"/>
-    <dynamicField name="*_t_ws" type="text_ws" indexed="true" stored="false" multiValued="true"/>
-    <dynamicField name="*_t_unstem_search"  type="textNoStem" indexed="true"  stored="false" multiValued="true"/>
-
-    <dynamicField name="random*" type="rand" />
-
-    <dynamicField name="*_sort"    type="alphaSort" indexed="true"  stored="false" multiValued="false" />
-    <dynamicField name="*_dt_sort" type="tdate"     indexed="true"  stored="false" multiValued="false" />
-    <dynamicField name="*_facet"   type="string"    indexed="true"  stored="true"  multiValued="true" />
-    <dynamicField name="*_display" type="string"    indexed="false" stored="true"  multiValued="true" />
-    <!-- END argo customization artifacts -->
   </fields>
 
 <!-- START argo customization artifacts -->
-  <defaultSearchField>text</defaultSearchField>
+  <defaultSearchField>all_text_timv</defaultSearchField>
   <solrQueryParser defaultOperator="AND" />
-  <copyField source="*_dt"    dest="date" />
-  <copyField source="*_t"     dest="text" />
-  <copyField source="*_t"     dest="text_search" />
-  <copyField source="*_t"     dest="text_unstem_search" />
-  <copyField source="title_t" dest="title_t_ws" />
-  <copyField source="title_t" dest="title_t_unstem_search" />
-  <copyField source="identityMetadata_t" dest="identityMetadata_t_ws" />
-  <copyField source="identityMetadata_t" dest="identityMetadata_t_unstem_search" />
 <!-- END argo customization artifacts -->
 
   <types>
