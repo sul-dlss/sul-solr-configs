@@ -28,7 +28,7 @@
        that you fully re-index after changing this setting as it can
        affect both how text is indexed and queried.
   -->
-  <luceneMatchVersion>5.0.0</luceneMatchVersion>
+  <luceneMatchVersion>LUCENE_5_0_0</luceneMatchVersion>
 
   <lib dir="${solr.install.dir:../../../..}/contrib/analysis-extras/lib" />
   <lib dir="${solr.install.dir:../../../..}/contrib/analysis-extras/lucene-libs" />
@@ -71,6 +71,19 @@
       <maxTime>${solr.autoSoftCommit.maxTime:-1}</maxTime>
     </autoSoftCommit>
   </updateHandler>
+
+  <jmx />
+
+  <!-- realtime get handler, guaranteed to return the latest stored fields
+    of any document, without the need to commit or open a new searcher. The current
+    implementation relies on the updateLog feature being enabled. -->
+  <requestHandler name="/get" class="solr.RealTimeGetHandler">
+    <lst name="defaults">
+      <str name="omitHeader">true</str>
+    </lst>
+  </requestHandler>
+
+  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
 
   <!-- SearchHandler
 
