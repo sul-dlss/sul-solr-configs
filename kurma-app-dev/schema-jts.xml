@@ -240,14 +240,14 @@
     <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
                distErrPct="0.025"
                maxDistErr="0.000009"
-               units="degrees"
+               distanceUnits="degrees"
             />
 
     <fieldType name="location_jts" class="solr.SpatialRecursivePrefixTreeFieldType"
                spatialContextFactory="com.spatial4j.core.context.jts.JtsSpatialContextFactory"
                distErrPct="0.025"
                maxDistErr="0.000009"
-               units="degrees"
+               distanceUnits="degrees"
             />
   </types>
   
