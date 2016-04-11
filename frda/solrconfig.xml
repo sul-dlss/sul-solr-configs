@@ -14,7 +14,7 @@
 
   <indexConfig>
   	<maxFieldLength>2147483647</maxFieldLength>
-    <unlockOnStartup>true</unlockOnStartup>
+    
 <!-- from sw-solr   
     <writeLockTimeout>1000</writeLockTimeout>
     <useCompoundFile>false</useCompoundFile>
