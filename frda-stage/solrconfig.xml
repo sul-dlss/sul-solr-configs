@@ -20,7 +20,7 @@
     <useCompoundFile>false</useCompoundFile>
     <ramBufferSizeMB>128</ramBufferSizeMB>
     <mergeFactor>10</mergeFactor>
-    <lockType>simple</lockType>
+    <lockType>${solr.lock.type:native}</lockType>
     <reopenReaders>true</reopenReaders>
     <deletionPolicy class="solr.SolrDeletionPolicy">
       <str name="maxCommitsToKeep">1</str>
