@@ -6,3 +6,6 @@ rvm:
 
 sudo: false
 language: ruby
+
+jdk:
+  - oraclejdk8

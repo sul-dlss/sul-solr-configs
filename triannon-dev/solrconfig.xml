@@ -14,7 +14,7 @@
 
   <indexConfig>
     <lockType>${solr.lock.type:native}</lockType>
-    <unlockOnStartup>true</unlockOnStartup>
+    
   </indexConfig>
 
   <jmx />

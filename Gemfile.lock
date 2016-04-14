@@ -32,8 +32,8 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 0.3)
     ruby-progressbar (1.7.5)
-    rubyzip (1.1.7)
-    solr_wrapper (0.5.0)
+    rubyzip (1.2.0)
+    solr_wrapper (0.8.1)
       ruby-progressbar
       rubyzip
     unicode-display_width (0.3.1)
@@ -47,7 +47,7 @@ DEPENDENCIES
   rake
   rspec
   rubocop
-  solr_wrapper (~> 0.5)
+  solr_wrapper (~> 0.8)
 
 BUNDLED WITH
    1.11.2

@@ -17,7 +17,7 @@
 
   <indexConfig>
 		<lockType>${solr.lock.type:native}</lockType>
-    <unlockOnStartup>true</unlockOnStartup>
+    
     <reopenReaders>true</reopenReaders>
     <infoStream>true</infoStream>
   </indexConfig>

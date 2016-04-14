@@ -171,7 +171,7 @@
          This is not needed if lock type is 'none' or 'single'
      -->
     <!--
-    <unlockOnStartup>false</unlockOnStartup>
+    
       -->
     
     <!-- Expert: Controls how often Lucene loads terms into memory
