@@ -8,14 +8,14 @@
 
   <luceneMatchVersion>5.4.1</luceneMatchVersion>
 
-  
-  
+
+
   <dataDir>${solr.data.dir:}</dataDir>
 
   <indexConfig>
   	<maxFieldLength>2147483647</maxFieldLength>
-    
-<!-- from sw-solr   
+
+<!-- from sw-solr
     <writeLockTimeout>1000</writeLockTimeout>
     <useCompoundFile>false</useCompoundFile>
     <ramBufferSizeMB>128</ramBufferSizeMB>
@@ -26,7 +26,7 @@
       <str name="maxCommitsToKeep">1</str>
       <str name="maxOptimizedCommitsToKeep">0</str>
     </deletionPolicy>
--->    
+-->
   </indexConfig>
 
   <!-- See docs re: autoCommit -->
@@ -344,7 +344,8 @@
       <str name="hl.fragListBuilder">single</str>
 -->
       <str name="hl.fragsize">0</str>
-    </lst>    
+      <str name="hl.maxAnalyzedChars">100000</str>
+    </lst>
   </requestHandler>
 
   <searchComponent class="solr.HighlightComponent" name="highlight">
@@ -388,7 +389,7 @@
 
       <str name="fl">score, *</str>
       <bool name="debugQuery">true</bool>
-      
+
       <bool name="facet">true</bool>
       <int name="facet.mincount">1</int>
       <int name="facet.limit">16</int>
@@ -419,7 +420,7 @@
       <str name="facet.query">search_date_dtsim:[1795-10-27T00:00:00Z TO 1797-09-05T00:00:00Z]</str>
       <str name="facet.query">search_date_dtsim:[1797-09-04T00:00:00Z TO 1799-06-19T00:00:00Z]</str>
       <str name="facet.query">search_date_dtsim:[1799-06-08T00:00:00Z TO 1799-11-12T00:00:00Z]</str>
-      
+
       <str name="group">false</str>
       <str name="group.ngroups">true</str>
       <str name="group.limit">10</str>
@@ -434,6 +435,7 @@
       <str name="hl.fragListBuilder">single</str>
 -->
       <str name="hl.fragsize">0</str>
+      <str name="hl.maxAnalyzedChars">100000</str>
     </lst>
   </requestHandler>
 
@@ -449,10 +451,10 @@
       <str>tvComponent</str>
     </arr>
   </requestHandler>
-    
+
   <requestHandler name="/update" class="solr.UpdateRequestHandler" startup="lazy" />
-  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />  
-  <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" /> 
+  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
+  <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
 
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
     <lst name="invariants">
