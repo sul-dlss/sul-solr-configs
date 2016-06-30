@@ -4,7 +4,7 @@
      this file, see http://wiki.apache.org/solr/SolrConfigXml.
 -->
 <config>
-  <luceneMatchVersion>LUCENE_4_10_4</luceneMatchVersion>
+  <luceneMatchVersion>5.4.1</luceneMatchVersion>
 
   <dataDir>${solr.data.dir:}</dataDir>
 
