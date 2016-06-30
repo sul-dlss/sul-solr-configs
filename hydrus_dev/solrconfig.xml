@@ -7,7 +7,7 @@
   -->
   <abortOnConfigurationError>${solr.abortOnConfigurationError:true}</abortOnConfigurationError>
 
-  <luceneMatchVersion>LUCENE_4_10_4</luceneMatchVersion>
+  <luceneMatchVersion>5.4.1</luceneMatchVersion>
 
   
   <jmx />
