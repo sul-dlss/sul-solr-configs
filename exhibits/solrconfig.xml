@@ -777,6 +777,7 @@
       <str name="facet.field">pub_date</str>
       <str name="facet.field">pub_year_tisim</str>
       <str name="facet.field">topic_facet</str>
+      <str name="facet.field">collection_with_title</str>
 
       <!-- Highlighting defaults -->
       <str name="hl.fl">all_search full_text_search</str>
