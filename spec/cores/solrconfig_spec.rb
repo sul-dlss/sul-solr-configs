@@ -31,7 +31,7 @@ describe 'solrconfig.xml' do
     it 'has a luceneMatchVersion on or after 5.x' do
       version = subject.xpath('/config/luceneMatchVersion').text
       expect(version).not_to be_empty
-      expect(version).to match(/^5/).or match(/^LUCENE_5/)
+      expect(version).to match(/^[56]/).or match(/^LUCENE_[56]/)
     end
   end
 
