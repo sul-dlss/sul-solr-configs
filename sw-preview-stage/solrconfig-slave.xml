@@ -196,18 +196,7 @@
     <httpCaching lastModifiedFrom="openTime" etagSeed="Solr" />
   </requestDispatcher>
 
-  <!-- Replication -->
-  <requestHandler name="/replication" class="solr.ReplicationHandler" >
-    <lst name="slave">
-      <str name="masterUrl">http://sw-solr-m:8983/solr</str>
-      <!-- per solr user email thread on Solr user list started by Jonathan Rochkind on Wed, 15 May 2013 12:47:53 -0700
-           http://find.searchhub.org/document/5fbb17c0a0bc0c97#ef3cc593e4355e2c, not setting a pollInterval has the effect
-           of the slave never polling master, but allowing manual replication.  This is what we want - cron jobs issue
-           http://_slave_host_:_port_/solr/replication?command=fetchindex on the slaves, but stagger them so the
-           replication isn't occurring on all three slaves simultaneously.
-      -->
-    </lst>
-  </requestHandler>
+<requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
 
   <!-- for most searches, including Blacklight's pulldown menu for the single search box
        Pulldown usage:
