@@ -19,6 +19,7 @@ describe 'integration with solr' do
     FileUtils.cp test_solr_xml, solr_xml
     FileUtils.mkdir contrib_dir unless File.exist? contrib_dir
     FileUtils.cp Dir.glob(File.join(solr_dir, 'contrib', 'analysis-extras', '**', '*.jar')), contrib_dir
+    FileUtils.cp Dir.glob(File.expand_path('../../../plugins/*', __FILE__)), contrib_dir
 
     @solr.start
   end
