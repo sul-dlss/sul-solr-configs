@@ -57,7 +57,7 @@
 
               <lib dir="./lib" />
     -->
-
+    <lib dir="${solr.install.dir:../../../..}/plugins/" regex=".*\.jar" />
     <lib dir="${solr.install.dir:../../../..}/contrib/langid/lib/" regex=".*\.jar" />
     <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-langid-\d.*\.jar" />
 
