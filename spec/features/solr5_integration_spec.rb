@@ -10,7 +10,7 @@ describe 'integration with solr' do
   let(:collection) { @collection }
 
   before(:all) do
-    @solr = SolrWrapper::Instance.new port: nil, version: '6.2.1'
+    @solr = SolrWrapper::Instance.new port: nil, version: '6.6.0'
     @solr.send(:extract)
     solr_dir = @solr.instance_dir
     test_solr_xml = File.expand_path('../../solr/solr.xml', __FILE__)
@@ -58,6 +58,7 @@ describe 'integration with solr' do
         salient_lines = log.reject { |x| x['message'] =~ /Creating new index/ }
                            .reject { |x| x['message'] =~ /deprecated/ }
                            .reject { |x| x['message'] =~ /no default request handler is registered/ }
+                           .reject { |x| x['message'] =~ /Will not work from Solr 7/ }
         expect(salient_lines).to be_empty
       end
 
