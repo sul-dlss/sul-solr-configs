@@ -10,7 +10,7 @@ describe 'integration with solr' do
   let(:collection) { @collection }
 
   before(:all) do
-    @solr = SolrWrapper::Instance.new port: nil, version: '6.6.0'
+    @solr = SolrWrapper::Instance.new port: nil, version: ENV.fetch('SOLR_VERSION', '6.6.0')
     @solr.send(:extract)
     solr_dir = @solr.instance_dir
     test_solr_xml = File.expand_path('../../solr/solr.xml', __FILE__)
