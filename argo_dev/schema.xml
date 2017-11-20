@@ -157,11 +157,6 @@
     <!--dynamicField name="*" type="ignored" multiValued="true" /-->
   </fields>
 
-<!-- START argo customization artifacts -->
-  <defaultSearchField>all_text_timv</defaultSearchField>
-  <solrQueryParser defaultOperator="AND" />
-<!-- END argo customization artifacts -->
-
   <types>
     <fieldType name="string"  class="solr.StrField" sortMissingLast="true" />
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>

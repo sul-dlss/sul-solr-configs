@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema name="revs" version="1.5">
   <uniqueKey>id</uniqueKey>
-  <!-- defaultSearchField is DEPRECATED; use df in requestHandler -->
-  <defaultSearchField>text</defaultSearchField>
-  <!-- defaultOperator is DEPRECATED; use q.op in requestHandler -->
-  <solrQueryParser defaultOperator="AND"/>
 
   <fields>
 
