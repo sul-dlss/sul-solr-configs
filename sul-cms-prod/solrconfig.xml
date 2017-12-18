@@ -134,7 +134,6 @@
 
     <useCompoundFile>false</useCompoundFile>
 
-    <mergeFactor>4</mergeFactor>
     <!-- Sets the amount of RAM that may be used by Lucene indexing
          for buffering added documents and deletions before they are
          flushed to the Directory.  -->
@@ -144,7 +143,6 @@
       -->
     <!-- <maxBufferedDocs>1000</maxBufferedDocs> -->
 
-    <maxMergeDocs>2147483647</maxMergeDocs>
     <maxFieldLength>100000</maxFieldLength>
     <writeLockTimeout>1000</writeLockTimeout>
 
@@ -163,7 +161,10 @@
          Other implementations of MergePolicy must have a no-argument
          constructor
       -->
-    <mergePolicy class="org.apache.lucene.index.LogByteSizeMergePolicy"/>
+      <mergePolicyFactory class="org.apache.solr.index.TieredMergePolicyFactory">
+        <int name="maxMergeAtOnce">10</int>
+        <int name="segmentsPerTier">10</int>
+      </mergePolicyFactory>
 
     <!-- Expert: Merge Scheduler
 
@@ -211,7 +212,7 @@
 
          This is not needed if lock type is 'none' or 'single'
      -->
-    
+
 
     <!-- If true, IndexReaders will be reopened (often more efficient)
          instead of closed and then opened.
@@ -886,7 +887,7 @@
       <bool name="omitHeader">true</bool>
     </lst>
   </requestHandler>
-  
+
   <requestHandler name="/update" class="solr.UpdateRequestHandler"/>
 
   <!-- Field Analysis Request Handler
@@ -990,7 +991,7 @@
        if this is just a master.
     -->
      <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
-     
+
      <requestHandler name="/get" class="solr.RealTimeGetHandler">
        <lst name="defaults">
          <str name="omitHeader">true</str>

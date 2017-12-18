@@ -96,7 +96,7 @@
      and require different update frequencies than the documents they are
      associated with.
     -->
-    <fieldType name="file" keyField="id" defVal="1" stored="false" indexed="false" class="solr.ExternalFileField" valType="pfloat"/>
+    <fieldType name="file" keyField="id" defVal="1" stored="false" indexed="false" class="solr.ExternalFileField" />
 
     <!-- The format for this date field is of the form 1995-12-31T23:59:59Z, and
          is a more restricted form of the canonical representation of dateTime
@@ -168,7 +168,7 @@
         <filter class="solr.StopFilterFactory"
                 ignoreCase="true"
                 words="stopwords.txt"
-                
+
                 />
         <filter class="solr.WordDelimiterFilterFactory"
                 protected="protwords.txt"
@@ -191,7 +191,7 @@
         <filter class="solr.StopFilterFactory"
                 ignoreCase="true"
                 words="stopwords.txt"
-                
+
                 />
         <filter class="solr.WordDelimiterFilterFactory"
                 protected="protwords.txt"
@@ -231,7 +231,7 @@
         <filter class="solr.StopFilterFactory"
                 ignoreCase="true"
                 words="stopwords.txt"
-                
+
                 />
         <filter class="solr.WordDelimiterFilterFactory"
                 protected="protwords.txt"
