@@ -15,7 +15,9 @@ describe 'schema.xml' do
     describe name do
       subject do
         Dir.chdir(name) do
-          Nokogiri::XML(File.read(File.join('schema.xml')), &:xinclude)
+          file = 'schema.xml'
+          file = 'managed-schema' unless File.exist? file
+          Nokogiri::XML(File.read(file), &:xinclude)
         end
       end
       include_examples 'a solr cloud-ready schema'
