@@ -33,7 +33,7 @@
     <lst name="defaults">
       <str name="defType">edismax</str>
       <str name="echoParams">explicit</str>
-      <str name="sort">score desc, pub_date_sort desc, title_sort asc</str>
+      <str name="sort">score desc, pub_year_isi desc, title_sort asc</str>
       <int name="rows">20</int>
       <str name="q.alt">*:*</str>
       <str name="mm">6&lt;-1 6&lt;90%</str>
@@ -105,6 +105,9 @@
         all_search                     vern_all_search
         full_text_unstem_search^2.5
         full_text_search^0.5
+        full_text_search_en^0.5
+        full_text_search_pt^0.5
+        full_text_search_id^0.5
       </str>
       <str name="pf"> <!-- (phrase boost within result set) -->
         title_245a_exact_search^5000
@@ -161,6 +164,9 @@
         all_search^5                   vern_all_search^5
         full_text_unstem_search^12.5
         full_text_search^2.5
+        full_text_search_en^2.5
+        full_text_search_pt^2.5
+        full_text_search_id^2.5
       </str>
       <str name="pf3">  <!-- (token trigrams boost within result set) -->
         title_245a_search^1500         vern_title_245a_search^1500
@@ -191,6 +197,9 @@
         collection_search^3
         all_search^3                   vern_all_search^3
         full_text_search^1.5
+        full_text_search_en^1.5
+        full_text_search_pt^1.5
+        full_text_search_id^1.5
       </str>
       <str name="pf2"> <!--(token bigrams boost within result set) -->
         title_245a_search^1000         vern_title_245a_search^1000
@@ -221,6 +230,9 @@
         collection_search^2
         all_search^2                   vern_all_search^2
         full_text_search
+        full_text_search_en
+        full_text_search_pt
+        full_text_search_id
       </str>
 
       <str name="qf_cjk">
@@ -667,19 +679,6 @@
       </str>
 
 
-      <!-- for course reserves searches -->
-      <str name="qf_crez">
-        crez_instructor_search
-        crez_course_name_search
-        crez_course_id_search
-      </str>
-      <str name="pf_crez">
-        crez_instructor_search^2
-        crez_course_name_search^2
-      </str>
-      <str name="sort_crez">score desc, title_sort asc, pub_date_sort desc</str>
-
-
       <!-- for advanced search publisher text box -->
       <str name="qf_pub_info">
         pub_search                     vern_pub_search
@@ -725,20 +724,48 @@
       <str name="qf_full_text">
         full_text_unstem_search^5
         full_text_search
+        full_text_search_en
+        full_text_search_pt
+        full_text_search_id
       </str>
       <str name="pf_full_text">
         full_text_unstem_search^25
         full_text_search^5
+        full_text_search_en^5
+        full_text_search_pt^5
+        full_text_search_id^5
       </str>
       <str name="pf3_full_text">
         full_text_unstem_search^15
         full_text_search^3
+        full_text_search_en^3
+        full_text_search_pt^3
+        full_text_search_id^3
       </str>
       <str name="pf2_full_text">
         full_text_unstem_search^10
         full_text_search^2
+        full_text_search_en^2
+        full_text_search_pt^2
+        full_text_search_id^2
       </str>
 
+      <str name="qf_toc_search">
+        toc_unstem_search^5
+        toc_search
+      </str>
+      <str name="pf_toc_search">
+        toc_unstem_search^25
+        toc_search^5
+      </str>
+      <str name="pf3_toc_search">
+        toc_unstem_search^15
+        toc_search^3
+      </str>
+      <str name="pf2_toc_search">
+        toc_unstem_search^10
+        toc_search^2
+      </str>
 
       <bool name="facet">true</bool>
       <int name="facet.mincount">1</int>
@@ -774,13 +801,14 @@
         <str name="f.format.facet.method">enum</str>
       <str name="facet.field">geographic_facet</str>
       <str name="facet.field">language</str>
-      <str name="facet.field">pub_date</str>
+      <str name="facet.field">pub_year_no_approx_isi</str>
+      <str name="facet.field">pub_year_w_approx_isi</str>
       <str name="facet.field">pub_year_tisim</str>
       <str name="facet.field">topic_facet</str>
       <str name="facet.field">collection_with_title</str>
 
       <!-- Highlighting defaults -->
-      <str name="hl.fl">all_search full_text_search</str>
+      <str name="hl.fl">all_search full_text_search full_text_search_en full_text_search_pt full_text_search_id</str>
 
       <str name="fl">
         score,
@@ -809,7 +837,6 @@
         modsxml,
         oclc,
         physical,                     vern_physical,
-        pub_date,
         publication_year_isi,
         beginning_year_isi,
         earliest_year_isi,
@@ -822,7 +849,6 @@
         production_year_isi,
         original_year_isi,
         copyright_year_isi,
-        pub_date_display,
         summary_display,
         title_245a_display,           vern_title_245a_display,
         title_245c_display,           vern_title_245c_display,
