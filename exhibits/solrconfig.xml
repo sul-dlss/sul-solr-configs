@@ -33,7 +33,7 @@
     <lst name="defaults">
       <str name="defType">edismax</str>
       <str name="echoParams">explicit</str>
-      <str name="sort">score desc, pub_date_sort desc, title_sort asc</str>
+      <str name="sort">score desc, pub_year_isi desc, title_sort asc</str>
       <int name="rows">20</int>
       <str name="q.alt">*:*</str>
       <str name="mm">6&lt;-1 6&lt;90%</str>
@@ -774,7 +774,8 @@
         <str name="f.format.facet.method">enum</str>
       <str name="facet.field">geographic_facet</str>
       <str name="facet.field">language</str>
-      <str name="facet.field">pub_date</str>
+      <str name="facet.field">pub_year_no_approx_isi</str>
+      <str name="facet.field">pub_year_w_approx_isi</str>
       <str name="facet.field">pub_year_tisim</str>
       <str name="facet.field">topic_facet</str>
       <str name="facet.field">collection_with_title</str>
@@ -809,7 +810,6 @@
         modsxml,
         oclc,
         physical,                     vern_physical,
-        pub_date,
         publication_year_isi,
         beginning_year_isi,
         earliest_year_isi,
@@ -822,7 +822,6 @@
         production_year_isi,
         original_year_isi,
         copyright_year_isi,
-        pub_date_display,
         summary_display,
         title_245a_display,           vern_title_245a_display,
         title_245c_display,           vern_title_245c_display,
