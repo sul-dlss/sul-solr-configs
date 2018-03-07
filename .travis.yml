@@ -12,5 +12,5 @@ jdk:
 
 matrix:
   include:
-    - env: "SOLR_VERSION=7.1.0"
+    - env: ""
     - env: "SOLR_VERSION=6.6.0"
