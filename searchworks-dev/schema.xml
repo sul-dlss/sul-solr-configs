@@ -4,7 +4,7 @@
 
   <fields>
     <!-- needed by some of Solr 4.0 functionality like transaction log or partial documents update -->
-    <field name="_version_" type="long" indexed="true" stored="true" multiValued="false"/>
+    <field name="_version_" type="long" indexed="true" stored="true"/>
 
     <field name="id" type="string_punct_stop" indexed="true" stored="true" required="true" />
     <field name="created" type="date" indexed="true" stored="true" default="NOW/SECOND" />
@@ -164,7 +164,7 @@
     <!-- sfx urls should rarely occur more than once in a marc bib record -->
     <field name="url_sfx" type="string" indexed="false" stored="true" multiValued="true" />
     <field name="url_restricted" type="string" indexed="false" stored="true" multiValued="true" />
-    <field name="managed_purl_urls" type="string" indexed="false" stored="true" multiValued="true"/>
+    <field name="managed_purl_urls" type="string" indexed="true" stored="true" multiValued="true"/>
 
     <!-- Physical Fields -->
     <field name="physical" type="text" indexed="true" stored="true" multiValued="true" />
