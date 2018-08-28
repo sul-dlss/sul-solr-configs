@@ -21,6 +21,8 @@ $ bundle install
 $ rake
 ```
 
+## Spinning up a solr instance
 
-
-
+```
+$ collection=searchworks-dev bundle exec solr_wrapper
+```

@@ -1,0 +1,6 @@
+# Place any default configuration for solr_wrapper here
+collection:
+  dir: <%= ENV['collection'] %>
+  name: <%= ENV['collection'] %>
+version: 7.4.0
+port: 8983
