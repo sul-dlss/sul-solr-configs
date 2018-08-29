@@ -145,8 +145,8 @@
         summary_search^2               vern_summary_search^2
 
         pub_date_search^2
-        isbn_search^1.5
-        issn_search^1.5
+        isbn_search^1.6
+        issn_search^1.6
         id
         druid
         oclc
@@ -317,8 +317,8 @@
         summary_search^2               vern_summary_search^2               cjk_summary_search^2
 
         pub_date_search^2
-        isbn_search^1.5
-        issn_search^1.5
+        isbn_search^1.6
+        issn_search^1.6
         id
         oclc
         barcode_search
