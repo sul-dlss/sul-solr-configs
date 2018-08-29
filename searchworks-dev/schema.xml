@@ -361,6 +361,8 @@
     <!-- Analyzed Text, general case -->
     <fieldtype name="text" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
       <analyzer type="index">
+        <!-- remove stand-alone punctuation, which gets dropped by the WDGF but an empty hole is left in the position and screws up phrase searches -->
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
         <tokenizer class="solr.WhitespaceTokenizerFactory" />
         <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
@@ -373,6 +375,7 @@
         <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
       </analyzer>
       <analyzer type="query">
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
         <tokenizer class="solr.WhitespaceTokenizerFactory" />
         <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
@@ -388,6 +391,7 @@
     <!-- Analyzed Text, no Stemming -->
     <fieldtype name="textNoStem" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
       <analyzer type="index">
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
         <tokenizer class="solr.WhitespaceTokenizerFactory" />
         <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
@@ -398,6 +402,7 @@
         <filter class="solr.FlattenGraphFilterFactory"/>
       </analyzer>
       <analyzer type="query">
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
         <tokenizer class="solr.WhitespaceTokenizerFactory" />
         <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
@@ -411,6 +416,7 @@
     <!-- Left and Right Anchored Analyzed Text, no Stemming -->
     <fieldtype name="text_anchored" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
       <analyzer type="index">
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
         <!-- put beginning and ending anchors on field value, removing trailing chars -->
         <!-- watch out for query time whitespace separated chars that will be processed as their own token stream, e.g. in 'felines : warm and fuzzy' -->
         <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^\s*(.*[\S&amp;&amp;[^\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]])[\s\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]*$" replacement="aaaaaa$1zzzzzz"/>
@@ -427,6 +433,7 @@
         <filter class="solr.FlattenGraphFilterFactory"/>
       </analyzer>
       <analyzer type="query">
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
         <!-- put beginning and ending anchors on field value, removing trailing chars -->
         <!-- watch out for query time whitespace separated chars that will be processed as their own token stream, e.g. in 'felines : warm and fuzzy' -->
         <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^\s*(.*[\S&amp;&amp;[^\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]])[\s\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]*$" replacement="aaaaaa$1zzzzzz"/>
