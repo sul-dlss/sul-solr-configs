@@ -583,7 +583,7 @@
         author_7xx_search^30           vern_author_7xx_search^30           cjk_author_7xx_search^30            ja_author_7xx_search^30
         author_8xx_search^5            vern_author_8xx_search^5            cjk_author_8xx_search^5             ja_author_8xx_search^5
       </str>
-      <str n       ame="pf2_author_cjk"> <!-- (token bigrams) -->
+      <str name="pf2_author_cjk"> <!-- (token bigrams) -->
         author_1xx_search^40           vern_author_1xx_search^40           cjk_author_1xx_search^40            ja_author_1xx_search^40
         author_7xx_search^20           vern_author_7xx_search^20           cjk_author_7xx_search^20            ja_author_7xx_search^20
         author_8xx_search^2            vern_author_8xx_search^2            cjk_author_8xx_search^2             ja_author_8xx_search^2
