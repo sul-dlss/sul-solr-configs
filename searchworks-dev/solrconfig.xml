@@ -271,7 +271,7 @@
       </str>
 
       <str name="qf_cjk">
-        title_245a_exact_search^1000
+        title_245a_exact_search^1000   cjk_exact_search_title_245a^1000
         title_245a_unstem_search^500
         title_245a_search^75           vern_title_245a_search^75           cjk_title_245a_search^75            ja_title_245a_search^75
         title_245_unstem_search^75
@@ -329,7 +329,7 @@
         all_search                     vern_all_search                     cjk_all_search                      ja_all_search
       </str>
       <str name="pf_cjk"> <!-- (phrase boost within result set) -->
-        title_245a_exact_search^5000
+        title_245a_exact_search^5000 cjk_exact_search_title_245a^5000
         title_245a_unstem_search^2500
         title_245a_search^375          vern_title_245a_search^375          cjk_title_245a_search^375           ja_title_245a_search^375
         title_245_unstem_search^375
@@ -492,7 +492,7 @@
       </str>
 
       <str name="qf_title_cjk">
-        title_245a_exact_search^350
+        title_245a_exact_search^350 cjk_exact_search_title_245a^350
         title_245a_unstem_search^100
         title_245a_search^75           vern_title_245a_search^75           cjk_title_245a_search^75            ja_title_245a_search^75
         title_245_unstem_search^75
@@ -508,7 +508,7 @@
         series_search                  vern_series_search                  cjk_series_search                   ja_series_search
       </str>
       <str name="pf_title_cjk"> <!-- (phrase) -->
-        title_245a_exact_search^1750
+        title_245a_exact_search^1750   cjk_exact_search_title_245a^1750
         title_245a_unstem_search^500
         title_245a_search^375          vern_title_245a_search^375          cjk_title_245a_search^375          ja_title_245a_search^375
         title_245_unstem_search^375

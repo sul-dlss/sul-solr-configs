@@ -267,6 +267,7 @@
     <dynamicField name="*_sort" type="alphaSort" stored="true" indexed="true"/>
     <dynamicField name="*_xml" type="string" stored="true" indexed="false" omitNorms="true" />
     <dynamicField name="cjk_*" type="text_cjk" stored="true" indexed="true" multiValued="true" />
+    <dynamicField name="cjk_exact_search_*" type="text_cjk_anchored" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="ja_*" type="text_ja" indexed="true" stored="true" multiValued="true" />
     <dynamicField name="*_hsim" type="string_hierarch" stored="true" indexed="true" multiValued="true" />
   </fields>
@@ -318,6 +319,7 @@
   <!-- both bigrams and unigrams in same field -->
   <copyField source="vern_title_245a_search" dest="cjk_title_245a_search" />
   <copyField source="vern_title_245_search" dest="cjk_title_245_search" />
+  <copyField source="vern_title_245a_search" dest="cjk_exact_search_title_245a" />
   <copyField source="vern_title_uniform_search" dest="cjk_title_uniform_search" />
   <copyField source="vern_title_variant_search" dest="cjk_title_variant_search" />
   <copyField source="vern_title_related_search" dest="cjk_title_related_search" />
@@ -496,6 +498,22 @@
         <filter class="solr.CJKBigramFilterFactory" han="false" hiragana="false" katakana="false" hangul="true" outputUnigrams="true" />
       </analyzer>
     </fieldtype>
+
+    <!-- Left and Right Anchored Analyzed CJK Text -->
+    <fieldType name="text_cjk_anchored"  class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="false">
+      <analyzer>
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
+        <!-- put beginning and ending anchors on field value, removing trailing chars -->
+        <!-- watch out for query time whitespace separated chars that will be processed as their own token stream, e.g. in 'felines : warm and fuzzy' -->
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^\s*(.*[\S&amp;&amp;[^\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]])[\s\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]*$" replacement="aaaaaa$1zzzzzz"/>
+        <charFilter class="edu.stanford.lucene.analysis.ICUCustomTransformCharFilterFactory" id="edu/stanford/lucene/analysis/stanford_cjk_transliterations.txt" />
+        <charFilter class="edu.stanford.lucene.analysis.ICUTransformCharFilterFactory" id="Traditional-Simplified" />
+        <charFilter class="edu.stanford.lucene.analysis.ICUTransformCharFilterFactory" id="Katakana-Hiragana" />
+        <tokenizer class="solr.WhitespaceTokenizerFactory" />
+        <filter class="solr.CJKWidthFilterFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+      </analyzer>
+    </fieldType>
 
     <!-- Japanese using morphological analysis (see text_cjk for a configuration using bigramming)
 
