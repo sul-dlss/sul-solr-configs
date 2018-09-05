@@ -550,7 +550,7 @@
            Punctuation characters are discarded by default.  Use discardPunctuation="false" to keep them.
         -->
         <!-- drop all strings that contain Hangul, because they are probably Korean and shouldn't get analyzed as Japanese -->
-        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern=".*[\p{InHangul_Jamo}\p{InHangul_Compatibility_Jamo}\p{InHangul_Syllables}].*" replacement=""/>
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^.*[\p{InHangul_Jamo}\p{InHangul_Compatibility_Jamo}\p{InHangul_Syllables}].*$" replacement=""/>
         <!-- only select strings that contain some kana; this is a really poor attempt at only parsing Japanese text, and preferably we could identify it during indexing instead;
             fortunately, for our current purposes, strings with kana are the ones we're particularly concerned with and the cjk_* fields will do well enough with Kanji-only values
         -->
