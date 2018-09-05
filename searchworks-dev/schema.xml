@@ -509,7 +509,7 @@
         <charFilter class="edu.stanford.lucene.analysis.ICUCustomTransformCharFilterFactory" id="edu/stanford/lucene/analysis/stanford_cjk_transliterations.txt" />
         <charFilter class="edu.stanford.lucene.analysis.ICUTransformCharFilterFactory" id="Traditional-Simplified" />
         <charFilter class="edu.stanford.lucene.analysis.ICUTransformCharFilterFactory" id="Katakana-Hiragana" />
-        <tokenizer class="solr.WhitespaceTokenizerFactory" />
+        <tokenizer class="solr.ICUTokenizerFactory" />
         <filter class="solr.CJKWidthFilterFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
       </analyzer>
@@ -555,6 +555,7 @@
             fortunately, for our current purposes, strings with kana are the ones we're particularly concerned with and the cjk_* fields will do well enough with Kanji-only values
         -->
         <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^(.*[\p{InHiragana}\p{InKatakana}\p{InKatakana_Phonetic_Extensions}].*)|(.*)$" replacement="$1"/>
+        <charFilter class="edu.stanford.lucene.analysis.ICUTransformCharFilterFactory" id="Hiragana-Katakana" />
         <tokenizer class="solr.JapaneseTokenizerFactory" mode="search"/>
         <!--<tokenizer class="solr.JapaneseTokenizerFactory" mode="search" userDictionary="lang/userdict_ja.txt"/>-->
         <!-- Reduces inflected verbs and adjectives to their base/dictionary forms (辞書形) -->
