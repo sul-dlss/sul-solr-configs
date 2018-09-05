@@ -509,6 +509,8 @@
         <charFilter class="edu.stanford.lucene.analysis.ICUCustomTransformCharFilterFactory" id="edu/stanford/lucene/analysis/stanford_cjk_transliterations.txt" />
         <charFilter class="edu.stanford.lucene.analysis.ICUTransformCharFilterFactory" id="Traditional-Simplified" />
         <charFilter class="edu.stanford.lucene.analysis.ICUTransformCharFilterFactory" id="Katakana-Hiragana" />
+        <!-- replace all whitespace to improve boosting when the metadata and query were entered with slightly different spacing -->
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+" replacement="" />
         <tokenizer class="solr.WhitespaceTokenizerFactory" />
         <filter class="solr.CJKWidthFilterFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
