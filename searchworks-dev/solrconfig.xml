@@ -31,6 +31,10 @@
     <updateLog>
       <str name="dir">${solr.core0.data.dir:}</str>
     </updateLog>
+    <autoCommit>
+       <maxDocs>20000</maxDocs>
+       <openSearcher>false</openSearcher>
+    </autoCommit>
   </updateHandler>
 
   <!-- NOTE:  these 2 lib dirs are here for testing only and do NOT go in the prod file -->
@@ -40,6 +44,152 @@
   <dataDir>${solr.data.dir:}</dataDir>
 
   <jmx />
+
+  <query>
+    <filterCache class="solr.FastLRUCache" size="50000" initialSize="12500" autowarmCount="48" cleanupThread="true"/>
+    <queryResultCache class="solr.LRUCache" size="102400" initialSize="8192" autowarmCount="1024"/>
+    <documentCache class="solr.LRUCache" size="40960" initialSize="8192" autowarmCount="0"/>
+    <queryResultWindowSize>80</queryResultWindowSize>
+    <queryResultMaxDocsCached>100</queryResultMaxDocsCached>
+    <useColdSearcher>true</useColdSearcher>
+    <maxWarmingSearchers>4</maxWarmingSearchers>
+
+    <!-- a newSearcher event is fired whenever a new searcher is being prepared
+         and there is a current searcher handling requests (aka registered).
+         It should only have the most common facets -->
+    <listener event="newSearcher" class="solr.QuerySenderListener">
+      <arr name="queries">
+        <!-- facets for default query for all objects -->
+        <lst>
+          <int name="rows">0</int>
+          <str name="fl">score</str>
+          <bool name="facet">true</bool>
+          <int name="facet.mincount">1</int>
+          <int name="facet.limit">30</int>
+          <str name="facet.field">access_facet</str>
+            <str name="f.access_facet.facet.method">enum</str>
+          <str name="facet.field">author_person_facet</str>
+          <str name="facet.field">author_other_facet</str>
+          <str name="facet.field">building_facet</str>
+            <str name="f.building_facet.facet.method">enum</str>
+          <str name="facet.field">callnum_facet_hsim</str>
+            <str name="f.callnum_facet_hsim.facet.sort">index</str>
+            <str name="f.callnum_facet_hsim.facet.method">enum</str>
+          <str name="facet.field">stanford_work_facet_hsim</str>
+            <str name="f.stanford_work_facet_hsim.facet.sort">index</str>
+            <str name="f.stanford_work_facet_hsim.facet.method">enum</str>
+          <str name="facet.field">stanford_dept_sim</str>
+          <str name="facet.field">collection</str>
+            <str name="f.collection.facet.method">enum</str>
+          <str name="facet.field">db_az_subject</str>
+            <str name="f.db_az_subject.facet.sort">index</str>
+            <str name="f.db_az_subject.facet.method">enum</str>
+          <!-- display_type can be removed after all DOR objects and MARC records are reindexed in Feb/March 2016 -->
+          <str name="facet.field">display_type</str>
+            <str name="f.display_type.facet.method">enum</str>
+          <str name="facet.field">era_facet</str>
+          <str name="facet.field">format_main_ssim</str>
+            <str name="f.format_main_ssim.facet.method">enum</str>
+            <str name="f.format_main_ssim.facet.method">enum</str>
+          <str name="facet.field">format_physical_ssim</str>
+            <str name="f.format_physical_ssim.facet.method">enum</str>
+          <str name="facet.field">fund_facet</str>
+          <str name="facet.field">genre_ssim</str>
+            <str name="f.genre_ssim.facet.method">enum</str>
+          <str name="facet.field">geographic_facet</str>
+          <str name="facet.field">language</str>
+          <str name="facet.field">location_facet</str>
+          <str name="facet.field">pub_year_tisim</str>
+          <str name="facet.field">topic_facet</str>
+        </lst>
+        <!-- single object query to populate filter and fieldValue cache -->
+        <lst>
+          <str name="q">id:666</str>
+          <str name="qt">standard</str>
+          <int name="rows">0</int>
+          <str name="fl">score</str>
+          <bool name="facet">true</bool>
+          <int name="facet.mincount">1</int>
+          <int name="facet.limit">30</int>
+          <str name="facet.field">access_facet</str>
+            <str name="f.access_facet.facet.method">enum</str>
+          <str name="facet.field">author_person_facet</str>
+          <str name="facet.field">author_other_facet</str>
+          <str name="facet.field">building_facet</str>
+            <str name="f.building_facet.facet.method">enum</str>
+          <str name="facet.field">callnum_facet_hsim</str>
+            <str name="f.callnum_facet_hsim.facet.sort">index</str>
+            <str name="f.callnum_facet_hsim.facet.method">enum</str>
+          <str name="facet.field">stanford_work_facet_hsim</str>
+            <str name="f.stanford_work_facet_hsim.facet.sort">index</str>
+            <str name="f.stanford_work_facet_hsim.facet.method">enum</str>
+          <str name="facet.field">stanford_dept_sim</str>
+          <str name="facet.field">collection</str>
+            <str name="f.collection.facet.method">enum</str>
+          <str name="facet.field">db_az_subject</str>
+            <str name="f.db_az_subject.facet.sort">index</str>
+            <str name="f.db_az_subject.facet.method">enum</str>
+          <!-- display_type can be removed after all DOR objects and MARC records are reindexed in Feb/March 2016 -->
+          <str name="facet.field">display_type</str>
+            <str name="f.display_type.facet.method">enum</str>
+          <str name="facet.field">era_facet</str>
+          <str name="facet.field">format_main_ssim</str>
+            <str name="f.format_main_ssim.facet.method">enum</str>
+          <str name="facet.field">format_physical_ssim</str>
+            <str name="f.format_physical_ssim.facet.method">enum</str>
+          <str name="facet.field">fund_facet</str>
+          <str name="facet.field">genre_ssim</str>
+            <str name="f.genre_ssim.facet.method">enum</str>
+          <str name="facet.field">geographic_facet</str>
+          <str name="facet.field">language</str>
+          <str name="facet.field">location_facet</str>
+          <str name="facet.field">pub_year_tisim</str>
+          <str name="facet.field">topic_facet</str>
+        </lst>
+      </arr>
+    </listener>
+
+    <!-- a firstSearcher event is fired whenever a new searcher is being
+         prepared but there is no current registered searcher to handle
+         requests or to gain autowarming data from. ("fast warmup") -->
+    <listener event="firstSearcher" class="solr.QuerySenderListener">
+      <arr name="queries">
+        <!-- facets for default query for all objects (home page) -->
+        <lst>
+          <int name="rows">0</int>
+          <str name="fl">score</str>
+          <bool name="facet">true</bool>
+          <int name="facet.mincount">1</int>
+          <int name="facet.limit">30</int>
+          <str name="facet.field">access_facet</str>
+            <str name="f.access_facet.facet.method">enum</str>
+          <str name="facet.field">building_facet</str>
+            <str name="f.building_facet.facet.method">enum</str>
+          <str name="facet.field">format_main_ssim</str>
+            <str name="f.format_main_ssim.facet.method">enum</str>
+          <str name="facet.field">language</str>
+        </lst>
+        <!-- single object query to populate filter and fieldValue cache -->
+        <lst>
+          <str name="q">id:666</str>
+          <str name="qt">standard</str>
+          <int name="rows">0</int>
+          <str name="fl">score</str>
+          <bool name="facet">true</bool>
+          <int name="facet.mincount">1</int>
+          <int name="facet.limit">30</int>
+          <str name="facet.field">access_facet</str>
+            <str name="f.access_facet.facet.method">enum</str>
+          <str name="facet.field">building_facet</str>
+            <str name="f.building_facet.facet.method">enum</str>
+          <str name="facet.field">format_main_ssim</str>
+            <str name="f.format_main_ssim.facet.method">enum</str>
+          <str name="facet.field">language</str>
+        </lst>
+        <!-- should there be warming for different sorts? -->
+      </arr>
+    </listener>
+  </query>
 
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
   <!-- realtime get handler, guaranteed to return the latest stored fields
