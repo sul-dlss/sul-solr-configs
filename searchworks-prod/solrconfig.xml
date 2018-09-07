@@ -974,6 +974,7 @@
         <str name="f.pub_year_tisim.facet.method">uif</str>
       <str name="facet.field">topic_facet</str>
         <str name="f.topic_facet.facet.method">uif</str>
+      <int name="f.format.facet.limit">0</int>
 
       <str name="fl">
         score,
