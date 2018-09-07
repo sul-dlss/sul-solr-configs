@@ -67,6 +67,7 @@
           <bool name="facet">true</bool>
           <int name="facet.mincount">1</int>
           <int name="facet.limit">30</int>
+          <str name="facet.method">uif</str>
           <str name="facet.field">access_facet</str>
             <str name="f.access_facet.facet.method">enum</str>
           <str name="facet.field">author_person_facet</str>
@@ -930,6 +931,7 @@
       <int name="facet.mincount">1</int>
       <int name="facet.limit">21</int>
       <int name="facet.threads">4</int>
+      <str name="facet.method">uif</str>
       <str name="facet.field">access_facet</str>
         <str name="f.access_facet.facet.method">enum</str>
       <str name="facet.field">author_person_facet</str>
