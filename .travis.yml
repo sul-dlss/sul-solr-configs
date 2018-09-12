@@ -10,7 +10,3 @@ language: ruby
 jdk:
   - oraclejdk8
 
-matrix:
-  include:
-    - env: ""
-    - env: "SOLR_VERSION=6.6.1"
