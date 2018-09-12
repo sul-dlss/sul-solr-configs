@@ -604,8 +604,8 @@
 
 
       <str name="qf_title">
-        title_245a_exact_search^350
-        title_245a_unstem_search^100
+        title_245a_exact_search^380
+        title_245a_unstem_search^130
         title_245a_search^75           vern_title_245a_search^75
         title_245_unstem_search^75
         title_245_search^50            vern_title_245_search^50
