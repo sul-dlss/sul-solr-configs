@@ -29,7 +29,7 @@
 
   </updateHandler>
 
-  <jmx />
+  
 
   <requestHandler name="search" class="solr.SearchHandler" default="true">
     <!-- default values for query parameters can be specified, these

@@ -57,7 +57,7 @@
 
   </indexConfig>
 
-  <jmx />
+  
 
   <updateHandler class="solr.DirectUpdateHandler2">
 

@@ -24,10 +24,6 @@ describe 'solrconfig.xml' do
       end
     end
 
-    it 'has jmx defined' do
-      expect(subject.xpath('/config/jmx')).not_to be_empty
-    end
-
     it 'has a luceneMatchVersion on or after 5.x' do
       version = subject.xpath('/config/luceneMatchVersion').text
       expect(version).not_to be_empty

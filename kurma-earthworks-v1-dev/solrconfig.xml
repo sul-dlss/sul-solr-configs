@@ -38,7 +38,7 @@
     </autoCommit>
   </updateHandler>
 
-  <jmx />
+  
 
   <!-- Required for Solr Cloud on sul-solr -->
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />

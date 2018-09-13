@@ -10,7 +10,7 @@
   <luceneMatchVersion>6.6.0</luceneMatchVersion>
 
   
-  <jmx />
+  
 
   <!-- the default high-performance update handler -->
   <updateHandler class="solr.DirectUpdateHandler2">
