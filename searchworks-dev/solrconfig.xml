@@ -43,7 +43,9 @@
 
   <dataDir>${solr.data.dir:}</dataDir>
 
-  <jmx />
+  <metrics>
+    <reporter name="defaultJmx" class="org.apache.solr.metrics.reporters.SolrJmxReporter"/>
+  </metrics>
 
   <query>
     <filterCache class="solr.FastLRUCache" size="50000" initialSize="12500" autowarmCount="48" cleanupThread="true"/>

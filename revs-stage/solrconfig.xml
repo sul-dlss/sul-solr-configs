@@ -44,7 +44,9 @@
     </autoSoftCommit>
   </updateHandler>
 
-  <jmx />
+  <metrics>
+    <reporter name="defaultJmx" class="org.apache.solr.metrics.reporters.SolrJmxReporter"/>
+  </metrics>
 
   <!-- realtime get handler, guaranteed to return the latest stored fields
     of any document, without the need to commit or open a new searcher. The current

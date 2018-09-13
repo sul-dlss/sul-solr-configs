@@ -57,7 +57,9 @@
 
   </indexConfig>
 
-  <jmx />
+  <metrics>
+    <reporter name="defaultJmx" class="org.apache.solr.metrics.reporters.SolrJmxReporter"/>
+  </metrics>
 
   <updateHandler class="solr.DirectUpdateHandler2">
 

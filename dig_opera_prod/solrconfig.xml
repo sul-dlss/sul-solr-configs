@@ -72,7 +72,9 @@
     </updateLog>
     </updateHandler>
 
-    <jmx />
+    <metrics>
+    <reporter name="defaultJmx" class="org.apache.solr.metrics.reporters.SolrJmxReporter"/>
+  </metrics>
 
     
     
