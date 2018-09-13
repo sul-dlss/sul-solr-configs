@@ -33,7 +33,7 @@
     </updateLog>
   </updateHandler>
 
-  <jmx />
+  
 
   <dataDir>${solr.data.dir:}</dataDir>
 

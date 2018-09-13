@@ -12,7 +12,7 @@
     </updateLog>
   </updateHandler>
 
-  <jmx />
+  
 
 
   <!-- realtime get handler, guaranteed to return the latest stored fields 

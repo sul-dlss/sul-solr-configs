@@ -43,7 +43,7 @@
 
   <dataDir>${solr.data.dir:}</dataDir>
 
-  <jmx />
+
 
   <query>
     <filterCache class="solr.FastLRUCache" size="50000" initialSize="12500" autowarmCount="48" cleanupThread="true"/>
