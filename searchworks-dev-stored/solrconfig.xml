@@ -39,7 +39,9 @@
 
   <dataDir>${solr.data.dir:}</dataDir>
 
-  <jmx />
+  <metrics>
+    <reporter name="defaultJmx" class="org.apache.solr.metrics.reporters.SolrJmxReporter"/>
+  </metrics>
 
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
   <!-- realtime get handler, guaranteed to return the latest stored fields

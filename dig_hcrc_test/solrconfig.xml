@@ -80,7 +80,9 @@
       <str name="dir">${solr.data.dir:}</str>
     </updateLog>
     </updateHandler>
-    <jmx />
+    <metrics>
+    <reporter name="defaultJmx" class="org.apache.solr.metrics.reporters.SolrJmxReporter"/>
+  </metrics>
     <requestHandler name="/get" class="solr.RealTimeGetHandler">
       <lst name="defaults">
         <str name="omitHeader">true</str>
