@@ -523,7 +523,6 @@
         <tokenizer class="solr.ICUTokenizerFactory" />
         <filter class="solr.CJKWidthFilterFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/>   <!-- NFKC, case folding, diacritics removed -->
-        <filter class="solr.CJKBigramFilterFactory" han="false" hiragana="false" katakana="false" hangul="true" outputUnigrams="true" />
       </analyzer>
     </fieldtype>
 
@@ -607,6 +606,10 @@
     <!-- Korean morphological analysis -->
     <fieldType name="text_ko" class="solr.TextField" positionIncrementGap="100">
       <analyzer>
+      <!-- only select strings that contain some Hangul; this is a really poor attempt at only parsing Korean text, and preferably we could identify it during indexing instead;
+          fortunately, for our current purposes, strings with hangul are the ones we're particularly concerned with and the cjk_* fields will do well enough with Kanji-only values
+      -->
+      <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^(.*[\p{InHangul_Jamo}\p{InHangul_Compatibility_Jamo}\p{InHangul_Syllables}].*)|(.*)$" replacement="$1"/>
         <!-- Nori Korean morphological analyzer/tokenizer (KoreanTokenizer)
           The Korean (nori) analyzer integrates Lucene nori analysis module into Solr.
           It uses the mecab-ko-dic dictionary to perform morphological analysis of Korean texts.
