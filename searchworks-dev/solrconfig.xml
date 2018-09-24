@@ -67,10 +67,11 @@
           <bool name="facet">true</bool>
           <int name="facet.mincount">1</int>
           <int name="facet.limit">30</int>
-          <int name="facet.threads">4</int>
+          <str name="facet.method">uif</str>
           <str name="facet.field">access_facet</str>
             <str name="f.access_facet.facet.method">enum</str>
           <str name="facet.field">author_person_facet</str>
+            <str name="f.author_person_facet.facet.method">uif</str>
           <str name="facet.field">author_other_facet</str>
           <str name="facet.field">building_facet</str>
             <str name="f.building_facet.facet.method">enum</str>
@@ -135,18 +136,25 @@
           <str name="facet.field">display_type</str>
             <str name="f.display_type.facet.method">enum</str>
           <str name="facet.field">era_facet</str>
+            <str name="f.era_facet.facet.method">uif</str>
           <str name="facet.field">format_main_ssim</str>
+            <int name="f.format_main_ssim.facet.limit">-1</int>
             <str name="f.format_main_ssim.facet.method">enum</str>
           <str name="facet.field">format_physical_ssim</str>
+            <int name="f.format_physical_ssim.facet.limit">20</int>
             <str name="f.format_physical_ssim.facet.method">enum</str>
           <str name="facet.field">fund_facet</str>
           <str name="facet.field">genre_ssim</str>
             <str name="f.genre_ssim.facet.method">enum</str>
           <str name="facet.field">geographic_facet</str>
           <str name="facet.field">language</str>
+            <str name="f.language.facet.method">uif</str>
           <str name="facet.field">location_facet</str>
+          <str name="facet.field">pub_date</str>
           <str name="facet.field">pub_year_tisim</str>
+            <str name="f.pub_year_tisim.facet.method">uif</str>
           <str name="facet.field">topic_facet</str>
+            <str name="f.topic_facet.facet.method">uif</str>
         </lst>
       </arr>
     </listener>
@@ -249,6 +257,7 @@
       <!-- in case lucene query parser -->
       <str name="df">all_search</str>
       <str name="q.op">AND</str>
+      <str name="sow">true</str>
 
       <str name="qf">
         title_245a_exact_search^1000
@@ -595,8 +604,8 @@
 
 
       <str name="qf_title">
-        title_245a_exact_search^350
-        title_245a_unstem_search^100
+        title_245a_exact_search^380
+        title_245a_unstem_search^130
         title_245a_search^75           vern_title_245a_search^75
         title_245_unstem_search^75
         title_245_search^50            vern_title_245_search^50
@@ -922,9 +931,12 @@
       <bool name="facet">true</bool>
       <int name="facet.mincount">1</int>
       <int name="facet.limit">21</int>
+      <int name="facet.threads">4</int>
+      <str name="facet.method">uif</str>
       <str name="facet.field">access_facet</str>
         <str name="f.access_facet.facet.method">enum</str>
       <str name="facet.field">author_person_facet</str>
+        <str name="f.author_person_facet.facet.method">uif</str>
       <str name="facet.field">author_other_facet</str>
       <str name="facet.field">building_facet</str>
         <str name="f.building_facet.facet.method">enum</str>
@@ -944,23 +956,26 @@
         <str name="f.db_az_subject.facet.method">enum</str>
         <str name="f.db_az_subject.facet.sort">index</str>
       <str name="facet.field">era_facet</str>
+        <str name="f.era_facet.facet.method">uif</str>
       <str name="facet.field">format_main_ssim</str>
         <int name="f.format_main_ssim.facet.limit">-1</int>
         <str name="f.format_main_ssim.facet.method">enum</str>
       <str name="facet.field">format_physical_ssim</str>
         <int name="f.format_physical_ssim.facet.limit">20</int>
         <str name="f.format_physical_ssim.facet.method">enum</str>
-      <str name="facet.field">format</str> <!-- deprecated: left for continuity in UI URLs for old formats -->
-        <str name="f.format.facet.method">enum</str>
       <str name="facet.field">fund_facet</str>
       <str name="facet.field">genre_ssim</str>
         <str name="f.genre_ssim.facet.method">enum</str>
       <str name="facet.field">geographic_facet</str>
       <str name="facet.field">language</str>
+        <str name="f.language.facet.method">uif</str>
       <str name="facet.field">location_facet</str>
       <str name="facet.field">pub_date</str>
       <str name="facet.field">pub_year_tisim</str>
+        <str name="f.pub_year_tisim.facet.method">uif</str>
       <str name="facet.field">topic_facet</str>
+        <str name="f.topic_facet.facet.method">uif</str>
+      <int name="f.format.facet.limit">0</int>
 
       <str name="fl">
         score,
