@@ -33,9 +33,17 @@
     </updateLog>
     <autoCommit>
        <maxDocs>20000</maxDocs>
+       <maxTime>15000</maxTime>
        <openSearcher>false</openSearcher>
     </autoCommit>
+    <autoSoftCommit>
+      <maxTime>900000</maxTime>
+    </autoSoftCommit>
+    <commitWithin>
+      <softCommit>false</softCommit>
+    </commitWithin>
   </updateHandler>
+
 
   <!-- NOTE:  these 2 lib dirs are here for testing only and do NOT go in the prod file -->
   <lib dir="${solr.install.dir:../../../..}/contrib/analysis-extras/lib" />
