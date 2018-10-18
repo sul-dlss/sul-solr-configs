@@ -1034,6 +1034,7 @@
         url_suppl,
         url_sfx,
         managed_purl_urls,
+        characteristics_ssim,
         author_struct:[json],
         marc_links_struct:[json],
         summary_struct:[json],
