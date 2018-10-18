@@ -1041,7 +1041,12 @@
         url_restricted,
         url_suppl,
         url_sfx,
-        managed_purl_urls
+        managed_purl_urls,
+        author_struct:[json],
+        marc_links_struct:[json],
+        summary_struct:[json],
+        toc_struct:[json],
+        uniform_title_display_struct:[json]
       </str>
     </lst>
   </requestHandler>
