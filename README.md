@@ -12,24 +12,26 @@ If you want to add or update configurations, you should send a pull request (tag
 
 [Example pull request](https://github.com/sul-dlss/sul-solr-configs/pull/1)
 
-Once the pull request is merged, pull the changes into the deployed repository, and push them to the Zookeeper cluster:
+Once the pull request is merged, pull the changes into the deployed repository, push them to the Zookeeper cluster, and have solr update or create the collection. There is a script located at `sul-solr-a:/home/lyberadmin/bin/upconfig` that will perform these steps, or you can:
 
 ```
 $ git pull
 $ /usr/share/java/solr/server/scripts/cloud-scripts/zkcli.sh -zkhost <zkhost_here>:2181 -cmd upconfig -confname <collectionname_here> -confdir <repo_dirname_here>
 ```
 
-Finally, create or reload the relevant solr collection by issuing an HTTP request:
+then
 
 ```
-https://<solr_server>/solr/admin/collections?action=CREATE&name=<collectionname_here>&numShards=1&replicationFactor=3
+$ curl "https://<solr_server>/solr/admin/collections?action=CREATE&name=<collectionname_here>&numShards=1&replicationFactor=3"
 ```
 
 or
 
 ```
-https://<solr_server>/solr/admin/collections?action=RELOAD&name=<collectionname_here>
+$ curl "https://<solr_server>/solr/admin/collections?action=RELOAD&name=<collectionname_here>""
 ```
+
+If you find that changes haven't propagated to the collection, check to see whether the `schema.xml` of the collection matches the `managed-schema`. In one case, before re-running the above process, reconciling the two with a `cp schema.xml managed-schema` propagated the changes.
 
 ## Testing configurations
 
