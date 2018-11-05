@@ -1006,6 +1006,7 @@
         format_main_ssim,
         format_physical_ssim,
         genre_ssim,
+        iiif_manifest_url_ssim,
         imprint_display,
         isbn_display,
         item_display,
