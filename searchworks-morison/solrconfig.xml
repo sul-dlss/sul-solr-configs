@@ -1056,7 +1056,14 @@
   <requestHandler name="document" class="solr.SearchHandler" >
     <lst name="defaults">
       <str name="echoParams">explicit</str>
-      <str name="fl">*</str>
+      <str name="fl">
+        *,
+        author_struct:[json],
+        marc_links_struct:[json],
+        summary_struct:[json],
+        toc_struct:[json],
+        uniform_title_display_struct:[json]
+      </str>
       <int name="rows">1</int>
       <str name="q">{!raw f=id v=$id}</str> <!-- use id=666 instead of q=id:666 -->
     </lst>
