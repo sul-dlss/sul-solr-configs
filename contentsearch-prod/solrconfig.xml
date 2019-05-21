@@ -21,10 +21,11 @@
   <lib dir="${solr.install.dir:../../../..}/contrib/analysis-extras/lucene-libs" />
   <lib dir="${solr.install.dir:../../../..}/contrib" regex="solr-tokenizing_suggester-\d.*\.jar" />
   <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-tokenizing_suggester-\d.*\.jar" />
+  <lib dir="${solr.install.dir:../../../..}/plugins/" regex="tokenizing-suggest.*\.jar" />
 
   <dataDir>${solr.data.dir:}</dataDir>
 
-  
+
 
   <requestHandler name="search" class="solr.SearchHandler" default="true">
     <!-- default values for query parameters can be specified, these
