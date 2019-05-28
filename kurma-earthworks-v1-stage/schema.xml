@@ -130,6 +130,7 @@
         <filter class="solr.StandardFilterFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+        <filter class="solr.LengthFilterFactory" min="2" max="255"/>
       </analyzer>
     </fieldType>
 
