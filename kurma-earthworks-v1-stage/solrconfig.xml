@@ -146,6 +146,7 @@
       <str name="facet.field">solr_year_i</str>
 
       <str name="spellcheck">true</str>
+      <bool name="lowercaseOperators">true</bool>
     </lst>
 
     <arr name="last-components">

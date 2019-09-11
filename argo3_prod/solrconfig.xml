@@ -18,7 +18,7 @@
     </updateLog>
   </updateHandler>
 
-  
+
 
   <!-- Used by reports via queries that pass qt=search -->
   <requestHandler name="search" class="solr.SearchHandler" default="true">
@@ -70,6 +70,7 @@
       <str name="spellcheck.extendedResults">true</str>
       <str name="spellcheck.collate">false</str>
       <str name="spellcheck.count">5</str>
+      <bool name="lowercaseOperators">true</bool>
     </lst>
     <arr name="last-components">
       <str>spellcheck</str>
