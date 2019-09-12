@@ -47,7 +47,7 @@
        that you fully re-index after changing this setting as it can
        affect both how text is indexed and queried.
     -->
-  <luceneMatchVersion>6.6.0</luceneMatchVersion>
+  <luceneMatchVersion>7.7.2</luceneMatchVersion>
 
   <!-- lib directives can be used to instruct Solr to load an Jars
        identified and use them to resolve any "plugins" specified in
@@ -269,7 +269,7 @@
 
        For more details see http://wiki.apache.org/solr/SolrJmx
     -->
-  
+
   <!-- If you want to connect to a particular server, specify the
        agentId
     -->
@@ -859,6 +859,7 @@
       <str name="spellcheck.extendedResults">false</str>
       <!--  The number of suggestions to return -->
       <str name="spellcheck.count">1</str>
+      <bool name="lowercaseOperators">true</bool>
     </lst>
     <arr name="last-components">
       <str>spellcheck</str>

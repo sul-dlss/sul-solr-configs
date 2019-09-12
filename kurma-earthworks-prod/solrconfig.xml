@@ -20,7 +20,7 @@
      this file, see http://wiki.apache.org/solr/SolrConfigXml.
 -->
 <config>
-  <luceneMatchVersion>6.6.0</luceneMatchVersion>
+  <luceneMatchVersion>7.7.2</luceneMatchVersion>
   <dataDir>${solr.data.dir:}</dataDir>
   <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.NRTCachingDirectoryFactory}"/>
   <codecFactory class="solr.SchemaCodecFactory"/>
@@ -152,6 +152,7 @@
       <str name="facet.field">solr_year_i</str>
 
       <str name="spellcheck">true</str>
+      <bool name="lowercaseOperators">true</bool>
     </lst>
 
     <arr name="last-components">
