@@ -1050,7 +1050,6 @@
         uniform_title_display_struct:[json],
         schema_dot_org_struct:[json]
       </str>
-      <bool name="lowercaseOperators">true</bool>
     </lst>
   </requestHandler>
 
