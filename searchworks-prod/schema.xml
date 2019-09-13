@@ -269,6 +269,7 @@
     <dynamicField name="cjk_*" type="text_cjk" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="cjk_exact_search_*" type="text_cjk_anchored" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="ja_*" type="text_ja" indexed="true" stored="true" multiValued="true" />
+    <dynamicField name="ko_*" type="text_ko" indexed="true" stored="true" multiValued="true" />
     <dynamicField name="*_hsim" type="string_hierarch" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="*_struct" type="string" stored="true" indexed="false" multiValued="true" omitNorms="true" />
     <dynamicField name="*_dtsi" type="date" stored="true" indexed="false" omitNorms="true" />
@@ -370,6 +371,32 @@
   <copyField source="summary_search" dest="ja_summary_search" />  <!-- we find CJK text in regular 520s -->
   <copyField source="vern_summary_search" dest="ja_summary_search" />
   <copyField source="vern_all_search" dest="ja_all_search" />
+
+  <!-- Korean fields -->
+  <copyField source="vern_title_245a_search" dest="ko_title_245a_search" />
+  <copyField source="vern_title_245_search" dest="ko_title_245_search" />
+  <copyField source="vern_title_uniform_search" dest="ko_title_uniform_search" />
+  <copyField source="vern_title_variant_search" dest="ko_title_variant_search" />
+  <copyField source="vern_title_related_search" dest="ko_title_related_search" />
+  <copyField source="vern_series_search" dest="ko_series_search" />
+  <copyField source="vern_author_1xx_search" dest="ko_author_1xx_search" />
+  <copyField source="vern_author_7xx_search" dest="ko_author_7xx_search" />
+  <copyField source="vern_author_8xx_search" dest="ko_author_8xx_search" />
+  <copyField source="vern_topic_search" dest="ko_topic_search" />
+  <copyField source="vern_topic_subx_search" dest="ko_topic_subx_search" />
+  <copyField source="vern_geographic_search" dest="ko_geographic_search" />
+  <copyField source="vern_geographic_subz_search" dest="ko_geographic_subz_search" />
+  <copyField source="vern_subject_other_search" dest="ko_subject_other_search" />
+  <copyField source="vern_subject_other_subvy_search" dest="ko_subject_other_subvy_search" />
+  <copyField source="vern_subject_all_search" dest="ko_subject_all_search" />
+  <copyField source="vern_pub_search" dest="ko_pub_search" />
+  <copyField source="vern_physical" dest="ko_physical_search" />
+  <copyField source="toc_search" dest="ko_toc_search" />  <!-- we find CJK text in regular 505s -->
+  <copyField source="vern_toc_search" dest="ko_toc_search" />
+  <copyField source="vern_context_search" dest="ko_context_search" />
+  <copyField source="summary_search" dest="ko_summary_search" />  <!-- we find CJK text in regular 520s -->
+  <copyField source="vern_summary_search" dest="ko_summary_search" />
+  <copyField source="vern_all_search" dest="ko_all_search" />
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
@@ -575,6 +602,20 @@
         <filter class="solr.JapaneseKatakanaStemFilterFactory" minimumLength="4"/>
         <!-- Lower-cases romaji characters -->
         <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
+    <fieldType name="text_ko" class="solr.TextField" positionIncrementGap="100" autoGeneratePhraseQueries="false">
+      <analyzer>
+        <!-- only select strings that contain some hangul; this is a really poor attempt at only parsing Korean text, and preferably we could identify it during indexing instead;
+            fortunately, for our current purposes, strings with hangul are the ones we're particularly concerned with and the cjk_* fields will do well enough with other values
+        -->
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^(.*[\p{InHangul_Jamo}\p{InHangul_Compatibility_Jamo}\p{InHangul_Syllables}].*)|(.*)$" replacement="$1"/>
+        <tokenizer class="solr.KoreanTokenizerFactory" outputUnknownUnigrams="true" />
+        <!-- removes some part of speech stuff like EOMI (Pos.E) -->
+        <filter class="solr.KoreanPartOfSpeechStopFilterFactory" />
+        <!-- Replaces term text with the Hangul transcription of Hanja characters, if applicable: -->
+        <filter class="solr.KoreanReadingFormFilterFactory" />
       </analyzer>
     </fieldType>
 
