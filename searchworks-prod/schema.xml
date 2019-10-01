@@ -287,6 +287,7 @@
   <copyField source="title_uniform_search" dest="title_uniform_unstem_search" />
   <copyField source="title_variant_search" dest="title_variant_unstem_search" />
   <copyField source="title_related_search" dest="title_related_unstem_search" />
+  <copyField source="author_title_search" dest="author_title_unstem_search" />
   <!-- unstemmed search fields: author -->
   <copyField source="author_1xx_search" dest="author_1xx_unstem_search" />
   <copyField source="author_7xx_search" dest="author_7xx_unstem_search" />

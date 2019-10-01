@@ -283,6 +283,9 @@
         series_unstem_search^5
         series_search^2                vern_series_search^2
 
+        author_title_unstem_search^25
+        author_title_search^10
+
         author_1xx_unstem_search^25
         author_1xx_search^20           vern_author_1xx_search^20
         author_7xx_unstem_search^20
@@ -342,6 +345,9 @@
         series_unstem_search^25
         series_search^10               vern_series_search^10
 
+        author_title_unstem_search^150
+        author_title_search^100
+
         author_1xx_unstem_search^125
         author_1xx_search^100          vern_author_1xx_search^100
         author_7xx_unstem_search^100
@@ -388,6 +394,9 @@
         title_related_search^45        vern_title_related_search^45
         series_search^30               vern_series_search^30
 
+        author_title_unstem_search^150
+        author_title_search^100
+
         author_1xx_search^75           vern_author_1xx_search^75
         author_7xx_search^60           vern_author_7xx_search^60
         author_8xx_search^30           vern_author_8xx_search^30
@@ -416,6 +425,9 @@
         title_variant_search^40        vern_title_variant_search^40
         title_related_search^30        vern_title_related_search^30
         series_search^20               vern_series_search^20
+
+        author_title_unstem_search^150
+        author_title_search^100
 
         author_1xx_search^50           vern_author_1xx_search^50
         author_7xx_search^40           vern_author_7xx_search^40
@@ -454,6 +466,9 @@
         series_exact_search^10
         series_unstem_search^5
         series_search^2                vern_series_search^2                cjk_series_search^2                 ja_series_search^2
+
+        author_title_unstem_search^150
+        author_title_search^100
 
         author_1xx_unstem_search^25
         author_1xx_search^20           vern_author_1xx_search^20           cjk_author_1xx_search^20            ja_author_1xx_search^20
@@ -513,6 +528,9 @@
         series_unstem_search^25
         series_search^10               vern_series_search^10               cjk_series_search^10                ja_series_search^10
 
+        author_title_unstem_search^150
+        author_title_search^100
+
         author_1xx_unstem_search^125
         author_1xx_search^100          vern_author_1xx_search^100          cjk_author_1xx_search^100           ja_author_1xx_search^100
         author_7xx_unstem_search^100
@@ -559,6 +577,9 @@
         title_related_search^45        vern_title_related_search^45        cjk_title_related_search^45         ja_title_related_search^45
         series_search^30               vern_series_search^30               cjk_series_search^30                ja_series_search^30
 
+        author_title_unstem_search^150
+        author_title_search^100
+
         author_1xx_search^75           vern_author_1xx_search^75           cjk_author_1xx_search^75            ja_author_1xx_search^75
         author_7xx_search^60           vern_author_7xx_search^60           cjk_author_7xx_search^60            ja_author_7xx_search^60
         author_8xx_search^30           vern_author_8xx_search^30           cjk_author_8xx_search^30            ja_author_8xx_search^30
@@ -587,6 +608,9 @@
         title_variant_search^40        vern_title_variant_search^40        cjk_title_variant_search^40         ja_title_variant_search^40
         title_related_search^30        vern_title_related_search^30        cjk_title_related_search^30         ja_title_related_search^30
         series_search^20               vern_series_search^20               cjk_series_search^20                ja_series_search^20
+
+        author_title_unstem_search^150
+        author_title_search^100
 
         author_1xx_search^50           vern_author_1xx_search^50           cjk_author_1xx_search^50            ja_author_1xx_search^50
         author_7xx_search^40           vern_author_7xx_search^40           cjk_author_7xx_search^40            ja_author_7xx_search^40
