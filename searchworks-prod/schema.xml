@@ -17,6 +17,10 @@
     <field name="all_unstem_search" type="textNoStem" indexed="true" stored="true" />
     <field name="vern_all_search" type="text" indexed="true" stored="true" />
 
+    <field name="bib_search" type="text" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <field name="bib_unstem_search" type="textNoStem" indexed="true" stored="true" />
+    <field name="vern_bib_search" type="text" indexed="true" stored="true" />
+
     <!-- Format Field: facet and display
       (deprecated in favor of format_main_ssim, left for continuity in UI URLs for old formats) -->
     <field name="format" type="string" indexed="true" stored="true" multiValued="true" />
@@ -307,6 +311,7 @@
   <!--  other unstemmed search fields -->
   <copyField source="series_search" dest="series_unstem_search" />
   <copyField source="all_search" dest="all_unstem_search" />
+  <copyField source="bib_search" dest="bib_unstem_search" />
 
   <!-- course reserve fields -->
   <copyField source="crez_instructor_search" dest="instructor" />
@@ -346,6 +351,7 @@
   <copyField source="summary_search" dest="cjk_summary_search" />  <!-- we find CJK text in regular 520s -->
   <copyField source="vern_summary_search" dest="cjk_summary_search" />
   <copyField source="vern_all_search" dest="cjk_all_search" />
+  <copyField source="vern_bib_search" dest="cjk_bib_search" />
 
   <!-- Japanese fields -->
   <copyField source="vern_title_245a_search" dest="ja_title_245a_search" />
@@ -372,6 +378,7 @@
   <copyField source="summary_search" dest="ja_summary_search" />  <!-- we find CJK text in regular 520s -->
   <copyField source="vern_summary_search" dest="ja_summary_search" />
   <copyField source="vern_all_search" dest="ja_all_search" />
+  <copyField source="vern_bib_search" dest="ja_bib_search" />
 
   <!-- Korean fields -->
   <copyField source="vern_title_245a_search" dest="ko_title_245a_search" />
@@ -398,6 +405,7 @@
   <copyField source="summary_search" dest="ko_summary_search" />  <!-- we find CJK text in regular 520s -->
   <copyField source="vern_summary_search" dest="ko_summary_search" />
   <copyField source="vern_all_search" dest="ko_all_search" />
+  <copyField source="vern_bib_search" dest="ko_bib_search" />
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
