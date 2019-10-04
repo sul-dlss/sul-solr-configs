@@ -80,6 +80,12 @@
     <field name="series_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
 
     <!-- Author Title Search Fields -->
+    <field name="author_title_245ac_search" type="text" indexed="true" stored="true" multiValued="true" />
+    <field name="author_title_245ac_unstem_search" type="text" indexed="true" stored="true" multiValued="true" />
+    <field name="vern_author_title_245ac_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="author_title_1xx_search" type="text" indexed="true" stored="true" multiValued="true" />
+    <field name="author_title_1xx_unstem_search" type="text" indexed="true" stored="true" multiValued="true" />
+    <field name="vern_author_title_1xx_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="author_title_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="author_title_unstem_search" type="text" indexed="true" stored="true" multiValued="true" />
 
@@ -293,6 +299,8 @@
   <copyField source="title_variant_search" dest="title_variant_unstem_search" />
   <copyField source="title_related_search" dest="title_related_unstem_search" />
   <copyField source="author_title_search" dest="author_title_unstem_search" />
+  <copyField source="author_title_245ac_search" dest="author_title_245ac_unstem_search" />
+  <copyField source="author_title_1xx_search" dest="author_title_1xx_unstem_search" />
   <!-- unstemmed search fields: author -->
   <copyField source="author_1xx_search" dest="author_1xx_unstem_search" />
   <copyField source="author_7xx_search" dest="author_7xx_unstem_search" />
@@ -353,6 +361,8 @@
   <copyField source="vern_summary_search" dest="cjk_summary_search" />
   <copyField source="vern_all_search" dest="cjk_all_search" />
   <copyField source="vern_bib_search" dest="cjk_bib_search" />
+  <copyField source="vern_author_title_245ac_search" dest="cjk_author_title_245ac_search" />
+  <copyfield source="vern_author_title_1xx_search" dest="cjk_vern_author_title_1xx_search" />
 
   <!-- Japanese fields -->
   <copyField source="vern_title_245a_search" dest="ja_title_245a_search" />
@@ -380,6 +390,8 @@
   <copyField source="vern_summary_search" dest="ja_summary_search" />
   <copyField source="vern_all_search" dest="ja_all_search" />
   <copyField source="vern_bib_search" dest="ja_bib_search" />
+  <copyField source="vern_author_title_245ac_search" dest="ja_author_title_245ac_search" />
+  <copyfield source="vern_author_title_1xx_search" dest="ja_vern_author_title_1xx_search" />
 
   <!-- Korean fields -->
   <copyField source="vern_title_245a_search" dest="ko_title_245a_search" />
@@ -407,6 +419,8 @@
   <copyField source="vern_summary_search" dest="ko_summary_search" />
   <copyField source="vern_all_search" dest="ko_all_search" />
   <copyField source="vern_bib_search" dest="ko_bib_search" />
+  <copyField source="vern_author_title_245ac_search" dest="ko_author_title_245ac_search" />
+  <copyfield source="vern_author_title_1xx_search" dest="ko_vern_author_title_1xx_search" />
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
