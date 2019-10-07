@@ -287,7 +287,7 @@
         author_title_245ac_unstem_search^250
         author_title_1xx_search^125
         author_title_245ac_search^100
-        author_title_unstem_search^25
+        author_title_unstem_search^50
         author_title_search^10
 
         author_1xx_unstem_search^25
@@ -351,12 +351,12 @@
         series_unstem_search^25
         series_search^10               vern_series_search^10
 
-        author_title_1xx_unstem_search^300
-        author_title_245ac_unstem_search^250
-        author_title_1xx_search^125
-        author_title_245ac_search^100
-        author_title_unstem_search^150
-        author_title_search^100
+        author_title_1xx_unstem_search^1000
+        author_title_245ac_unstem_search^500
+        author_title_1xx_search^300
+        author_title_245ac_search^270
+        author_title_unstem_search^250
+        author_title_search^101
 
         author_1xx_unstem_search^125
         author_1xx_search^100          vern_author_1xx_search^100
@@ -406,11 +406,11 @@
         title_related_search^45        vern_title_related_search^45
         series_search^30               vern_series_search^30
 
-        author_title_1xx_unstem_search^300
-        author_title_245ac_unstem_search^250
-        author_title_1xx_search^125
-        author_title_245ac_search^100
-        author_title_unstem_search^150
+        author_title_1xx_unstem_search^600
+        author_title_245ac_unstem_search^500
+        author_title_1xx_search^300
+        author_title_245ac_search^250
+        author_title_unstem_search^200
         author_title_search^100
 
         author_1xx_search^75           vern_author_1xx_search^75
