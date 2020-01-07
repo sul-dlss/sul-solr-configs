@@ -142,8 +142,8 @@
       <fieldType name="tlong" class="solr.TrieLongField" positionIncrementGap="0" docValues="true" precisionStep="8"/>
     </types>
     <fields>
-      <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
-      <field name="_version_" type="long" indexed="true" stored="false"/>
+      <field name="_root_" type="string" docValues="false" indexed="true" stored="true"/>
+      <field name="_version_" type="long" indexed="true" stored="true"/>
       <field name="body" type="string" multiValued="true" indexed="true" stored="true"/>
       <field name="canvas" type="string" multiValued="true" indexed="true" stored="true"/>
       <field name="created" type="date" multiValued="false" indexed="true" stored="true"/>
@@ -159,7 +159,7 @@
       <field name="text" type="stripHTML_en" multiValued="true" indexed="true" stored="true"/>
       <field name="type" type="string" multiValued="true" indexed="true" stored="true"/>
       <field name="within" type="string" multiValued="true" indexed="true" stored="true"/>
-      <dynamicField name="*_coordinate" type="tdouble" indexed="true" stored="false" useDocValuesAsStored="false"/>
+      <dynamicField name="*_coordinate" type="tdouble" indexed="true" stored="true" useDocValuesAsStored="false"/>
       <dynamicField name="ignored_*" type="ignored" multiValued="true"/>
       <dynamicField name="random_*" type="random"/>
       <dynamicField name="attr_*" type="text_general" multiValued="true" indexed="true" stored="true"/>

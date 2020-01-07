@@ -13,42 +13,42 @@
     <!-- the catch-all field for all text -->
     <field name="all_search" type="text" indexed="true" stored="false" multiValued="true" />
     <field name="all_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
-    
+
     <!-- Abstract -->
-    <field name="abstract_search" type="text" indexed="true" stored="false" />
+    <field name="abstract_search" type="text" indexed="true" stored="true" />
     <field name="abstract_unstem_search" type="textNoStem" indexed="true" stored="false" />
     <field name="abstract_display" type="string" indexed="false" stored="true" />
-    
+
     <!-- Access condition -->
-    <field name="access_condition_search" type="text" indexed="true" stored="false" />
+    <field name="access_condition_search" type="text" indexed="true" stored="true" />
     <field name="access_condition_unstem_search" type="textNoStem" indexed="true" stored="false" />
     <field name="access_condition_display" type="string" indexed="false" stored="true" />
-    
+
     <!-- Genre -->
-    <field name="genre_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="genre_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="genre_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="genre_display" type="string" indexed="false" stored="true" multiValued="true" />
     <field name="genre_facet" type="string" indexed="true" stored="false" multiValued="true" />
-    
+
     <!-- Type of resource -->
-    <field name="type_of_resource_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="type_of_resource_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="type_of_resource_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="type_of_resource_display" type="string" indexed="false" stored="true" multiValued="true" />
     <field name="type_of_resource_facet" type="string" indexed="true" stored="false" multiValued="true" />
-    
+
     <!-- Author: corporate, personal  -->
     <!-- Author: corporate  -->
-    <field name="corporate_authors_search" type="text" indexed="true" stored="false"  multiValued="true" />
+    <field name="corporate_authors_search" type="text" indexed="true" stored="true"  multiValued="true" />
     <field name="corporate_authors_unstem_search" type="textNoStem" indexed="true" stored="false"  multiValued="true" />
     <field name="corporate_authors_display" type="string" indexed="false" stored="true"  multiValued="true" />
     <field name="corporate_authors_facet" type="string" indexed="true" stored="false"  multiValued="true" />
     <!-- Author: personal  -->
-    <field name="personal_authors_search" type="text" indexed="true" stored="false"  multiValued="true" />
+    <field name="personal_authors_search" type="text" indexed="true" stored="true"  multiValued="true" />
     <field name="personal_authors_unstem_search" type="textNoStem" indexed="true" stored="false"  multiValued="true" />
     <field name="personal_authors_display" type="string" indexed="false" stored="true"  multiValued="true" />
     <field name="personal_authors_facet" type="string" indexed="true" stored="false"  multiValued="true" />
     <!-- Author: all  -->
-    <field name="authors_all_search" type="text" indexed="true" stored="false"  multiValued="true" />
+    <field name="authors_all_search" type="text" indexed="true" stored="true"  multiValued="true" />
     <field name="authors_all_unstem_search" type="textNoStem" indexed="true" stored="false"  multiValued="true" />
     <field name="authors_all_display" type="string" indexed="false" stored="true"  multiValued="true" />
     <field name="authors_all_facet" type="string" indexed="true" stored="false"  multiValued="true" />
@@ -56,45 +56,45 @@
     <!-- Title fields: title, title variant, subtitle -->
     <!-- Title fields: title -->
     <field name="title_exact_search" type="text_anchored" indexed="true" stored="false" />
-    <field name="title_search" type="text" indexed="true" stored="false" />
+    <field name="title_search" type="text" indexed="true" stored="true" />
     <field name="title_unstem_search" type="textNoStem" indexed="true" stored="false" />
     <field name="title_display" type="string" indexed="false" stored="true" />
     <field name="title_sort" type="alphaSort" indexed="true" stored="false" />
     <!-- Title fields: title variant -->
-    <field name="title_alternate_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="title_alternate_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="title_alternate_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="title_alternate_display" type="string" indexed="false" stored="true" multiValued="true" />
     <!-- Title fields: title other -->
-    <field name="title_other_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="title_other_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="title_other_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="title_other_display" type="string" indexed="false" stored="true" multiValued="true" />
     <!-- Title fields: subtitle -->
-    <field name="subtitle_search" type="text" indexed="true" stored="false" />
+    <field name="subtitle_search" type="text" indexed="true" stored="true" />
     <field name="subtitle_unstem_search" type="textNoStem" indexed="true" stored="false" />
     <field name="subtitle_display" type="string" indexed="false" stored="true" />
 
     <!-- Language -->
     <field name="language" type="string" indexed="true" stored="true" multiValued="true" />
-    
+
     <!-- Physical description fields: extent, form, media_type -->
     <!-- Physical description fields: extent -->
     <field name="physical_description_extent_display" type="string" indexed="false" stored="true" multiValued="true" />
     <!-- Physical description fields: form -->
-    <field name="physical_description_form_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="physical_description_form_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="physical_description_form_display" type="string" indexed="false" stored="true" multiValued="true" />
     <field name="physical_description_form_facet" type="string" indexed="true" stored="false" multiValued="true" />
     <!-- Physical description fields: media_type -->
-    <field name="physical_description_media_type_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="physical_description_media_type_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="physical_description_media_type_display" type="string" indexed="false" stored="true" multiValued="true" />
     <field name="physical_description_media_type_facet" type="string" indexed="true" stored="false" multiValued="true" />
-    
+
     <!-- locations fields: physical location, location url -->
     <field name="physical_location_display" type="string" indexed="false" stored="true" multiValued="true" />
     <field name="location_url_display" type="string" indexed="false" stored="true" multiValued="true" />
 
     <!-- related item fields: title, location url -->
     <field name="relateditem_location_url_display" type="string" indexed="false" stored="true" multiValued="true" />
-    <field name="relateditem_title_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="relateditem_title_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="relateditem_title_display" type="string" indexed="false" stored="true" multiValued="true" />
 
     <!-- origin info fields: date_issued, place_terms, publishers -->
@@ -107,39 +107,39 @@
     <field name="pub_date_sort" type="int" indexed="true" stored="false" />
     <field name="pub_date_display" type="string" indexed="false" stored="true"/>
     <!-- origin info fields: place -->
-    <field name="place_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="place_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="place_facet" type="string" indexed="true" stored="false" multiValued="true" />
     <field name="place_display" type="string" indexed="false" stored="true" multiValued="true" />
     <!-- origin info fields: publishers -->
-    <field name="publishers_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="publishers_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="publishers_display" type="string" indexed="false" stored="true" multiValued="true" />
 
     <!--  Subject Search Fields: topic, geographic, other -->
     <!--  Subject Search Fields: topic -->
-    <field name="topic_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="topic_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="topic_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="topic_display" type="string" indexed="false" stored="true" multiValued="true" />
     <field name="topic_facet" type="string" indexed="true" stored="false" multiValued="true" />
     <!--  Subject Search Fields: geographic -->
-    <field name="geographic_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="geographic_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="geographic_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="geographic_display" type="string" indexed="false" stored="true" multiValued="true" />
     <field name="geographic_facet" type="string" indexed="true" stored="false" multiValued="true" />
     <!--  Subject Search Fields: era -->
-    <field name="era_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="era_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="era_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="era_display" type="string" indexed="false" stored="true" multiValued="true" />
     <field name="era_facet" type="string" indexed="true" stored="false" multiValued="true" />
     <!--  Subject Search Fields: other -->
-    <field name="subject_other_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="subject_other_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="subject_other_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="subject_other_display" type="string" indexed="false" stored="true" multiValued="true" />
     <!--  Subject Search Fields: all -->
-    <field name="subject_all_search" type="text" indexed="true" stored="false" multiValued="true" />
+    <field name="subject_all_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="subject_all_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="subject_all_display" type="string" indexed="false" stored="true" multiValued="true" />
-    <field name="subject_all_facet" type="string" indexed="true" stored="false" multiValued="true" />    
-   
+    <field name="subject_all_facet" type="string" indexed="true" stored="false" multiValued="true" />
+
     <!-- Format Field: facet and display -->
     <field name="format" type="string" indexed="true" stored="true" multiValued="true" />
 
@@ -170,13 +170,13 @@
     <field name="collection_with_title" type="string" indexed="false" stored="true" multiValued="true" />
     <field name="img_info" type="string" indexed="false" stored="true" multiValued="true"/>
     <field name="file_id" type="string" indexed="false" stored="true" multiValued="true"/>
-    
+
     <!-- *************** additional fields for annotation objects  ****************** -->
     <!-- annotated_at - time of annotation -->
     <field name="annotated_at" type="string" stored="true" indexed="true" />
-    <field name="annotated_at_tdate" type="tdate" stored="false" indexed="true" />
+    <field name="annotated_at_tdate" type="tdate" stored="true" indexed="true" />
     <!-- annotated_by - author of annotation (use author_all) -->
-    <!-- 
+    <!--
     <field name="annotated_by_search" type="text" indexed="true" stored="false"  multiValued="true" />
     <field name="annotated_by_unstem_search" type="textNoStem" indexed="true" stored="false"  multiValued="true" />
     <field name="annotated_by_display" type="string" indexed="false" stored="true"  multiValued="true" />
@@ -194,20 +194,20 @@
     <field name="body_type" type="string" stored="true" indexed="true" multiValued="true"/>
     <!-- body -->
     <field name="body_chars_exact_search" type="text_anchored" indexed="true" stored="false" />
-    <field name="body_chars_search" type="text" indexed="true" stored="false" />
+    <field name="body_chars_search" type="text" indexed="true" stored="true" />
     <field name="body_chars_unstem_search" type="textNoStem" indexed="true" stored="false" />
     <field name="body_chars_display" type="string" indexed="false" stored="true" />
     <field name="body_chars_sort" type="alphaSort" indexed="true" stored="false" />
     <!-- manuscript -->
-    <field name="manuscript_search" type="text" indexed="true" stored="false" />
+    <field name="manuscript_search" type="text" indexed="true" stored="true" />
     <field name="manuscript_display" type="string" indexed="false" stored="true" />
     <field name="manuscript_facet" type="string" indexed="true" stored="false" />
     <field name="manuscript_sort" type="alphaSort" indexed="true" stored="false" />
     <!-- folio: facet and display -->
     <field name="folio" type="string" stored="true" indexed="true" />
     <field name="folio_sort" type="alphaSort" stored="false" indexed="true" />
-    <field name="sort_index" type="tint" indexed="true" stored="false" />
-    
+    <field name="sort_index" type="tint" indexed="true" stored="true" />
+
     <!-- *************** dynamic field types  ****************** -->
     <!--
     <dynamicField name="*_unstem_search" type="textNoStem" stored="false" indexed="true" multiValued="true" />
@@ -216,18 +216,18 @@
     <dynamicField name="*_display" type="string" stored="true" indexed="false" multiValued="true"/>
     <dynamicField name="*_sort" type="alphaSort" stored="false" indexed="true"/>
     -->
-    <dynamicField name="*_si" type="string" stored="false" indexed="true" multiValued="false" omitNorms="true" />
-    <dynamicField name="*_sim" type="string" stored="false" indexed="true" multiValued="true" omitNorms="true" />
+    <dynamicField name="*_si" type="string" stored="true" indexed="true" multiValued="false" omitNorms="true" />
+    <dynamicField name="*_sim" type="string" stored="true" indexed="true" multiValued="true" omitNorms="true" />
     <dynamicField name="*_ss" type="string" stored="true" indexed="false" multiValued="false" omitNorms="true" />
     <dynamicField name="*_ssm" type="string" stored="true" indexed="false" multiValued="true" omitNorms="true" />
     <dynamicField name="*_ssi" type="string" stored="true" indexed="true" multiValued="false" omitNorms="true" />
     <dynamicField name="*_ssim" type="string" stored="true" indexed="true" multiValued="true" omitNorms="true" />
     <dynamicField name="*_isi" type="tint" stored="true" indexed="true" omitNorms="true" />
     <dynamicField name="*_isim" type="tint" stored="true" indexed="true" multiValued="true" omitNorms="true" />
-    <dynamicField name="*_sort" type="alphaSort" stored="false" indexed="true"/>
+    <dynamicField name="*_sort" type="alphaSort" stored="true" indexed="true"/>
     <dynamicField name="*_xml" type="string" stored="true" indexed="false" omitNorms="true" />
-    <dynamicField name="cjk_*" type="text" stored="false" indexed="true" multiValued="true" />
-    <dynamicField name="*_hsim" type="string_hierarch" stored="false" indexed="true" multiValued="true" />
+    <dynamicField name="cjk_*" type="text" stored="true" indexed="true" multiValued="true" />
+    <dynamicField name="*_hsim" type="string_hierarch" stored="true" indexed="true" multiValued="true" />
   </fields>
 
   <!-- copy fields -->
@@ -310,7 +310,7 @@
   <copyField source="topic_search" dest="topic_facet" />
   <copyField source="geographic_search" dest="geographic_facet" />
   <copyField source="era_search" dest="era_facet" />
-  <copyField source="subject_all_search" dest="subject_all_facet" /> 
+  <copyField source="subject_all_search" dest="subject_all_facet" />
   <copyField source="manuscript_search" dest="manuscript_facet" />
 
   <types>
