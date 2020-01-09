@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schema name="Stanford Searchworks" version="1.5">
   <uniqueKey>id</uniqueKey>
-  <similarity class="solr.ClassicSimilarityFactory"/>
+  <similarity class="solr.BM25SimilarityFactory"/>
 
   <fields>
     <!-- needed by some of Solr 4.0 functionality like transaction log or partial documents update -->
@@ -16,6 +16,10 @@
     <field name="all_search" type="text" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true"/>
     <field name="all_unstem_search" type="textNoStem" indexed="true" stored="true" />
     <field name="vern_all_search" type="text" indexed="true" stored="true" />
+
+    <field name="bib_search" type="text" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <field name="bib_unstem_search" type="textNoStem" indexed="true" stored="true" />
+    <field name="vern_bib_search" type="text" indexed="true" stored="true" />
 
     <!-- Format Field: facet and display
       (deprecated in favor of format_main_ssim, left for continuity in UI URLs for old formats) -->
@@ -76,7 +80,14 @@
     <field name="series_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
 
     <!-- Author Title Search Fields -->
+    <field name="author_title_245ac_search" type="text" indexed="true" stored="true" multiValued="true" />
+    <field name="author_title_245ac_unstem_search" type="text" indexed="true" stored="true" multiValued="true" />
+    <field name="vern_author_title_245ac_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="author_title_1xx_search" type="text" indexed="true" stored="true" multiValued="true" />
+    <field name="author_title_1xx_unstem_search" type="text" indexed="true" stored="true" multiValued="true" />
+    <field name="vern_author_title_1xx_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="author_title_search" type="text" indexed="true" stored="true" multiValued="true" />
+    <field name="author_title_unstem_search" type="text" indexed="true" stored="true" multiValued="true" />
 
     <!-- Author Search Fields -->
     <field name="author_1xx_search" type="text" indexed="true" stored="true" />
@@ -269,6 +280,7 @@
     <dynamicField name="cjk_*" type="text_cjk" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="cjk_exact_search_*" type="text_cjk_anchored" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="ja_*" type="text_ja" indexed="true" stored="true" multiValued="true" />
+    <dynamicField name="ko_*" type="text_ko" indexed="true" stored="true" multiValued="true" />
     <dynamicField name="*_hsim" type="string_hierarch" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="*_struct" type="string" stored="true" indexed="false" multiValued="true" omitNorms="true" />
     <dynamicField name="*_dtsi" type="date" stored="true" indexed="false" omitNorms="true" />
@@ -286,6 +298,9 @@
   <copyField source="title_uniform_search" dest="title_uniform_unstem_search" />
   <copyField source="title_variant_search" dest="title_variant_unstem_search" />
   <copyField source="title_related_search" dest="title_related_unstem_search" />
+  <copyField source="author_title_search" dest="author_title_unstem_search" />
+  <copyField source="author_title_245ac_search" dest="author_title_245ac_unstem_search" />
+  <copyField source="author_title_1xx_search" dest="author_title_1xx_unstem_search" />
   <!-- unstemmed search fields: author -->
   <copyField source="author_1xx_search" dest="author_1xx_unstem_search" />
   <copyField source="author_7xx_search" dest="author_7xx_unstem_search" />
@@ -305,6 +320,7 @@
   <!--  other unstemmed search fields -->
   <copyField source="series_search" dest="series_unstem_search" />
   <copyField source="all_search" dest="all_unstem_search" />
+  <copyField source="bib_search" dest="bib_unstem_search" />
 
   <!-- course reserve fields -->
   <copyField source="crez_instructor_search" dest="instructor" />
@@ -344,6 +360,9 @@
   <copyField source="summary_search" dest="cjk_summary_search" />  <!-- we find CJK text in regular 520s -->
   <copyField source="vern_summary_search" dest="cjk_summary_search" />
   <copyField source="vern_all_search" dest="cjk_all_search" />
+  <copyField source="vern_bib_search" dest="cjk_bib_search" />
+  <copyField source="vern_author_title_245ac_search" dest="cjk_author_title_245ac_search" />
+  <copyfield source="vern_author_title_1xx_search" dest="cjk_vern_author_title_1xx_search" />
 
   <!-- Japanese fields -->
   <copyField source="vern_title_245a_search" dest="ja_title_245a_search" />
@@ -370,6 +389,38 @@
   <copyField source="summary_search" dest="ja_summary_search" />  <!-- we find CJK text in regular 520s -->
   <copyField source="vern_summary_search" dest="ja_summary_search" />
   <copyField source="vern_all_search" dest="ja_all_search" />
+  <copyField source="vern_bib_search" dest="ja_bib_search" />
+  <copyField source="vern_author_title_245ac_search" dest="ja_author_title_245ac_search" />
+  <copyfield source="vern_author_title_1xx_search" dest="ja_vern_author_title_1xx_search" />
+
+  <!-- Korean fields -->
+  <copyField source="vern_title_245a_search" dest="ko_title_245a_search" />
+  <copyField source="vern_title_245_search" dest="ko_title_245_search" />
+  <copyField source="vern_title_uniform_search" dest="ko_title_uniform_search" />
+  <copyField source="vern_title_variant_search" dest="ko_title_variant_search" />
+  <copyField source="vern_title_related_search" dest="ko_title_related_search" />
+  <copyField source="vern_series_search" dest="ko_series_search" />
+  <copyField source="vern_author_1xx_search" dest="ko_author_1xx_search" />
+  <copyField source="vern_author_7xx_search" dest="ko_author_7xx_search" />
+  <copyField source="vern_author_8xx_search" dest="ko_author_8xx_search" />
+  <copyField source="vern_topic_search" dest="ko_topic_search" />
+  <copyField source="vern_topic_subx_search" dest="ko_topic_subx_search" />
+  <copyField source="vern_geographic_search" dest="ko_geographic_search" />
+  <copyField source="vern_geographic_subz_search" dest="ko_geographic_subz_search" />
+  <copyField source="vern_subject_other_search" dest="ko_subject_other_search" />
+  <copyField source="vern_subject_other_subvy_search" dest="ko_subject_other_subvy_search" />
+  <copyField source="vern_subject_all_search" dest="ko_subject_all_search" />
+  <copyField source="vern_pub_search" dest="ko_pub_search" />
+  <copyField source="vern_physical" dest="ko_physical_search" />
+  <copyField source="toc_search" dest="ko_toc_search" />  <!-- we find CJK text in regular 505s -->
+  <copyField source="vern_toc_search" dest="ko_toc_search" />
+  <copyField source="vern_context_search" dest="ko_context_search" />
+  <copyField source="summary_search" dest="ko_summary_search" />  <!-- we find CJK text in regular 520s -->
+  <copyField source="vern_summary_search" dest="ko_summary_search" />
+  <copyField source="vern_all_search" dest="ko_all_search" />
+  <copyField source="vern_bib_search" dest="ko_bib_search" />
+  <copyField source="vern_author_title_245ac_search" dest="ko_author_title_245ac_search" />
+  <copyfield source="vern_author_title_1xx_search" dest="ko_vern_author_title_1xx_search" />
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
@@ -575,6 +626,20 @@
         <filter class="solr.JapaneseKatakanaStemFilterFactory" minimumLength="4"/>
         <!-- Lower-cases romaji characters -->
         <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
+    <fieldType name="text_ko" class="solr.TextField" positionIncrementGap="100" autoGeneratePhraseQueries="false">
+      <analyzer>
+        <!-- only select strings that contain some hangul; this is a really poor attempt at only parsing Korean text, and preferably we could identify it during indexing instead;
+            fortunately, for our current purposes, strings with hangul are the ones we're particularly concerned with and the cjk_* fields will do well enough with other values
+        -->
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^(.*[\p{InHangul_Jamo}\p{InHangul_Compatibility_Jamo}\p{InHangul_Syllables}].*)|(.*)$" replacement="$1"/>
+        <tokenizer class="solr.KoreanTokenizerFactory" outputUnknownUnigrams="true" />
+        <!-- removes some part of speech stuff like EOMI (Pos.E) -->
+        <filter class="solr.KoreanPartOfSpeechStopFilterFactory" />
+        <!-- Replaces term text with the Hangul transcription of Hanja characters, if applicable: -->
+        <filter class="solr.KoreanReadingFormFilterFactory" />
       </analyzer>
     </fieldType>
 
