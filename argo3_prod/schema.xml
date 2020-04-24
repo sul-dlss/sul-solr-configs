@@ -156,8 +156,6 @@
          unknown fields indexed and/or stored by default -->
     <!--dynamicField name="*" type="ignored" multiValued="true" /-->
 
-    <!-- END hydra deprecated items -->
-
     <!-- START argo customization artifacts -->
     <field name="text"        type="text_ws" indexed="true" stored="false" multiValued="true"/>
     <field name="text_search" type="text"    indexed="true" stored="false" multiValued="true"/>
