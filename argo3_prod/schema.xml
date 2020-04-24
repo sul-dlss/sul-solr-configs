@@ -157,11 +157,14 @@
     <!--dynamicField name="*" type="ignored" multiValued="true" /-->
 
     <!-- START argo customization artifacts -->
-    <field name="text"        type="text_ws" indexed="true" stored="false" multiValued="true"/>
-    <field name="text_search" type="text"    indexed="true" stored="false" multiValued="true"/>
-    <field name="text_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true"/>
-    <field name="date"        type="date"    indexed="true" stored="false" multiValued="true"/>
+    <!-- NOTE:  these fields are not used, but may be in the index, so they can only be removed with an index rebuild -->
+    <field name="text"        type="text_ws" indexed="true" stored="false" multiValued="true"/> <!-- empty -->
+    <field name="text_search" type="text"    indexed="true" stored="false" multiValued="true"/> <!-- empty -->
+    <field name="text_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true"/> <!-- empty -->
+    <field name="date"        type="date"    indexed="true" stored="false" multiValued="true"/> <!-- empty -->
 
+    <!-- NOTE:  these dynamicField types (within argo customization artifacts comments) are only used by unused fields
+      which are in the index, so they can only be removed with an index rebuild -->
     <dynamicField name="*_i"  type="tint"    indexed="true"  stored="true"/>
     <dynamicField name="*_s"  type="string"  indexed="true"  stored="true" multiValued="true"/>
     <dynamicField name="*_l"  type="tlong"   indexed="true"  stored="true"/>
@@ -183,14 +186,15 @@
   </fields>
 
 <!-- START argo customization artifacts -->
-  <copyField source="*_dt"    dest="date" />
-  <copyField source="*_t"     dest="text" />
-  <copyField source="*_t"     dest="text_search" />
-  <copyField source="*_t"     dest="text_unstem_search" />
-  <copyField source="title_t" dest="title_t_ws" />
-  <copyField source="title_t" dest="title_t_unstem_search" />
-  <copyField source="identityMetadata_t" dest="identityMetadata_t_ws" />
-  <copyField source="identityMetadata_t" dest="identityMetadata_t_unstem_search" />
+<!-- NOTE:  these fields are not used, but may be in the index, so can only be removed with an index rebuild -->
+  <copyField source="*_dt"    dest="date" /> <!-- empty -->
+  <copyField source="*_t"     dest="text" /> <!-- empty -->
+  <copyField source="*_t"     dest="text_search" /> <!-- empty -->
+  <copyField source="*_t"     dest="text_unstem_search" /> <!-- empty -->
+  <copyField source="title_t" dest="title_t_ws" /> <!-- empty -->
+  <copyField source="title_t" dest="title_t_unstem_search" /> <!-- empty -->
+  <copyField source="identityMetadata_t" dest="identityMetadata_t_ws" /> <!-- missing -->
+  <copyField source="identityMetadata_t" dest="identityMetadata_t_unstem_search" /> <!-- missing -->
 <!-- END argo customization artifacts -->
 
   <types>
