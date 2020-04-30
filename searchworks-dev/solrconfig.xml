@@ -1043,6 +1043,7 @@
         managed_purl_urls,
         characteristics_ssim,
         author_struct:[json],
+        hathitrust_info_struct:[json],
         marc_links_struct:[json],
         summary_struct:[json],
         toc_struct:[json],
@@ -1059,6 +1060,7 @@
       <str name="fl">
         *,
         author_struct:[json],
+        hathitrust_info_struct:[json],
         marc_links_struct:[json],
         summary_struct:[json],
         toc_struct:[json],
