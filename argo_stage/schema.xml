@@ -150,6 +150,9 @@
     <!-- you must define copyField source and dest fields explicity or schemaBrowser doesn't work -->
     <field name="all_text_timv" type="text" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
 
+    <!-- for structured values (JSON blobs) -->
+    <dynamicField name="*_struct" type="string" stored="true" indexed="false" multiValued="true" omitNorms="true" />
+    
     <!-- uncomment the following to ignore any fields that don't already match an existing
          field name or dynamic field, rather than reporting them as an error.
          alternately, change the type="ignored" to some other type e.g. "text" if you want
