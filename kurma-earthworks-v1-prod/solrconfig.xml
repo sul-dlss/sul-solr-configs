@@ -38,7 +38,18 @@
     </autoCommit>
   </updateHandler>
 
+  <updateProcessor class="solr.RemoveBlankFieldUpdateProcessorFactory" name="remove_blanks" />
 
+  <updateRequestProcessorChain name="earthworks-processor" processor="remove_blanks">
+    <processor class="solr.LogUpdateProcessorFactory" />
+    <processor class="solr.RunUpdateProcessorFactory" />
+  </updateRequestProcessorChain>
+
+  <requestHandler name="/update" class="solr.UpdateRequestHandler">
+    <lst name="defaults">
+      <str name="update.chain">earthworks-processor</str>
+    </lst>
+  </requestHandler>
 
   <!-- Required for Solr Cloud on sul-solr -->
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
