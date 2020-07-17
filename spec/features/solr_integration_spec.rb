@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'solr_wrapper'
-require 'hurley'
+require 'faraday'
 require 'json'
 require 'fileutils'
 require 'securerandom'
@@ -10,7 +10,7 @@ describe 'integration with solr' do
   let(:collection) { @collection }
 
   before(:all) do
-    @solr = SolrWrapper::Instance.new port: nil, version: ENV.fetch('SOLR_VERSION', '7.5.0')
+    @solr = SolrWrapper::Instance.new port: nil, version: ENV.fetch('SOLR_VERSION', '8.6.0')
     @solr.send(:extract)
     solr_dir = @solr.instance_dir
     test_solr_xml = File.expand_path('../../solr/solr.xml', __FILE__)
@@ -37,11 +37,11 @@ describe 'integration with solr' do
 
   shared_examples 'works in solr' do
     let(:client) do
-      Hurley::Client.new("#{solr.url}#{collection}/")
+      Faraday.new("#{solr.url}#{collection}/")
     end
 
     let(:log_response) do
-      client.get('/solr/admin/info/logging?wt=json&since=0').body
+      client.get('/solr/admin/info/logging?wt=json&since=0').body.to_s
     end
 
     let(:log) do
