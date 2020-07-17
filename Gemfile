@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :test do
-  gem 'hurley'
+  gem 'faraday'
   gem 'nokogiri'
   gem 'rake'
   gem 'rspec'

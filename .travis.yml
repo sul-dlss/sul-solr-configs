@@ -2,11 +2,10 @@ notifications:
   email: false
 
 rvm:
-  - 2.6.3
+  - 2.7.1
 
 sudo: false
 language: ruby
 
 jdk:
-  - openjdk8
-
+  - openjdk11
