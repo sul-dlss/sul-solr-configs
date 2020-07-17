@@ -33,7 +33,7 @@
     </updateLog>
   </updateHandler>
 
-  
+
 
   <dataDir>${solr.data.dir:}</dataDir>
 
@@ -97,7 +97,7 @@
         title_alternate_search^20
         title_other_search^20
         title_other_unstem_search^20
-        
+
         personal_authors_unstem_search^25
         personal_authors_search^20
         corporate_authors_unstem_search^20
@@ -116,7 +116,6 @@
         subject_all_unstem_search^5
         subject_all_search^2
 
-        manuscript_unstem_search^5
         manuscript_search^2
         abstract_unstem_search^5
         abstract_search^2
@@ -156,7 +155,6 @@
         subject_all_unstem_search^25
         subject_all_search^10
 
-        manuscript_unstem_search^25
         manuscript_search^10
         abstract_unstem_search^25
         abstract_search^10
@@ -229,7 +227,7 @@
       <str name="facet.field">era_facet</str>
       <str name="facet.field">subject_all_facet</str>
       <str name="facet.field">format</str>
-      <str name="facet.field">model</str>      
+      <str name="facet.field">model</str>
       <str name="facet.field">collection</str>
         <str name="f.collection.facet.method">enum</str>
       <str name="facet.field">format</str>
@@ -304,7 +302,7 @@
       <int name="facet.mincount">1</int>
     </lst>
   </requestHandler>
-  
+
   <requestHandler name="descriptions" class="solr.SearchHandler">
     <lst name="defaults">
       <str name="defType">edismax</str>
@@ -332,7 +330,7 @@
         title_alternate_search^20
         title_other_search^20
         title_other_unstem_search^20
-        
+
         personal_authors_unstem_search^25
         personal_authors_search^20
         corporate_authors_unstem_search^20
@@ -351,7 +349,6 @@
         subject_all_unstem_search^5
         subject_all_search^2
 
-        manuscript_unstem_search^5
         manuscript_search^2
         abstract_unstem_search^5
         abstract_search^2
@@ -391,7 +388,6 @@
         subject_all_unstem_search^25
         subject_all_search^10
 
-        manuscript_unstem_search^25
         manuscript_search^10
         abstract_unstem_search^25
         abstract_search^10
@@ -464,7 +460,7 @@
       <str name="facet.field">era_facet</str>
       <str name="facet.field">subject_all_facet</str>
       <str name="facet.field">format</str>
-      <str name="facet.field">model</str>      
+      <str name="facet.field">model</str>
       <str name="facet.field">collection</str>
         <str name="f.collection.facet.method">enum</str>
       <str name="facet.field">format</str>
@@ -550,7 +546,7 @@
         title_alternate_search^20
         title_other_search^20
         title_other_unstem_search^20
-        
+
         personal_authors_unstem_search^25
         personal_authors_search^20
         corporate_authors_unstem_search^20
@@ -569,7 +565,6 @@
         subject_all_unstem_search^5
         subject_all_search^2
 
-        manuscript_unstem_search^5
         manuscript_search^2
         abstract_unstem_search^5
         abstract_search^2
@@ -609,7 +604,6 @@
         subject_all_unstem_search^25
         subject_all_search^10
 
-        manuscript_unstem_search^25
         manuscript_search^10
         abstract_unstem_search^25
         abstract_search^10
@@ -682,7 +676,7 @@
       <str name="facet.field">era_facet</str>
       <str name="facet.field">subject_all_facet</str>
       <str name="facet.field">format</str>
-      <str name="facet.field">model</str>      
+      <str name="facet.field">model</str>
       <str name="facet.field">collection</str>
         <str name="f.collection.facet.method">enum</str>
       <str name="facet.field">format</str>
@@ -768,7 +762,7 @@
         title_alternate_search^20
         title_other_search^20
         title_other_unstem_search^20
-        
+
         personal_authors_unstem_search^25
         personal_authors_search^20
         corporate_authors_unstem_search^20
@@ -787,7 +781,6 @@
         subject_all_unstem_search^5
         subject_all_search^2
 
-        manuscript_unstem_search^5
         manuscript_search^2
         abstract_unstem_search^5
         abstract_search^2
@@ -827,7 +820,6 @@
         subject_all_unstem_search^25
         subject_all_search^10
 
-        manuscript_unstem_search^25
         manuscript_search^10
         abstract_unstem_search^25
         abstract_search^10
@@ -900,7 +892,7 @@
       <str name="facet.field">era_facet</str>
       <str name="facet.field">subject_all_facet</str>
       <str name="facet.field">format</str>
-      <str name="facet.field">model</str>      
+      <str name="facet.field">model</str>
       <str name="facet.field">collection</str>
         <str name="f.collection.facet.method">enum</str>
       <str name="facet.field">format</str>

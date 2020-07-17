@@ -48,8 +48,6 @@
        -->
         <str name="qf">
           id
-          pid
-          canvas
           ocrtext
           ocrtext_en
           ocrtext_pt
@@ -64,8 +62,6 @@
 
        <str name="fl">
          id,
-         pid,
-         canvas,
          score
        </str>
 
