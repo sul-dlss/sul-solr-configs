@@ -63,6 +63,7 @@
       <str name="facet.limit">10</str>
       <str name="facet.field">active_fedora_model_ssi</str>
       <str name="facet.field">object_type_si</str>
+      <str name="facet.threads">8</str>
 
       <str name="spellcheck">true</str>
       <str name="spellcheck.dictionary">default</str>
