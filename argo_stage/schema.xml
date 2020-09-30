@@ -153,6 +153,9 @@
     <!-- for structured values (JSON blobs) -->
     <dynamicField name="*_struct" type="string" stored="true" indexed="false" multiValued="true" omitNorms="true" />
     
+    <!-- random field type allows us to sample data -->
+    <dynamicField name="random*" type="rand" />
+    
     <!-- uncomment the following to ignore any fields that don't already match an existing
          field name or dynamic field, rather than reporting them as an error.
          alternately, change the type="ignored" to some other type e.g. "text" if you want
