@@ -16,7 +16,7 @@
     </updateLog>
   </updateHandler>
 
-  
+
 
 
   <dataDir>${solr.data.dir:}</dataDir>
@@ -102,6 +102,7 @@
         award_search
         collection_search
         all_unstem_search^5
+        modsxml_tsi
         all_search                     vern_all_search
         full_text_unstem_search^2.5
         full_text_search^0.5
@@ -161,6 +162,7 @@
         award_search^5
         collection_search^5
         all_unstem_search^25
+        modsxml_tsi^5
         all_search^5                   vern_all_search^5
         full_text_unstem_search^12.5
         full_text_search^2.5
@@ -195,6 +197,7 @@
         physical^3                     vern_physical^3
         award_search^3
         collection_search^3
+        modsxml_tsi^3
         all_search^3                   vern_all_search^3
         full_text_search^1.5
         full_text_search_en^1.5
@@ -228,6 +231,7 @@
         physical^2                     vern_physical^2
         award_search^2
         collection_search^2
+        modsxml_tsi^2
         all_search^2                   vern_all_search^2
         full_text_search
         full_text_search_en
@@ -291,6 +295,7 @@
         award_search
         collection_search
         all_unstem_search^5
+        modsxml_tsi
         all_search                     vern_all_search                     cjk_all_search
       </str>
       <str name="pf_cjk"> <!-- (phrase boost within result set) -->
@@ -345,6 +350,7 @@
         award_search^5
         collection_search^5
         all_unstem_search^25
+        modsxml_tsi^5
         all_search^5                   vern_all_search^5                   cjk_all_search^5
       </str>
       <str name="pf3_cjk">  <!-- (token trigrams boost within result set) -->
@@ -374,6 +380,7 @@
         physical^3                     vern_physical^3                     cjk_physical_search^3
         award_search^3
         collection_search^3
+        modsxml_tsi^3
         all_search^3                   vern_all_search^3                   cjk_all_search^3
       </str>
       <str name="pf2_cjk"> <!--(token bigrams boost within result set) -->
@@ -403,6 +410,7 @@
         physical^2                     vern_physical^2                     cjk_physical_search^2
         award_search^2
         collection_search^2
+        modsxml_tsi^2
         all_search^2                   vern_all_search^2                   cjk_all_search^2
       </str>
 
@@ -880,7 +888,7 @@
     </lst>
   </requestHandler>
 
-  <!-- for searching exhibit documents (e.g. by title) -->
+    <!-- for searching exhibit documents (e.g. by title) -->
   <requestHandler name="exhibit-titles" class="solr.SearchHandler">
     <lst name="defaults">
       <str name="defType">edismax</str>
