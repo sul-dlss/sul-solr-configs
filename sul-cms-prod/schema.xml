@@ -349,6 +349,7 @@
        boosting for the field, and saves some memory).  Only full-text
        fields or fields that need an index-time boost need norms.
     -->
+    <field name="_version_" type="long" indexed="true" stored="true"/>
 
     <!-- The document id is usually derived from a site-spcific key (hash) and the
       entity type and ID like:
