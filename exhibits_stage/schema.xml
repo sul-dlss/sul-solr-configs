@@ -374,7 +374,7 @@
 
     <!-- Analyzed Text, general case -->
     <fieldtype name="text" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
-      <analyzer type="index">
+      <analyzer type="query">
         <tokenizer class="solr.ICUTokenizerFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/> <!-- NFKC, case folding, diacritics removed -->
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
@@ -395,7 +395,7 @@
 
     <!-- Analyzed Text, English -->
     <fieldtype name="text_en" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
-      <analyzer type="index">
+      <analyzer type="query">
         <tokenizer class="solr.ICUTokenizerFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/> <!-- NFKC, case folding, diacritics removed -->
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
@@ -416,7 +416,7 @@
 
     <!-- Analyzed Text, Portuguese -->
     <fieldtype name="text_pt" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
-      <analyzer type="index">
+      <analyzer type="query">
         <tokenizer class="solr.ICUTokenizerFactory"/>
         <filter class="solr.PortugueseLightStemFilterFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/> <!-- NFKC, case folding, diacritics removed -->
@@ -434,7 +434,7 @@
 
     <!-- Analyzed Text, Indonesian -->
     <fieldtype name="text_id" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
-      <analyzer type="index">
+      <analyzer type="query">
         <tokenizer class="solr.ICUTokenizerFactory"/>
         <filter class="solr.IndonesianStemFilterFactory" stemDerivational="true" />
         <filter class="solr.ICUFoldingFilterFactory"/> <!-- NFKC, case folding, diacritics removed -->
@@ -509,7 +509,7 @@
     <!-- so punctuation terms (& : ;) are stopwords to allow results from other fields when these chars are surrounded by spaces in query -->
     <!--  do not lowercase -->
     <fieldType name="string_punct_stop" class="solr.TextField" omitNorms="true">
-      <analyzer type="index">
+      <analyzer type="query">
         <tokenizer class="solr.KeywordTokenizerFactory" />
         <filter class="solr.ICUNormalizer2FilterFactory" name="nfkc" mode="compose" />
       </analyzer>
@@ -523,7 +523,7 @@
 
     <!-- field designed for LC call number searching -->
     <fieldType name="callnum_ws" class="solr.TextField" omitNorms="true" positionIncrementGap="100" autoGeneratePhraseQueries="true">
-      <analyzer type="index">
+      <analyzer type="query">
         <!-- LC: no space between class letters and digits; normalize to " ." before first cutter, no leading space -->
         <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^ *([A-Za-z]{1,3}) ?(\d{1,4}(\.\d+)?) ?\.?([A-Za-z]\d+)" replacement="$1$2 .$4"/>
         <!-- LC: add space between first cutter letter and its digits to allow matching on first cutter letter only -->
@@ -554,7 +554,7 @@
        But it will not match documents indexed with values like Books, or Books/Fic...
      -->
     <fieldType name="string_hierarch" class="solr.TextField" positionIncrementGap="100">
-      <analyzer type="index">
+      <analyzer type="query">
         <tokenizer class="solr.PathHierarchyTokenizerFactory" delimiter="|" />
       </analyzer>
       <analyzer type="query">
@@ -566,7 +566,7 @@
 
     <!-- A text field with defaults appropriate for English and NGrams -->
     <fieldType name="text_en_ng" class="solr.TextField" positionIncrementGap="100">
-      <analyzer type="index">
+      <analyzer type="query">
         <tokenizer class="solr.ICUTokenizerFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
         <filter class="solr.EnglishPossessiveFilterFactory"/>
