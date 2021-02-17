@@ -14,7 +14,7 @@
     <field name="marcxml" type="string" indexed="false" stored="true" />
     <!-- all_search: catch-all field for searchable text; stored for hit highlighting />-->
     <field name="all_search" type="text" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true"/>
-    <field name="all_unstem_search" type="textNoStem" indexed="true" stored="true" />
+    <field name="all_unstem_search" type="textNoStem" indexed="true" stored="false" />
     <field name="vern_all_search" type="text" indexed="true" stored="true" />
 
     <!-- Format Field: facet and display
@@ -37,22 +37,22 @@
     <field name="oclc" type="string_punct_stop" indexed="true" stored="true" multiValued="true" />
 
     <!-- Title Search Fields -->
-    <field name="title_245a_exact_search" type="text_anchored" indexed="true" stored="true" />
+    <field name="title_245a_exact_search" type="text_anchored" indexed="true" stored="false" />
     <field name="title_245a_search" type="text" indexed="true" stored="true" />
     <field name="vern_title_245a_search" type="textNoStem" indexed="true" stored="true" />
-    <field name="title_245a_unstem_search" type="textNoStem" indexed="true" stored="true" />
+    <field name="title_245a_unstem_search" type="textNoStem" indexed="true" stored="false" />
     <field name="title_245_search" type="text" indexed="true" stored="true" />
     <field name="vern_title_245_search" type="textNoStem" indexed="true" stored="true" />
-    <field name="title_245_unstem_search" type="textNoStem" indexed="true" stored="true" />
+    <field name="title_245_unstem_search" type="textNoStem" indexed="true" stored="false" />
     <field name="title_uniform_search" type="text" indexed="true" stored="true" />
     <field name="vern_title_uniform_search" type="textNoStem" indexed="true" stored="true" />
-    <field name="title_uniform_unstem_search" type="textNoStem" indexed="true" stored="true" />
+    <field name="title_uniform_unstem_search" type="textNoStem" indexed="true" stored="false" />
     <field name="title_variant_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_title_variant_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="title_variant_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="title_variant_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="title_related_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_title_related_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="title_related_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="title_related_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
 
     <!-- Title Display fields -->
     <field name="title_display" type="string" indexed="false" stored="true" />
@@ -70,10 +70,10 @@
     <field name="title_sort" type="alphaSort" indexed="true" stored="true" />
 
     <!-- Series Search Fields -->
-    <field name="series_exact_search" type="text_anchored" indexed="true" stored="true" multiValued="true" />
+    <field name="series_exact_search" type="text_anchored" indexed="true" stored="false" multiValued="true" />
     <field name="series_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_series_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="series_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="series_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
 
     <!-- Author Title Search Fields -->
     <field name="author_title_search" type="text" indexed="true" stored="true" multiValued="true" />
@@ -81,13 +81,13 @@
     <!-- Author Search Fields -->
     <field name="author_1xx_search" type="text" indexed="true" stored="true" />
     <field name="vern_author_1xx_search" type="textNoStem" indexed="true" stored="true" />
-    <field name="author_1xx_unstem_search" type="textNoStem" indexed="true" stored="true" />
+    <field name="author_1xx_unstem_search" type="textNoStem" indexed="true" stored="false" />
     <field name="author_7xx_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_author_7xx_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="author_7xx_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="author_7xx_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="author_8xx_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_author_8xx_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="author_8xx_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="author_8xx_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
 
     <!-- Author Facet Fields -->
     <field name="author_person_facet" type="string" indexed="true" stored="true" multiValued="true" />
@@ -108,25 +108,25 @@
     <!--  Subject Search Fields -->
     <field name="topic_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_topic_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="topic_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="topic_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="topic_subx_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_topic_subx_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="topic_subx_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="topic_subx_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="geographic_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_geographic_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="geographic_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="geographic_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="geographic_subz_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_geographic_subz_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="geographic_subz_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="geographic_subz_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="subject_other_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_subject_other_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="subject_other_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="subject_other_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="subject_other_subvy_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_subject_other_subvy_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="subject_other_subvy_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="subject_other_subvy_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="subject_all_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_subject_all_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="subject_all_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="subject_all_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
 
     <field name="db_az_subject" type="string" indexed="true" stored="true" multiValued="true" />
     <field name="db_az_subject_search" type="text" indexed="true" stored="true" multiValued="true" />
@@ -174,15 +174,15 @@
     <!-- Table of Contents -->
     <field name="toc_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_toc_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="toc_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="toc_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <!-- Context -->
     <field name="context_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_context_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="context_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="context_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <!-- Summary -->
     <field name="summary_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="vern_summary_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
-    <field name="summary_unstem_search" type="textNoStem" indexed="true" stored="true" multiValued="true" />
+    <field name="summary_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="summary_display" type="string" indexed="false" stored="true" multiValued="true" />
     <!-- Award -->
     <field name="award_search" type="text" indexed="true" stored="true" multiValued="true" />
@@ -266,10 +266,10 @@
     <dynamicField name="*_isim" type="tint" stored="true" indexed="true" multiValued="true" omitNorms="true" />
     <dynamicField name="*_sort" type="alphaSort" stored="true" indexed="true"/>
     <dynamicField name="*_xml" type="string" stored="true" indexed="false" omitNorms="true" />
-    <dynamicField name="cjk_*" type="text_cjk" stored="true" indexed="true" multiValued="true" />
-    <dynamicField name="cjk_exact_search_*" type="text_cjk_anchored" stored="true" indexed="true" multiValued="true" />
-    <dynamicField name="ja_*" type="text_ja" indexed="true" stored="true" multiValued="true" />
-    <dynamicField name="ko_*" type="text_ko" indexed="true" stored="true" multiValued="true" />
+    <dynamicField name="cjk_*" type="text_cjk" stored="true" indexed="false" multiValued="true" />
+    <dynamicField name="cjk_exact_search_*" type="text_cjk_anchored" stored="false" indexed="true" multiValued="true" />
+    <dynamicField name="ja_*" type="text_ja" indexed="true" stored="false" multiValued="true" />
+    <dynamicField name="ko_*" type="text_ko" indexed="true" stored="false" multiValued="true" />
     <dynamicField name="*_hsim" type="string_hierarch" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="*_struct" type="string" stored="true" indexed="false" multiValued="true" omitNorms="true" />
     <dynamicField name="*_dtsi" type="date" stored="true" indexed="false" omitNorms="true" />
