@@ -339,10 +339,8 @@
   <copyField source="vern_subject_all_search" dest="cjk_subject_all_search" />
   <copyField source="vern_pub_search" dest="cjk_pub_search" />
   <copyField source="vern_physical" dest="cjk_physical_search" />
-  <copyField source="toc_search" dest="cjk_toc_search" />  <!-- we find CJK text in regular 505s -->
   <copyField source="vern_toc_search" dest="cjk_toc_search" />
   <copyField source="vern_context_search" dest="cjk_context_search" />
-  <copyField source="summary_search" dest="cjk_summary_search" />  <!-- we find CJK text in regular 520s -->
   <copyField source="vern_summary_search" dest="cjk_summary_search" />
   <copyField source="vern_all_search" dest="cjk_all_search" />
 
@@ -365,10 +363,8 @@
   <copyField source="vern_subject_all_search" dest="ja_subject_all_search" />
   <copyField source="vern_pub_search" dest="ja_pub_search" />
   <copyField source="vern_physical" dest="ja_physical_search" />
-  <copyField source="toc_search" dest="ja_toc_search" />  <!-- we find CJK text in regular 505s -->
   <copyField source="vern_toc_search" dest="ja_toc_search" />
   <copyField source="vern_context_search" dest="ja_context_search" />
-  <copyField source="summary_search" dest="ja_summary_search" />  <!-- we find CJK text in regular 520s -->
   <copyField source="vern_summary_search" dest="ja_summary_search" />
   <copyField source="vern_all_search" dest="ja_all_search" />
 
@@ -391,10 +387,8 @@
   <copyField source="vern_subject_all_search" dest="ko_subject_all_search" />
   <copyField source="vern_pub_search" dest="ko_pub_search" />
   <copyField source="vern_physical" dest="ko_physical_search" />
-  <copyField source="toc_search" dest="ko_toc_search" />  <!-- we find CJK text in regular 505s -->
   <copyField source="vern_toc_search" dest="ko_toc_search" />
   <copyField source="vern_context_search" dest="ko_context_search" />
-  <copyField source="summary_search" dest="ko_summary_search" />  <!-- we find CJK text in regular 520s -->
   <copyField source="vern_summary_search" dest="ko_summary_search" />
   <copyField source="vern_all_search" dest="ko_all_search" />
 
