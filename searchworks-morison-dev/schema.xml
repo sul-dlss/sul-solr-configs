@@ -266,7 +266,7 @@
     <dynamicField name="*_isim" type="tint" stored="true" indexed="true" multiValued="true" omitNorms="true" />
     <dynamicField name="*_sort" type="alphaSort" stored="true" indexed="true"/>
     <dynamicField name="*_xml" type="string" stored="true" indexed="false" omitNorms="true" />
-    <dynamicField name="cjk_*" type="text_cjk" stored="true" indexed="false" multiValued="true" />
+    <dynamicField name="cjk_*" type="text_cjk" stored="false" indexed="true" multiValued="true" />
     <dynamicField name="cjk_exact_search_*" type="text_cjk_anchored" stored="false" indexed="true" multiValued="true" />
     <dynamicField name="ja_*" type="text_ja" indexed="true" stored="false" multiValued="true" />
     <dynamicField name="ko_*" type="text_ko" indexed="true" stored="false" multiValued="true" />
