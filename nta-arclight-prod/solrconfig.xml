@@ -79,123 +79,127 @@
     -->
   <requestHandler name="search" class="solr.SearchHandler" default="true">
     <!-- default values for query parameters can be specified, these
-         will be overridden by parameters in the request
+        will be overridden by parameters in the request
       -->
-     <lst name="defaults">
-       <str name="defType">edismax</str>
-       <str name="echoParams">explicit</str>
-       <int name="rows">10</int>
+    <lst name="defaults">
+      <str name="defType">edismax</str>
+      <str name="echoParams">explicit</str>
+      <int name="rows">10</int>
 
-       <str name="q.alt">*:*</str>
-       <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
+      <str name="q.alt">*:*</str>
+      <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
 
-       <!-- this qf and pf are used by default, if not otherwise specified by
+      <!-- this qf and pf are used by default, if not otherwise specified by
             client. The default blacklight_config will use these for the
             "keywords" search. See the author_qf/author_pf, title_qf, etc
             below, which the default blacklight_config will specify for
             those searches. You may also be interested in:
             http://wiki.apache.org/solr/LocalParams
-       -->
+      -->
 
-       <str name="qf">
+      <str name="qf">
         collection_title_tesim^150
         title_tesim^100
-        name_tesim^10
-        place_tesim^10
+        normalized_title_teim^100
+        name_teim^10
+        place_teim^10
         unitid_identifier_match^5
-        subject_tesim^2
+        subject_teim^2
         text
         full_text_tesimv^0.5
       </str>
       <str name="pf">
         collection_title_tesim^150
         title_tesim^100
-        name_tesim^10
-        place_tesim^10
+        normalized_title_teim^100
+        name_teim^10
+        place_teim^10
         unitid_identifier_match^5
         text^5
         full_text_tesimv^2.5
-        subject_tesim^2
+        subject_teim^2
       </str>
 
-       <str name="qf_name">
-         name_tesim
-       </str>
-       <str name="pf_name">
-         name_tesim
-       </str>
-       <str name="qf_place">
-         place_tesim
-       </str>
-       <str name="pf_place">
-         place_tesim
-       </str>
-       <str name="qf_subject">
-         subject_tesim
-       </str>
-       <str name="pf_subject">
-         subject_tesim
-       </str>
-       <str name="qf_title">
-         title_tesim
-       </str>
-       <str name="pf_title">
-         title_tesim
-       </str>
+      <str name="qf_name">
+        name_teim
+      </str>
+      <str name="pf_name">
+        name_teim
+      </str>
+      <str name="qf_place">
+        place_teim
+      </str>
+      <str name="pf_place">
+        place_teim
+      </str>
+      <str name="qf_subject">
+        subject_teim
+      </str>
+      <str name="pf_subject">
+        subject_teim
+      </str>
+      <str name="qf_title">
+        title_tesim
+        normalized_title_teim
+      </str>
+      <str name="pf_title">
+        title_tesim
+        normalized_title_teim
+      </str>
 
-       <int name="ps">3</int>
-       <float name="tie">0.01</float>
+      <int name="ps">3</int>
+      <float name="tie">0.01</float>
 
-       <str name="fl">
-         id,
-         score,
-         abstract_ssm,
-         accessrestrict_ssm,
-         child_component_count_isim,
-         collection_ssm,
-         collection_unitid_ssm,
-         containers_ssim,
-         creator_ssm,
-         extent_ssm,
-         geogname_ssm,
-         has_online_content_ssim,
-         language_ssm,
-         level_ssm,
-         repository_ssm,
-         scopecontent_ssm,
-         title_ssm,
-         normalized_title_ssm,
-         normalized_date_ssm,
-         unitid_ssm,
-         parent_ssim,
-         parent_unittitles_ssm,
-         ead_ssi,
-         ref_ssm,
-         component_level_isim,
-         parent_access_restrict_ssm,
-         parent_access_terms_ssm,
-         names_coll_ssim
-         places_ssim
-       </str>
+      <str name="fl">
+        id,
+        score,
+        abstract_ssm,
+        accessrestrict_ssm,
+        child_component_count_isi,
+        collection_ssm,
+        collection_unitid_ssm,
+        containers_ssim,
+        creator_ssm,
+        extent_ssm,
+        geogname_ssm,
+        has_online_content_ssim,
+        language_ssim,
+        level_ssm,
+        repository_ssm,
+        scopecontent_ssm,
+        title_ssm,
+        normalized_title_ssm,
+        normalized_date_ssm,
+        unitid_ssm,
+        parent_ssim,
+        parent_unittitles_ssm,
+        ead_ssi,
+        ref_ssm,
+        component_level_isim,
+        parent_access_restrict_ssm,
+        parent_access_terms_ssm,
+        names_coll_ssim
+        places_ssim
+      </str>
 
-       <str name="facet">true</str>
-       <str name="facet.mincount">1</str>
-       <str name="facet.field">level_sim</str>
-       <str name="facet.field">creator_sim</str>
-       <str name="facet.field">date_range_sim</str>
-       <str name="facet.field">names_sim</str>
-       <str name="facet.field">geogname_sim</str>
-       <str name="facet.field">access_subjects_sim</str>
-       <str name="facet.field">repository_sim</str>
-       <str name="facet.field">collection_sim</str>
+      <str name="facet">true</str>
+      <str name="facet.mincount">1</str>
+      <str name="facet.field">level_ssim</str>
+      <str name="facet.field">creator_ssim</str>
+      <str name="facet.field">date_range_ssim</str>
+      <str name="facet.field">names_ssim</str>
+      <str name="facet.field">geogname_ssim</str>
+      <str name="facet.field">access_subjects_ssim</str>
+      <str name="facet.field">repository_ssim</str>
+      <str name="facet.field">collection_ssim</str>
 
-       <str name="spellcheck">true</str>
-       <str name="spellcheck.dictionary">default</str>
-       <str name="spellcheck.onlyMorePopular">true</str>
-       <str name="spellcheck.extendedResults">true</str>
-       <str name="spellcheck.collate">false</str>
-       <str name="spellcheck.count">5</str>
-     </lst>
+      <str name="spellcheck">true</str>
+      <str name="spellcheck.dictionary">default</str>
+      <str name="spellcheck.onlyMorePopular">true</str>
+      <str name="spellcheck.extendedResults">true</str>
+      <str name="spellcheck.collate">false</str>
+      <str name="spellcheck.count">5</str>
+    </lst>
     <arr name="last-components">
       <str>spellcheck</str>
     </arr>
@@ -217,17 +221,17 @@
         suggestions.
 
         http://wiki.apache.org/solr/SpellCheckComponent
-     -->
+    -->
   <searchComponent name="spellcheck" class="solr.SpellCheckComponent">
 
     <str name="queryAnalyzerFieldType">textSpell</str>
 
     <!-- Multiple "Spell Checkers" can be declared and used by this
-         component
+        component
       -->
 
     <!-- a spellchecker built from a field of the main index, and
-         written to disk
+        written to disk
       -->
     <lst name="spellchecker">
       <str name="name">default</str>
@@ -259,41 +263,41 @@
 
     <!-- a spellchecker that uses a different distance measure -->
     <!--
-       <lst name="spellchecker">
-         <str name="name">jarowinkler</str>
-         <str name="field">spell</str>
-         <str name="distanceMeasure">
-           org.apache.lucene.search.spell.JaroWinklerDistance
-         </str>
-         <str name="spellcheckIndexDir">spellcheckerJaro</str>
-       </lst>
-     -->
+      <lst name="spellchecker">
+        <str name="name">jarowinkler</str>
+        <str name="field">spell</str>
+        <str name="distanceMeasure">
+          org.apache.lucene.search.spell.JaroWinklerDistance
+        </str>
+        <str name="spellcheckIndexDir">spellcheckerJaro</str>
+      </lst>
+    -->
 
     <!-- a spellchecker that use an alternate comparator
 
-         comparatorClass be one of:
+        comparatorClass be one of:
           1. score (default)
           2. freq (Frequency first, then score)
           3. A fully qualified class name
       -->
     <!--
-       <lst name="spellchecker">
-         <str name="name">freq</str>
-         <str name="field">lowerfilt</str>
-         <str name="spellcheckIndexDir">spellcheckerFreq</str>
-         <str name="comparatorClass">freq</str>
-         <str name="buildOnCommit">true</str>
+      <lst name="spellchecker">
+        <str name="name">freq</str>
+        <str name="field">lowerfilt</str>
+        <str name="spellcheckIndexDir">spellcheckerFreq</str>
+        <str name="comparatorClass">freq</str>
+        <str name="buildOnCommit">true</str>
       -->
 
     <!-- A spellchecker that reads the list of words from a file -->
     <!--
-       <lst name="spellchecker">
-         <str name="classname">solr.FileBasedSpellChecker</str>
-         <str name="name">file</str>
-         <str name="sourceLocation">spellings.txt</str>
-         <str name="characterEncoding">UTF-8</str>
-         <str name="spellcheckIndexDir">spellcheckerFile</str>
-       </lst>
+      <lst name="spellchecker">
+        <str name="classname">solr.FileBasedSpellChecker</str>
+        <str name="name">file</str>
+        <str name="sourceLocation">spellings.txt</str>
+        <str name="characterEncoding">UTF-8</str>
+        <str name="spellcheckIndexDir">spellcheckerFile</str>
+      </lst>
       -->
   </searchComponent>
 
