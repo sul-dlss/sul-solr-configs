@@ -99,6 +99,7 @@
 
       <str name="qf">
         collection_title_tesim^150
+        date_hierarchy_ssim^150
         title_tesim^100
         normalized_title_teim^100
         name_teim^10
@@ -153,8 +154,8 @@
       <str name="fl">
         id,
         score,
-        abstract_ssm,
-        accessrestrict_ssm,
+        abstract_html_tesm,
+        accessrestrict_html_tesm,
         child_component_count_isi,
         collection_ssm,
         collection_unitid_ssm,
@@ -166,7 +167,7 @@
         language_ssim,
         level_ssm,
         repository_ssm,
-        scopecontent_ssm,
+        scopecontent_html_tesm,
         title_ssm,
         normalized_title_ssm,
         normalized_date_ssm,
