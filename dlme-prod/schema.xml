@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema name="Hydra" version="1.5">
+  <!-- NOTE: various comments and unused configuration possibilities have been purged
+     from this file.  Please refer to http://wiki.apache.org/solr/SchemaXml,
+     as well as the default schema file included with Solr -->
+
+  <uniqueKey>id</uniqueKey>
+
+  <fields>
+    <field name="id" type="string" stored="true" indexed="true" multiValued="false" required="true"/>
+    <field name="_version_" type="long"     indexed="true"  stored="true"/>
+    <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" multiValued="false"/>
+
+    <field name="cho_title_ng" type="text_en_ng" stored="false" indexed="true" multiValued="true"/>
+    <field name="id_ng"         type="text_en_ng" stored="false" indexed="true" multiValued="false"/>
+
+    <!-- NOTE:  not all possible Solr field types are represented in the dynamic fields -->
+
+    <!-- text (_t...) -->
+
+    <dynamicField name="*_ts" type="text" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_tsm" type="text" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_tsi" type="text" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_tsim" type="text" stored="true" indexed="true" multiValued="true"/>
+
+    <!-- exact-ish text (_exact_t...); exact matching of whitespace tokenized terms -->
+    <dynamicField name="*_exact_ts" type="text_ws" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_exact_tsm" type="text_ws" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_exact_tsi" type="text_ws" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_exact_tsim" type="text_ws" stored="true" indexed="true" multiValued="true"/>
+
+    <dynamicField name="*_fuzzy_tsim" type="text_fuzzy" stored="true" indexed="true" multiValued="true"/>
+
+    <!-- English text (_te...) -->
+    <dynamicField name="*_tes" type="text_en" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_tesm" type="text_en" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_tesi" type="text_en" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_tesim" type="text_en" stored="true" indexed="true" multiValued="true"/>
+
+    <!-- Arabic text (_tar...) -->
+    <dynamicField name="*_tars" type="text_ar" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_tarsm" type="text_ar" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_tarsi" type="text_ar" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_tarsim" type="text_ar" stored="true" indexed="true" multiValued="true"/>
+
+    <!-- Persian text (_tfa...) -->
+    <dynamicField name="*_tfas" type="text_fa" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_tfasm" type="text_fa" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_tfasi" type="text_fa" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_tfasim" type="text_fa" stored="true" indexed="true" multiValued="true"/>
+
+    <!-- Turkish text (_ttr...) -->
+    <dynamicField name="*_ttrs" type="text_tr" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_ttrsm" type="text_tr" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_ttrsi" type="text_tr" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_ttrsim" type="text_tr" stored="true" indexed="true" multiValued="true"/>
+
+    <!-- string (_s...) -->
+    <dynamicField name="*_ss" type="string" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_ssm" type="string" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_ssi" type="string" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_ssim" type="string" stored="true" indexed="true" multiValued="true"/>
+
+    <!-- integer (_i...) -->
+    <dynamicField name="*_is" type="int" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_ism" type="int" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_isi" type="int" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_isim" type="int" stored="true" indexed="true" multiValued="true"/>
+
+    <!-- boolean (_b...) -->
+    <dynamicField name="*_bs" type="boolean" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_bsi" type="boolean" stored="true" indexed="true" multiValued="false"/>
+
+    <!-- you must define copyField source and dest fields explicity or schemaBrowser doesn't work -->
+    <field name="all_text_timv" type="text" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <field name="all_text.ar_timv" type="text_en" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <field name="all_text.en_timv" type="text_ar" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+
+  </fields>
+
+
+  <!-- Above, multiple source fields are copied to the [text] field.
+      Another way to map multiple source fields to the same
+      destination field is to use the dynamic field syntax.
+      copyField also supports a maxChars to copy setting.  -->
+
+  <copyField source="id" dest="id_ng" maxChars="3000"/>
+  <copyField source="cho_identifier_ssim" dest="cho_identifier_tsim" />
+  <copyField source="cho_title_tsim" dest="cho_title_ng" maxChars="3000"/>
+  <copyField source="cho_title_tsim" dest="cho_title_exact_tsim" />
+  <copyField source="cho_title_tsim" dest="cho_title_tarsim" />
+  <copyField source="cho_title_tsim" dest="cho_title_tesim" />
+  <copyField source="cho_title_tsim" dest="cho_title_tfasim" />
+  <copyField source="cho_title_tsim" dest="cho_title_ttrsim" />
+  <copyField source="cho_alternative_tsim" dest="cho_alternative_exact_tsim" />
+  <copyField source="cho_alternative_tsim" dest="cho_alternative_tarsim" />
+  <copyField source="cho_alternative_tsim" dest="cho_alternative_tesim" />
+  <copyField source="cho_alternative_tsim" dest="cho_alternative_tfasim" />
+  <copyField source="cho_alternative_tsim" dest="cho_alternative_ttrsim" />
+  <copyField source="cho_creator_tsim" dest="cho_creator_fuzzy_tsim" />
+  <copyField source="cho_creator_tsim" dest="cho_creator_tarsim" />
+  <copyField source="cho_creator_tsim" dest="cho_creator_tesim" />
+  <copyField source="cho_creator_tsim" dest="cho_creator_tfasim" />
+  <copyField source="cho_creator_tsim" dest="cho_creator_ttrsim" />
+  <copyField source="cho_contributor_tsim" dest="cho_contributor_fuzzy_tsim" />
+  <copyField source="cho_contributor_tsim" dest="cho_contributor_tarsim" />
+  <copyField source="cho_contributor_tsim" dest="cho_contributor_tesim" />
+  <copyField source="cho_contributor_tsim" dest="cho_contributor_tfasim" />
+  <copyField source="cho_contributor_tsim" dest="cho_contributor_ttrsim" />
+
+  <copyField source="*_ssim" dest="all_text_timv" maxChars="3000"/>
+  <copyField source="*.en_ssim" dest="all_text.en_timv" maxChars="3000"/>
+  <copyField source="*.ar-Arab_ssim" dest="all_text.ar_timv" maxChars="3000"/>
+
+  <types>
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+    <fieldType name="rand" class="solr.RandomSortField" omitNorms="true"/>
+
+    <!-- Default numeric field types.  -->
+    <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0" sortMissingLast="true"/>
+    <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0" sortMissingLast="true"/>
+
+    <!-- The format for this date field is of the form 1995-12-31T23:59:59Z
+         Optional fractional seconds are allowed: 1995-12-31T23:59:59.999Z
+      -->
+    <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0" sortMissingLast="true"/>
+
+    <fieldType name="text" class="solr.TextField" omitNorms="false">
+      <analyzer>
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.TrimFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
+    <!-- A text field that only splits on whitespace for exact matching of words -->
+    <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.TrimFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
+    <!-- A text field with defaults appropriate for English -->
+    <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.EnglishPossessiveFilterFactory"/>
+        <!-- EnglishMinimalStemFilterFactory is less aggressive than PorterStemFilterFactory: -->
+        <filter class="solr.EnglishMinimalStemFilterFactory"/>
+        <!--
+        <filter class="solr.PorterStemFilterFactory"/>
+        -->
+        <filter class="solr.TrimFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
+    <fieldType name="text_ar" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ArabicNormalizationFilterFactory"/>
+        <filter class="solr.ArabicStemFilterFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+      </analyzer>
+    </fieldType>
+
+    <fieldType name="text_fa" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <!-- for ZWNJ -->
+        <charFilter class="solr.PersianCharFilterFactory"/>
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ArabicNormalizationFilterFactory"/>
+        <filter class="solr.PersianNormalizationFilterFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+      </analyzer>
+    </fieldType>
+
+    <!-- Turkish -->
+    <fieldType name="text_tr" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.SnowballPorterFilterFactory" language="Turkish"/>
+      </analyzer>
+    </fieldType>
+
+    <!-- A text field with defaults appropriate for English an NGrams -->
+    <fieldType name="text_en_ng" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.EnglishPossessiveFilterFactory"/>
+        <!-- EnglishMinimalStemFilterFactory is less aggressive than PorterStemFilterFactory: -->
+        <filter class="solr.EnglishMinimalStemFilterFactory"/>
+        <filter class="solr.TrimFilterFactory"/>
+        <filter class="solr.EdgeNGramFilterFactory" minGramSize="3" maxGramSize="15" />
+      </analyzer>
+
+      <analyzer type="query">
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.EnglishPossessiveFilterFactory"/>
+        <!-- EnglishMinimalStemFilterFactory is less aggressive than PorterStemFilterFactory: -->
+        <filter class="solr.EnglishMinimalStemFilterFactory"/>
+        <filter class="solr.TrimFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
+    <fieldType name="text_fuzzy" class="solr.TextField">
+      <analyzer>
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.BeiderMorseFilterFactory" nameType="GENERIC" ruleType="APPROX"
+                concat="true" languageSet="auto">
+        </filter>
+      </analyzer>
+    </fieldType>
+  </types>
+</schema>
