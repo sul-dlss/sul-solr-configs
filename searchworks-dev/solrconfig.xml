@@ -315,6 +315,7 @@
         pub_date_search^2
         isbn_search^1.6
         issn_search^1.6
+        callnum_search
         id
         druid
         oclc
@@ -373,6 +374,7 @@
 
         pub_date_search^10
         issn_search^7.5
+        callnum_search^7
         physical^5                     vern_physical^5
         award_search^5
         collection_search^5
@@ -487,6 +489,7 @@
         pub_date_search^2
         isbn_search^1.6
         issn_search^1.6
+        callnum_search
         id
         oclc
         barcode_search
@@ -544,6 +547,7 @@
 
         pub_date_search^10
         issn_search^7.5
+        callnum_search^7
         physical^5                     vern_physical^5                     cjk_physical_search^5               ja_physical_search^5    ko_physical_search^5
         award_search^5
         collection_search^5
