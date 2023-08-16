@@ -987,6 +987,7 @@
       <str name="fl">
         score,
         id,
+        uuid_ssi,
         author_corp_display,          vern_author_corp_display,
         author_meeting_display,       vern_author_meeting_display,
         author_person_display,        vern_author_person_display,
@@ -1042,13 +1043,19 @@
         url_suppl,
         url_sfx,
         managed_purl_urls,
+        ht_access_sim,
+        ht_htid_ssim,
+        ht_bib_key_ssim,
         characteristics_ssim,
+        holdings_json_struct:[json],
         author_struct:[json],
         marc_links_struct:[json],
         summary_struct:[json],
         toc_struct:[json],
         uniform_title_display_struct:[json],
-        schema_dot_org_struct:[json]
+        schema_dot_org_struct:[json],
+        collection_struct:[json],
+        item_display_struct:[json]
       </str>
     </lst>
   </requestHandler>
@@ -1064,7 +1071,10 @@
         summary_struct:[json],
         toc_struct:[json],
         uniform_title_display_struct:[json],
-        schema_dot_org_struct:[json]
+        schema_dot_org_struct:[json],
+        holdings_json_struct:[json],
+        collection_struct:[json],
+        item_display_struct:[json]
       </str>
       <int name="rows">1</int>
       <str name="q">{!raw f=id v=$id}</str> <!-- use id=666 instead of q=id:666 -->
