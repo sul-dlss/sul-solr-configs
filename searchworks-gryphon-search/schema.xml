@@ -252,6 +252,7 @@
 
 
     <field name="uuid_ssi" type="string" indexed="true" stored="true" multiValued="false" docValues="true" />
+    <field name="hashed_id_ssi" type="string" indexed="true" stored="true" multiValued="false" docValues="true" />
     <field name="building_location_facet_ssim" type="string" indexed="false" stored="true" docValues="true" multiValued="true" />
 
     <!-- *************** dynamic field types  ****************** -->
