@@ -8,9 +8,7 @@ To run a solr collection in the cloud, you must include some required configurat
 
 ## Updating configurations
 
-If you want to add or update configurations, you should send a pull request (tagging [@sul-dlss/devops](https://github.com/orgs/sul-dlss/teams/devops)) with your changes.
-
-[Example pull request](https://github.com/sul-dlss/sul-solr-configs/pull/1)
+If you want to add or update configurations, you should make a pull request.
 
 Once the pull request is merged, pull the changes into the deployed repository, push them to the Zookeeper cluster, and have solr update or create the collection. There is a script located at `sul-solr-a:/home/lyberadmin/bin/upconfig` that will perform these steps, or you can:
 
