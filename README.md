@@ -1,10 +1,22 @@
 # sul-solr-configs
 
-This repository manages the Solr configuration files in our solrcloud.
+This repository manages the Solr configuration files in our SolrCloud.
 
 ## Required configuration
 
-To run a solr collection in the cloud, you must include some required configuration. For Solr 4.x, the [required solr configuration](https://wiki.apache.org/solr/SolrCloud#Required_Config) is documented on the Solr wiki.
+To run a Solr collection in our SolrCloud, you must include some required configuration. For Solr 4.x, the [required solr configuration](https://wiki.apache.org/solr/SolrCloud#Required_Config) is documented on the Solr wiki.
+
+### managed-schema
+
+schema.xml is NO LONGER where all the schema fields come from, due to SolrCloud "managed_schema".
+
+From https://solr.apache.org/guide/8_11/overview-of-documents-fields-and-schema-design.html:
+
+"managed-schema is the name for the schema file Solr uses by default to support making Schema changes at runtime via the Schema API, or Schemaless Mode features. You may explicitly configure the managed schema features to use an alternative filename if you choose, but the contents of the files are still updated automatically by Solr. ...
+
+"If you are using SolrCloud you may not be able to find any file by these names on the local filesystem. You will only be able to see the schema through the Schema API (if enabled) or through the Solr Admin UI’s Cloud Screens."
+
+Schema API: https://solr.apache.org/guide/8_11/schema-api.html
 
 ## Updating configurations
 
