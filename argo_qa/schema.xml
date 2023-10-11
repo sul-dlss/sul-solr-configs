@@ -120,6 +120,7 @@
     <dynamicField name="*_tesiv"  type="text_en" stored="true" indexed="true"  multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
     <dynamicField name="*_tesimv" type="text_en" stored="true" indexed="true"  multiValued="true"  termVectors="true" termPositions="true" termOffsets="true"/>
 
+    <dynamicField name="*_text_nostem_i"  type="textNoStem" indexed="true"  stored="false" multiValued="false"/>
     <dynamicField name="*_text_nostem_im"  type="textNoStem" indexed="true"  stored="false" multiValued="true"/>
 
     <dynamicField name="random*" type="rand" />
