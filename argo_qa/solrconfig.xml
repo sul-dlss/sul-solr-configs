@@ -163,6 +163,19 @@
       <str name="facet.field">wf_swp_ssim</str>
       <str name="facet.field">doi_ssim</str>
       <str name="facet.field">barcode_id_ssim</str>
+      <str name="facet.field">content_file_roles_ssim</str>
+      <str name="f.content_file_roles_ssim.facet.sort">index</str>
+      <str name="f.content_file_roles_ssim.facet.method">enum</str>
+      <str name="facet.field">rights_descriptions_ssim</str>
+      <str name="f.rights_descriptions_ssim.facet.sort">index</str>
+      <str name="f.rights_descriptions_ssim.facet.method">enum</str>
+      <str name="facet.field">use_license_machine_ssi</str>
+      <str name="f.use_license_machine_ssi.facet.sort">index</str>
+      <str name="f.use_license_machine_ssi.facet.method">enum</str>
+      <str name="facet.field">processing_status_text_ssi</str>
+      <str name="f.processing_status_text_ssi.facet.method">enum</str>
+      <str name="facet.field">metadata_source_ssim</str>
+      <str name="f.metadata_source_ssim.facet.method">enum</str>
     </lst>
   </requestHandler>
 
