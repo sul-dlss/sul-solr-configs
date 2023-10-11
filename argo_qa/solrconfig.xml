@@ -72,7 +72,6 @@
         topic_tesim^2
 
         collection_title_tesim
-        source_id_ssim
 
         exploded_project_tag_ssim^2
         exploded_nonproject_tag_ssim
@@ -84,10 +83,13 @@
         object_type_ssim
 
         id
+        objectId_tesim
         identifier_ssim
         identifier_tesim
         barcode_id_ssim
         folio_instance_hrid_ssim
+        source_id_ssim^3
+        source_id_text_nostem_i
         previous_ils_ids_ssim
         doi_ssim
         contributor_orcids_ssim
@@ -98,16 +100,10 @@
         topic_tesim^10
 
         collection_title_tesim^5
-        source_id_ssim^5
-
-        exploded_project_tag_ssim^10
-        exploded_nonproject_tag_ssim^5
-        exploded_tag_ssim^5
-        tag_ssim^5
 
         objectId_tesim^5
-        identifier_ssim^5
         identifier_tesim^5
+        source_id_text_nostem_i^5
       </str>
       <str name="pf3">  <!-- (token trigrams boost within result set) -->
         sw_display_title_tesim^15
@@ -115,16 +111,10 @@
         topic_tesim^6
 
         collection_title_tesim^3
-        source_id_ssim^3
-
-        exploded_project_tag_ssim^6
-        exploded_nonproject_tag_ssim^3
-        exploded_tag_ssim^3
-        tag_ssim^3
 
         objectId_tesim^3
-        identifier_ssim^3
         identifier_tesim^3
+        source_id_text_nostem_i^3
       </str>
       <str name="pf2"> <!--(token bigrams boost within result set) -->
         sw_display_title_tesim^10
@@ -132,16 +122,10 @@
         topic_tesim^4
 
         collection_title_tesim^2
-        source_id_ssim^2
-
-        exploded_project_tag_ssim^4
-        exploded_nonproject_tag_ssim^2
-        exploded_tag_ssim^2
-        tag_ssim^2
 
         objectId_tesim^2
-        identifier_ssim^2
         identifier_tesim^2
+        source_id_text_nostem_i^2
       </str>
 
       <str name="facet">true</str>
