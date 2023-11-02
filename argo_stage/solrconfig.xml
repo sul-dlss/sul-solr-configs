@@ -72,7 +72,7 @@
 
       <str name="qf">
         sw_display_title_tesim^5
-        sw_author_tesim^3
+        contributor_text_nostem_im^3
         topic_tesim^2
 
         exploded_project_tag_ssim^2
@@ -84,8 +84,8 @@
         sw_format_ssim
         object_type_ssim
 
-        descriptive_tiv
         descriptive_text_nostem_i
+        descriptive_tiv
         descriptive_teiv
 
         collection_title_tesim
@@ -105,7 +105,7 @@
       </str>
       <str name="pf">  <!-- (phrase boost within result set) -->
         sw_display_title_tesim^25
-        sw_author_tesim^15
+        contributor_text_nostem_im^15
         topic_tesim^10
 
         descriptive_tiv^5
@@ -120,7 +120,7 @@
       </str>
       <str name="pf3">  <!-- (token trigrams boost within result set) -->
         sw_display_title_tesim^15
-        sw_author_tesim^9
+        contributor_text_nostem_im^9
         topic_tesim^6
 
         descriptive_tiv^15
@@ -135,7 +135,7 @@
       </str>
       <str name="pf2"> <!--(token bigrams boost within result set) -->
         sw_display_title_tesim^10
-        sw_author_tesim^6
+        contributor_text_nostem_im^6
         topic_tesim^4
 
         descriptive_tiv^10
