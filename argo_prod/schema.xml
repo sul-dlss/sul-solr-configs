@@ -28,13 +28,13 @@
 
     <!-- IntPointField integer (_ip...) (very efficient searches for specific values, or ranges of values) -->
     <!-- docValues true makes for faster facets, but more storage -->
-    <dynamicField name="*_ipi"    class="solr.IntPointField" stored="false" indexed="true"  multiValued="false" docValues="true"/>
-    <dynamicField name="*_ipim"   class="solr.IntPointField" stored="false" indexed="true"  multiValued="true"/>
-    <dynamicField name="*_ips"    class="solr.IntPointField" stored="true"  indexed="false" multiValued="false" docValues="true"/>
-    <dynamicField name="*_ipsm"   class="solr.IntPointField" stored="true"  indexed="false" multiValued="true"/>
-    <dynamicField name="*_ipsi"   class="solr.IntPointField" stored="true"  indexed="true"  multiValued="false"/>
-    <dynamicField name="*_ipsidv" class="solr.IntPointField" stored="true"  indexed="true"  multiValued="false" docValues="true"/>
-    <dynamicField name="*_ipsim"  class="solr.IntPointField" stored="true"  indexed="true"  multiValued="true"/>
+    <dynamicField name="*_ipi"    type="intPoint" stored="false" indexed="true"  multiValued="false" docValues="true"/>
+    <dynamicField name="*_ipim"   type="intPoint" stored="false" indexed="true"  multiValued="true"/>
+    <dynamicField name="*_ips"    type="intPoint" stored="true"  indexed="false" multiValued="false" docValues="true"/>
+    <dynamicField name="*_ipsm"   type="intPoint" stored="true"  indexed="false" multiValued="true"/>
+    <dynamicField name="*_ipsi"   type="intPoint" stored="true"  indexed="true"  multiValued="false"/>
+    <dynamicField name="*_ipsidv" type="intPoint" stored="true"  indexed="true"  multiValued="false" docValues="true"/>
+    <dynamicField name="*_ipsim"  type="intPoint" stored="true"  indexed="true"  multiValued="true"/>
     <!-- DEPRECATED: use IntPointField (_ip...) instead as type int is TrieInteger integer (_i...) -->
     <dynamicField name="*_ii"   type="int" stored="false" indexed="true"  multiValued="false"/>
     <dynamicField name="*_iim"  type="int" stored="false" indexed="true"  multiValued="true"/>
@@ -54,14 +54,14 @@
     <!-- The format for this date field is of the form 1995-12-31T23:59:59Z
          Optional fractional seconds are allowed: 1995-12-31T23:59:59.999Z -->
     <!-- docValues true makes for faster facets, but more storage -->
-    <dynamicField name="*_dtpi"     class="solr.DatePointField" stored="false" indexed="true"  multiValued="false" docValues="true"/>
-    <dynamicField name="*_dtpim"    class="solr.DatePointField" stored="false" indexed="true"  multiValued="true"/>
-    <dynamicField name="*_dtps"     class="solr.DatePointField" stored="true"  indexed="false" multiValued="false" docValues="true"/>
-    <dynamicField name="*_dtpsm"    class="solr.DatePointField" stored="true"  indexed="false" multiValued="true"/>
-    <dynamicField name="*_dtpsi"    class="solr.DatePointField" stored="true"  indexed="true"  multiValued="false" docValues="true"/>
-    <dynamicField name="*_dtpsidv"  class="solr.DatePointField" stored="true"  indexed="true"  multiValued="false" docValues="true"/>
-    <dynamicField name="*_dtpsim"   class="solr.DatePointField" stored="true"  indexed="true"  multiValued="true"/>
-    <dynamicField name="*_dtpsimdv" class="solr.DatePointField" stored="true"  indexed="true"  multiValued="true"  docValues="true"/>
+    <dynamicField name="*_dtpi"     type="datePoint" stored="false" indexed="true"  multiValued="false" docValues="true"/>
+    <dynamicField name="*_dtpim"    type="datePoint" stored="false" indexed="true"  multiValued="true"/>
+    <dynamicField name="*_dtps"     type="datePoint" stored="true"  indexed="false" multiValued="false" docValues="true"/>
+    <dynamicField name="*_dtpsm"    type="datePoint" stored="true"  indexed="false" multiValued="true"/>
+    <dynamicField name="*_dtpsi"    type="datePoint" stored="true"  indexed="true"  multiValued="false" docValues="true"/>
+    <dynamicField name="*_dtpsidv"  type="datePoint" stored="true"  indexed="true"  multiValued="false" docValues="true"/>
+    <dynamicField name="*_dtpsim"   type="datePoint" stored="true"  indexed="true"  multiValued="true"/>
+    <dynamicField name="*_dtpsimdv" type="datePoint" stored="true"  indexed="true"  multiValued="true"  docValues="true"/>
     <!-- DEPRECATED: (_dt...) type date is a TrieDate -->
     <!-- The format for this date field is of the form 1995-12-31T23:59:59Z
          Optional fractional seconds are allowed: 1995-12-31T23:59:59.999Z -->
@@ -80,12 +80,12 @@
     <dynamicField name="*_dttsim" type="tdate" stored="true" indexed="true"  multiValued="true"/>
 
     <!-- DoublePointField (_dbp...) (very efficient searches for specific values, or ranges of values) -->
-    <dynamicField name="*_dbpi"   class="solr.DoublePointField" stored="false" indexed="true"  multiValued="false" docValues="true"/>
-    <dynamicField name="*_dbpim"  class="solr.DoublePointField" stored="false" indexed="true"  multiValued="true"/>
-    <dynamicField name="*_dbps"   class="solr.DoublePointField" stored="true"  indexed="false" multiValued="false" docValues="true"/>
-    <dynamicField name="*_dbpsm"  class="solr.DoublePointField" stored="true"  indexed="false" multiValued="true"/>
-    <dynamicField name="*_dbpsi"  class="solr.DoublePointField" stored="true"  indexed="true"  multiValued="false" docValues="true"/>
-    <dynamicField name="*_dbpsim" class="solr.DoublePointField" stored="true"  indexed="true"  multiValued="true"/>
+    <dynamicField name="*_dbpi"   type="doublePoint" stored="false" indexed="true"  multiValued="false" docValues="true"/>
+    <dynamicField name="*_dbpim"  type="doublePoint" stored="false" indexed="true"  multiValued="true"/>
+    <dynamicField name="*_dbps"   type="doublePoint" stored="true"  indexed="false" multiValued="false" docValues="true"/>
+    <dynamicField name="*_dbpsm"  type="doublePoint" stored="true"  indexed="false" multiValued="true"/>
+    <dynamicField name="*_dbpsi"  type="doublePoint" stored="true"  indexed="true"  multiValued="false" docValues="true"/>
+    <dynamicField name="*_dbpsim" type="doublePoint" stored="true"  indexed="true"  multiValued="true"/>
     <!-- DEPRECATED: double is a TrieDouble (_db...) -->
     <dynamicField name="*_dbi"   type="double" stored="false" indexed="true"  multiValued="false"/>
     <dynamicField name="*_dbim"  type="double" stored="false" indexed="true"  multiValued="true"/>
@@ -155,6 +155,10 @@
   <types>
     <fieldType name="string"  class="solr.StrField" sortMissingLast="true" />
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+
+    <fieldType name="intPoint" class="solr.IntPointField" />
+    <fieldType name="datePoint" class="solr.DatePointField" />
+    <fieldType name="doublePoint" class="solr.DoublePointField" />
 
     <!-- DEPRECATED: All Trie* numeric and date field types have been deprecated in favor of *Point field types. -->
 
