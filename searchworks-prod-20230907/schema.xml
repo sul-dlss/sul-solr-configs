@@ -7,7 +7,8 @@
     <!-- needed by some of Solr 4.0 functionality like transaction log or partial documents update -->
     <field name="_version_" type="long" indexed="true" stored="true" />
 
-    <field name="id" type="string_punct_stop" indexed="true" stored="true" required="true" />
+    <field name="id" type="string" indexed="true" stored="true" required="true" docValues="true" />
+    <field name="id_search" type="string_punct_stop" indexed="true" stored="true" />
     <field name="timestamp" type="date" indexed="true" stored="true" default="NOW/SECOND" docValues="true" />
     <field name="created" type="date" indexed="true" stored="true" default="NOW/SECOND" docValues="true" />
     <field name="last_updated" type="date" indexed="true" stored="true" default="NOW/SECOND" docValues="true" />
@@ -282,6 +283,7 @@
   </fields>
 
   <!-- copy fields -->
+  <copyField source="id" dest="id_search" />
   <copyField source="collection" dest="collection_search" />
   <copyField source="pub_date" dest="pub_date_search" />
   <copyField source="db_az_subject" dest="db_az_subject_search" />
