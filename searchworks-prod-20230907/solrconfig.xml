@@ -316,10 +316,12 @@
         pub_date_search^2
         isbn_search^1.6
         issn_search^1.6
-        id
+        id_search
         druid
         oclc
+        id
         barcode_search
+        item_barcodes_search
         physical                       vern_physical
         award_search
         collection_search
