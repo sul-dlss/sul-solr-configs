@@ -276,13 +276,13 @@
         series_unstem_search^5
         series_search^2                vern_series_search^2
 
-        <!-- give these significant boosts to push them on par with titles + phrase boosts -->
-        author_title_1xx_unstem_search^700
-        author_title_245ac_unstem_search^550
-        author_title_1xx_search^325
-        author_title_245ac_search^300
-        author_title_unstem_search^250
-        author_title_search^50
+        <!-- give some boosts to push them on par with titles + phrase boosts -->
+        author_title_1xx_unstem_search^250
+        author_title_245ac_unstem_search^100
+        author_title_1xx_search^50
+        author_title_245ac_search^30
+        author_title_unstem_search^75
+        author_title_search^15
 
         author_1xx_unstem_search^25
         author_1xx_search^20           vern_author_1xx_search^20
