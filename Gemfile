@@ -6,5 +6,5 @@ group :test do
   gem 'rake'
   gem 'rspec'
   gem 'rubocop'
-  gem 'solr_wrapper', '~> 2.0'
+  gem 'solr_wrapper'
 end
