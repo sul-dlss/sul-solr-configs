@@ -39,7 +39,10 @@
 
       <str name="qf">
         sw_display_title_tesim^5
-        contributor_text_nostem_im^3
+
+        author_text_nostem_im^3
+        contributor_text_nostem_im
+
         topic_tesim^2
 
         tag_text_unstemmed_im
@@ -73,7 +76,10 @@
       </str>
       <str name="pf">  <!-- (defType dismax, edismax: phrase boost within result set) -->
         sw_display_title_tesim^25
-        contributor_text_nostem_im^15
+
+        author_text_nostem_im^15
+        contributor_text_nostem_im^5
+
         topic_tesim^10
 
         descriptive_text_nostem_i^5
@@ -88,7 +94,10 @@
       </str>
       <str name="pf3">  <!-- (defType edismax: token trigrams boost within result set) -->
         sw_display_title_tesim^15
-        contributor_text_nostem_im^9
+
+        author_text_nostem_im^9
+        contributor_text_nostem_im^3
+
         topic_tesim^6
 
         descriptive_text_nostem_i^15
@@ -103,7 +112,10 @@
       </str>
       <str name="pf2"> <!--(defType edismax: token bigrams boost within result set) -->
         sw_display_title_tesim^10
-        contributor_text_nostem_im^6
+
+        author_text_nostem_im^6
+        contributor_text_nostem_im^2
+
         topic_tesim^4
 
         descriptive_text_nostem_i^10
@@ -146,7 +158,10 @@
 
       <str name="qf">
         sw_display_title_tesim^5
-        contributor_text_nostem_im^3
+
+        author_text_nostem_im^3
+        contributor_text_nostem_im
+
         topic_tesim^2
 
         tag_text_unstemmed_im
@@ -180,7 +195,10 @@
       </str>
       <str name="pf">  <!-- (defType dismax, edismax: phrase boost within result set) -->
         sw_display_title_tesim^25
-        contributor_text_nostem_im^15
+
+        author_text_nostem_im^15
+        contributor_text_nostem_im^5
+
         topic_tesim^10
 
         descriptive_text_nostem_i^5
@@ -195,7 +213,10 @@
       </str>
       <str name="pf3">  <!-- (defType edismax: token trigrams boost within result set) -->
         sw_display_title_tesim^15
-        contributor_text_nostem_im^9
+
+        author_text_nostem_im^9
+        contributor_text_nostem_im^3
+
         topic_tesim^6
 
         descriptive_text_nostem_i^15
@@ -210,7 +231,10 @@
       </str>
       <str name="pf2"> <!--(defType edismax: token bigrams boost within result set) -->
         sw_display_title_tesim^10
-        contributor_text_nostem_im^6
+
+        author_text_nostem_im^6
+        contributor_text_nostem_im^2
+
         topic_tesim^4
 
         descriptive_text_nostem_i^10
