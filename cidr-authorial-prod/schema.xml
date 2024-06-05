@@ -93,8 +93,6 @@
         <filter class="solr.LowerCaseFilterFactory"/>
       </analyzer>
     </fieldType>
-    <!-- A specialized field for geospatial search. If indexed, this fieldType must not be multivalued. -->
-    <fieldType name="location" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
   </types>
   <fields>
     <!-- Valid attributes for fields:
@@ -245,12 +243,6 @@
 
     <!-- Type used to index the lat and lon components for the "location" FieldType -->
     <dynamicField name="*_coordinate"  type="tdouble" indexed="true"  stored="true"  multiValued="false"/>
-    <dynamicField name="*_p" type="location" indexed="true" stored="true" multiValued="false"/>
-
-    <dynamicField name="*_ll" stored="true"  type="location" multiValued="false" indexed="true"/>
-    <dynamicField name="*_llm" stored="true"  type="location" multiValued="true" indexed="true"/>
-    <dynamicField name="*_lls" stored="true" type="location" multiValued="false" indexed="true"/>
-    <dynamicField name="*_llms" stored="true" type="location" multiValued="true" indexed="true"/>
     <field name="textSpell" stored="false"  type="textSpell" multiValued="true" indexed="true"/>
 
     <!-- required by Solr 4 -->
