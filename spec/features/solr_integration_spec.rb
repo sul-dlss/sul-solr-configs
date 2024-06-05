@@ -10,16 +10,17 @@ describe 'integration with solr' do
   let(:collection) { @collection }
 
   before(:all) do
-    @solr = SolrWrapper::Instance.new port: nil, version: ENV.fetch('SOLR_VERSION', '8.11.1')
+    @solr = SolrWrapper::Instance.new port: nil, version: ENV.fetch('SOLR_VERSION', '9.6.1')
     @solr.send(:extract)
     solr_dir = @solr.instance_dir
-    test_solr_xml = File.expand_path('../../solr/solr.xml', __FILE__)
+    test_solr_xml = File.expand_path('../solr/solr.xml', __dir__)
     solr_xml = File.join(solr_dir, 'server/solr/solr.xml')
     contrib_dir = File.join(solr_dir, 'solr-contrib')
     FileUtils.cp test_solr_xml, solr_xml
     FileUtils.mkdir contrib_dir unless File.exist? contrib_dir
     FileUtils.cp Dir.glob(File.join(solr_dir, 'contrib', 'analysis-extras', '**', '*.jar')), contrib_dir
-    FileUtils.cp Dir.glob(File.expand_path('../../../plugins/*', __FILE__)), contrib_dir
+    FileUtils.cp Dir.glob(File.join(solr_dir, 'modules', 'analysis-extras', '**', '*.jar')), contrib_dir
+    FileUtils.cp Dir.glob(File.expand_path('../../plugins/*', __dir__)), contrib_dir
 
     @solr.start
   end
