@@ -243,7 +243,7 @@
            autowarmCount - the number of entries to prepopulate from
                and old cache.
       -->
-    <filterCache class="solr.FastLRUCache"
+    <filterCache class="solr.search.CaffeineCache"
                  size="512"
                  initialSize="512"
                  autowarmCount="0"/>
