@@ -54,8 +54,8 @@
 
   <query>
     <filterCache class="solr.search.CaffeineCache" size="50000" initialSize="12500" autowarmCount="48" cleanupThread="true"/>
-    <queryResultCache class="solr.LRUCache" size="102400" initialSize="8192" autowarmCount="1024"/>
-    <documentCache class="solr.LRUCache" size="40960" initialSize="8192" autowarmCount="0"/>
+    <queryResultCache class="solr.search.CaffeineCache" size="102400" initialSize="8192" autowarmCount="1024"/>
+    <documentCache class="solr.search.CaffeineCache" size="40960" initialSize="8192" autowarmCount="0"/>
     <fieldValueCache class="solr.search.CaffeineCache" size="100" initialSize="25" autowarmCount="0" showItems="64"/>
     <queryResultWindowSize>80</queryResultWindowSize>
     <queryResultMaxDocsCached>100</queryResultMaxDocsCached>
