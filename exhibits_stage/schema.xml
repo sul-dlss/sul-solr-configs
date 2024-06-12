@@ -7,7 +7,8 @@
     <field name="_version_" type="long" indexed="true" stored="true"/>
     <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" />
 
-    <field name="id" type="string_punct_stop" indexed="true" stored="true" required="true" />
+    <field name="id" type="string" indexed="true" stored="true" required="true" />
+    <field name="id_search" type="string_punct_stop" indexed="true" stored="false" />
     <field name="created" type="date" indexed="true" stored="true" default="NOW/SECOND" />
     <field name="last_updated" type="date" indexed="true" stored="true" default="NOW/SECOND" />
     <!-- entire marc bib record -->
@@ -336,6 +337,7 @@
 
   <!-- exhibits fields -->
   <copyField source="id" dest="id_ng" maxChars="3000"/>
+  <copyField source="id" dest="id_search" />
   <copyField source="title_full_display" dest="full_title_ng" maxChars="3000"/>
   <!-- NOTE:  all_search is meant for metadata -->
   <copyField source="*_tesim" dest="all_search" />
@@ -459,7 +461,7 @@
 
     <!-- Left and Right Anchored Analyzed Text, no Stemming -->
     <fieldtype name="text_anchored" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
-      <analyzer>
+      <analyzer type="index">
         <!-- put beginning and ending anchors on field value, removing trailing chars -->
         <!-- watch out for query time whitespace separated chars that will be processed as their own token stream, e.g. in 'felines : warm and fuzzy' -->
         <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^\s*(.*[\S&amp;&amp;[^\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]])[\s\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]*$" replacement="aaaaaa$1zzzzzz"/>
@@ -469,7 +471,23 @@
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms_both_anchors.txt" ignoreCase="true" expand="true"/>
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms_left_anchor.txt" ignoreCase="true" expand="true"/>
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms_right_anchor.txt" ignoreCase="true" expand="true"/>
-        <filter class="solr.WordDelimiterFilterFactory"
+        <filter class="solr.WordDelimiterGraphFilterFactory"
+          splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
+          splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
+          catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
+        <filter class="solr.FlattenGraphFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <!-- put beginning and ending anchors on field value, removing trailing chars -->
+        <!-- watch out for query time whitespace separated chars that will be processed as their own token stream, e.g. in 'felines : warm and fuzzy' -->
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="^\s*(.*[\S&amp;&amp;[^\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]])[\s\.\,:;/=&lt;&gt;\(\)\[\]\&amp;\|]*$" replacement="aaaaaa$1zzzzzz"/>
+        <tokenizer class="solr.WhitespaceTokenizerFactory" />
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms_both_anchors.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms_left_anchor.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms_right_anchor.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.WordDelimiterGraphFilterFactory"
           splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
           splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
           catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
@@ -509,11 +527,11 @@
     <fieldType name="string_punct_stop" class="solr.TextField" omitNorms="true">
       <analyzer type="index">
         <tokenizer class="solr.KeywordTokenizerFactory" />
-        <filter class="solr.ICUNormalizer2FilterFactory" name="nfkc" mode="compose" />
+        <filter class="solr.ICUNormalizer2FilterFactory" mode="compose" />
       </analyzer>
       <analyzer type="query">
         <tokenizer class="solr.KeywordTokenizerFactory" />
-        <filter class="solr.ICUNormalizer2FilterFactory" name="nfkc" mode="compose" />
+        <filter class="solr.ICUNormalizer2FilterFactory" mode="compose" />
         <!-- removing punctuation for Lucene query parser issues -->
         <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords_punctuation.txt"  />
       </analyzer>
