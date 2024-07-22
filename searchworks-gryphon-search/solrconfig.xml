@@ -15,11 +15,6 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-
-<!--
- This is a stripped down config file used for a simple example...
- It is *not* a good example to work from.
--->
 <config>
   <luceneMatchVersion>8.11.2</luceneMatchVersion>
   <!--  The DirectoryFactory to use for indexes.
