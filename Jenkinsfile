@@ -20,7 +20,7 @@ pipeline {
           git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT $GIT_COMMIT | 
             xargs dirname | sort | uniq |
             grep -v "spec/" | grep -v "plugins" | grep -v "\\." |
-            xargs -I {} echo "Deploying {}" && ssh -o StrictHostKeyChecking=no -v lyberadmin@sul-solr-prod-a.stanford.edu -- ~/bin/upconfig {}
+            xargs -I {} echo "Deploying {}" && ssh -o StrictHostKeyChecking=no -v lyberadmin@sul-solr-prod-a.stanford.edu -- bin/upconfig {}
           '''
         }
       }
