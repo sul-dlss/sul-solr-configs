@@ -258,6 +258,31 @@
       <str name="qf">
         title_245a_exact_search^1000
         title_245a_unstem_search^500
+        title_245_unstem_search^75
+        title_245_search^50            vern_title_245_search^50
+
+        author_title_1xx_unstem_search^250
+        author_title_245ac_unstem_search^100
+        author_title_1xx_search^50
+        author_title_unstem_search^25
+        author_title_search^10
+
+        topic_unstem_search^50
+        topic_search^20
+        db_az_subject_search^5
+
+        pub_date_search^2
+        isbn_search^1.6
+        issn_search^1.6
+        id_search
+        druid
+        item_barcodes_search
+        all_search                     vern_all_search
+      </str>
+
+      <str name="qf_single_term">
+        title_245a_exact_search^1000
+        title_245a_unstem_search^500
         title_245a_search^75           vern_title_245a_search^75
         title_245_unstem_search^75
         title_245_search^50            vern_title_245_search^50
