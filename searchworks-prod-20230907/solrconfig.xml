@@ -319,6 +319,77 @@
         all_unstem_search^5
         all_search                     vern_all_search
       </str>
+
+      <str name="qf_single_term">
+        title_245a_exact_search^1000
+        title_245a_unstem_search^500
+        title_245a_search^75           vern_title_245a_search^75
+        title_245_unstem_search^75
+        title_245_search^50            vern_title_245_search^50
+        title_uniform_unstem_search^50
+        title_uniform_search^20        vern_title_uniform_search^20
+        title_variant_unstem_search^20
+        title_variant_search^15        vern_title_variant_search^15
+        title_related_unstem_search^15
+        title_related_search^10        vern_title_related_search^10
+        series_exact_search^10
+        series_unstem_search^5
+        series_search^2                vern_series_search^2
+
+        <!-- give some boosts to push them on par with titles + phrase boosts -->
+        author_title_1xx_unstem_search^250
+        author_title_245ac_unstem_search^100
+        author_title_1xx_search^50
+        author_title_245ac_search^30
+        author_title_unstem_search^75
+        author_title_search^15
+
+        author_1xx_unstem_search^25
+        author_1xx_search^20           vern_author_1xx_search^20
+        author_7xx_unstem_search^20
+        author_7xx_search^10           vern_author_7xx_search^10
+        author_8xx_unstem_search^10
+        author_8xx_search^5            vern_author_8xx_search^5
+
+        topic_unstem_search^50
+        topic_search^20                vern_topic_search^20
+        geographic_unstem_search^20
+        geographic_search^10           vern_geographic_search^10
+        subject_other_unstem_search^10
+        subject_other_search^5         vern_subject_other_search^5
+        db_az_subject_search^5
+        topic_subx_unstem_search^5
+        topic_subx_search^2            vern_topic_subx_search^2
+        geographic_subz_unstem_search^5
+        geographic_subz_search^2       vern_geographic_subz_search^2
+        subject_other_subvy_unstem_search^5
+        subject_other_subvy_search^2   vern_subject_other_subvy_search^2
+        subject_all_unstem_search^5
+        subject_all_search^2           vern_subject_all_search^2
+
+        toc_unstem_search^5
+        toc_search^2                   vern_toc_search^2
+        context_unstem_search^5
+        context_search^2               vern_context_search^2
+        summary_unstem_search^5
+        summary_search^2               vern_summary_search^2
+
+        bib_unstem_search^10
+        bib_search^7
+        pub_date_search^2
+        isbn_search^1.6
+        issn_search^1.6
+        id_search
+        druid
+        oclc
+        item_barcodes_search
+        physical                       vern_physical
+        award_search
+        collection_search
+        all_unstem_search^5
+        all_search                     vern_all_search
+      </str>
+
       <str name="pf"> <!-- (phrase boost within result set) -->
         title_245a_exact_search^5000
         title_245a_unstem_search^2500
