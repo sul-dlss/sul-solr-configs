@@ -253,7 +253,7 @@
       <!-- in case lucene query parser -->
       <str name="df">all_search</str>
       <str name="q.op">AND</str>
-      <str name="sow">true</str>
+      <str name="sow">false</str>
 
       <str name="qf">
         title_245a_exact_search^1700
