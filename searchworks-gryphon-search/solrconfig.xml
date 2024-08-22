@@ -272,6 +272,9 @@
         topic_search^20
         db_az_subject_search^5
 
+        bib_unstem_search^20
+        bib_search^10 vern_bib_search^5
+
         pub_date_search^2
         isbn_search^1.6
         issn_search^1.6
