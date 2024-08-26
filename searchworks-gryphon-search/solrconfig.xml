@@ -951,20 +951,6 @@
         series_search^2                vern_series_search^2                cjk_series_search^2                 ja_series_search^2
       </str>
 
-
-      <!-- for course reserves searches -->
-      <str name="qf_crez">
-      	crez_instructor_search
-      	crez_course_name_search
-        crez_course_id_search
-      </str>
-      <str name="pf_crez">
-      	crez_instructor_search^2
-      	crez_course_name_search^2
-      </str>
-      <str name="sort_crez">score desc, title_sort asc, pub_date_sort desc</str>
-
-
       <!-- for advanced search publisher text box -->
       <str name="qf_pub_info">
         pub_search                     vern_pub_search
@@ -1075,7 +1061,6 @@
         collection,
         collection_type,
         collection_with_title,
-        crez_course_info,
         courses_folio_id_ssim,
         db_az_subject,
         druid,
@@ -1089,7 +1074,6 @@
         iiif_manifest_url_ssim,
         imprint_display,
         isbn_display,
-        item_display,
         lccn,
         lc_assigned_callnum_ssim,
         mhld_display,
@@ -1159,15 +1143,6 @@
       </str>
       <int name="rows">1</int>
       <str name="q">{!raw f=id v=$id}</str> <!-- use id=666 instead of q=id:666 -->
-    </lst>
-  </requestHandler>
-
-  <!-- barcode requests; use /barcode?q=1234567890 -->
-  <requestHandler name="/barcode" class="solr.SearchHandler" >
-    <lst name="defaults">
-      <str name="echoParams">explicit</str>
-      <str name="fl">id</str>
-      <str name="q">{!field f=barcode_search v=$n}</str>
     </lst>
   </requestHandler>
 
