@@ -255,26 +255,8 @@
       <str name="q.op">AND</str>
       <str name="sow">false</str>
 
-      <str name="bq">{!edismax sow=true qf=$qf_bq ps=2 ps2=2 ps3=3 pf=$pf_bq pf2=$pf_bq pf3=$pf_bq bq="" v=$q}</str>
-
-      <str name="qf_bq">
-        title_245a_exact_search^1000
-        title_245a_unstem_search^500
-        title_245_unstem_search^75
-        title_245_search^50            vern_title_245_search^50
-
-        author_title_1xx_unstem_search^250
-        author_title_245ac_unstem_search^100
-      </str>
-
-      <str name="pf_bq">
-        title_245a_unstem_search^100
-        title_245_unstem_search^50
-        title_245_search^20            vern_title_245_search^20
-
-        author_title_1xx_unstem_search^25
-        author_title_245ac_unstem_search^10
-      </str>
+      <!-- bump up results with a single-term matching in the 245a -->
+      <str name="bq">{!dismax sow=true qf=title_245a_exact_search^500 pf='' pf2='' pf3='' bf='' bq='' v=$q mm=1}</str>
 
       <str name="qf">
         title_245a_exact_search^1700
