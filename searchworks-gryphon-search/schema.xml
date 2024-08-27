@@ -505,11 +505,15 @@
     <fieldtype name="text_ws" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
       <analyzer type="index">
         <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+([&quot;\[{(])" replacement=" " />
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="([;:.,&quot;\]})]+)\s+" replacement=" " />
         <tokenizer class="solr.WhitespaceTokenizerFactory" />
         <filter class="solr.ICUNormalizer2FilterFactory" />
       </analyzer>
       <analyzer type="query">
         <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(&quot;)" replacement=" " />
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="([;:.,&quot;]+}+)\s+" replacement=" " />
         <tokenizer class="solr.WhitespaceTokenizerFactory" />
         <filter class="solr.ICUNormalizer2FilterFactory" />
       </analyzer>
