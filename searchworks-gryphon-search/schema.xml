@@ -89,6 +89,7 @@
     <field name="author_title_search" type="text" indexed="true" stored="true" multiValued="true" />
     <field name="author_title_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="true" />
     <field name="best_author_title_search" type="text" indexed="true" stored="true" multiValued="false" />
+    <field name="best_author_title_unstem_search" type="textNoStem" indexed="true" stored="false" multiValued="false" />
 
     <!-- Author Search Fields -->
     <field name="author_1xx_search" type="text" indexed="true" stored="true" />
@@ -308,6 +309,7 @@
   <copyField source="author_title_search" dest="author_title_unstem_search" />
   <copyField source="author_title_245ac_search" dest="author_title_245ac_unstem_search" />
   <copyField source="author_title_1xx_search" dest="author_title_1xx_unstem_search" />
+  <copyField source="best_author_title_search" dest="best_author_title_unstem_search" />
   <!-- unstemmed search fields: author -->
   <copyField source="author_1xx_search" dest="author_1xx_unstem_search" />
   <copyField source="author_7xx_search" dest="author_7xx_unstem_search" />
