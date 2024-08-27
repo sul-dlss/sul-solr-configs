@@ -44,9 +44,11 @@
 
     <!-- Title Search Fields -->
     <field name="title_245a_exact_search" type="text_anchored" indexed="true" stored="false" />
+    <field name="title_245a_ws_search" type="text_ws" indexed="true" stored="false" />
     <field name="title_245a_search" type="text" indexed="true" stored="true" />
     <field name="vern_title_245a_search" type="textNoStem" indexed="true" stored="true" />
     <field name="title_245a_unstem_search" type="textNoStem" indexed="true" stored="false" />
+    <field name="title_245_ws_search" type="text_ws" indexed="true" stored="false" />
     <field name="title_245_search" type="text" indexed="true" stored="true" />
     <field name="vern_title_245_search" type="textNoStem" indexed="true" stored="true" />
     <field name="title_245_unstem_search" type="textNoStem" indexed="true" stored="false" />
@@ -301,8 +303,10 @@
   <copyField source="barcode_search" dest="item_barcodes" />
   <!-- unstemmed and anchored search fields: title -->
   <copyField source="title_245a_search" dest="title_245a_exact_search" />
+  <copyField source="title_245a_search" dest="title_245a_ws_search" />
   <copyField source="title_245a_search" dest="title_245a_unstem_search" />
   <copyField source="title_245_search" dest="title_245_unstem_search" />
+  <copyField source="title_245_search" dest="title_245_ws_search" />
   <copyField source="title_uniform_search" dest="title_uniform_unstem_search" />
   <copyField source="title_variant_search" dest="title_variant_unstem_search" />
   <copyField source="title_related_search" dest="title_related_unstem_search" />
@@ -494,6 +498,20 @@
           splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
           splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
           catenateAll="0" preserveOriginal="0" stemEnglishPossessive="0" />
+      </analyzer>
+    </fieldtype>
+
+    <!-- Analyzed Text, exact string matching -->
+    <fieldtype name="text_ws" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
+      <analyzer type="index">
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
+        <tokenizer class="solr.WhitespaceTokenizerFactory" />
+        <filter class="solr.ICUNormalizer2FilterFactory" />
+      </analyzer>
+      <analyzer type="query">
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="\s+(\p{Punct}+)\s+" replacement=" " />
+        <tokenizer class="solr.WhitespaceTokenizerFactory" />
+        <filter class="solr.ICUNormalizer2FilterFactory" />
       </analyzer>
     </fieldtype>
 
