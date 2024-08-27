@@ -258,6 +258,7 @@
       <str name="bq">{!edismax sow=true qf=$qf_bq ps=2 ps2=2 ps3=3 pf=$pf_bq pf2=$pf_bq pf3=$pf_bq bq="" v=$q}</str>
 
       <str name="qf_bq">
+        title_245a_exact_search^1000
         title_245a_unstem_search^500
         title_245_unstem_search^75
         title_245_search^50            vern_title_245_search^50
