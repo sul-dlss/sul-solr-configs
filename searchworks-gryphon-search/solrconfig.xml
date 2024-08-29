@@ -379,8 +379,8 @@
         title_variant_search^75        vern_title_variant_search^75
         title_related_unstem_search^75
         title_related_search^50        vern_title_related_search^50
-        series_exact_search^50
-        series_unstem_search^25
+        series_exact_search^300
+        series_unstem_search^275
         series_search^10               vern_series_search^10
 
         best_author_title_unstem_search^2000
