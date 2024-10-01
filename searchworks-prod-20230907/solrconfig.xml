@@ -1132,6 +1132,7 @@
         ht_access_sim,
         ht_htid_ssim,
         ht_bib_key_ssim,
+        holdings_library_code_ssim,
         characteristics_ssim,
         holdings_json_struct:[json],
         author_struct:[json],
