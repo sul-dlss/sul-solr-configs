@@ -267,6 +267,7 @@
     <dynamicField name="*_hsim" type="string_hierarch" stored="true" indexed="true" multiValued="true" />
     <dynamicField name="*_struct" type="string" stored="true" indexed="false" multiValued="true" omitNorms="true" />
     <dynamicField name="*_dtsi" type="date" stored="true" indexed="false" omitNorms="true" />
+    <dynamicField name="*suggest" type="textSuggest" indexed="true" stored="false" multiValued="true" />
   </fields>
 
   <!-- copy fields -->
@@ -366,6 +367,10 @@
   <copyField source="vern_summary_search" dest="ja_summary_search" />
   <copyField source="vern_all_search" dest="ja_all_search" />
 
+  <!-- for suggestions -->
+  <copyField source="author_person_facet" dest="suggest"/>
+  <copyField source="author_other_facet" dest="suggest"/>
+
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
     <fieldtype name="boolean" class="solr.BoolField" sortMissingLast="true" />
@@ -437,6 +442,15 @@
           catenateAll="0" preserveOriginal="0" stemEnglishPossessive="0" />
       </analyzer>
     </fieldtype>
+
+    <!-- for suggestions -->
+    <fieldType class="solr.TextField" name="textSuggest" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+    </fieldType>
 
     <!-- Left and Right Anchored Analyzed Text, no Stemming -->
     <fieldtype name="text_anchored" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
