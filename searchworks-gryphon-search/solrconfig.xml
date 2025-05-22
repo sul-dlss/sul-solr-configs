@@ -356,6 +356,7 @@
         pub_date_search^2
         isbn_search^1.6
         issn_search^1.6
+        callnum_search
         id_search
         druid
         oclc
@@ -427,6 +428,7 @@
         bib_search^7
         pub_date_search^10
         issn_search^7.5
+        callnum_search^7
         physical^5                     vern_physical^5
         award_search^5
         collection_search^5
