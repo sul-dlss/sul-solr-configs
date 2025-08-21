@@ -665,8 +665,14 @@
 
     <!-- for suggestions -->
     <fieldType class="solr.TextField" name="textSuggest" positionIncrementGap="100">
-      <analyzer>
-        <tokenizer class="solr.KeywordTokenizerFactory"/>
+      <analyzer type="index">
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+        <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="10"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.StandardTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
       </analyzer>
