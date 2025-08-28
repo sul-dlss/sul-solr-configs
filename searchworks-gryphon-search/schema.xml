@@ -664,8 +664,14 @@
       </analyzer>
     </fieldType>
 
-    <!-- for suggestions -->
-    <fieldType class="solr.TextField" name="textSuggest" positionIncrementGap="100">
+    <!-- for storing suggestions -->
+    <fieldType name="textSuggest" class="solr.TextField" positionIncrementGap="100">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+    </fieldType>
+    <!-- for analysis of suggested text as part of lookup implementation-->
+    <fieldType name="textSuggestAnalyzer" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
         <tokenizer class="solr.StandardTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
