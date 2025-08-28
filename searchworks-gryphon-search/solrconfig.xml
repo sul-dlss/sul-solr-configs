@@ -1210,26 +1210,11 @@
       <str name="buildOnCommit">true</str>
       <str name="field">suggest</str>
     </lst>
-     <lst name="suggester">
-      <str name="name">mySuggesterPrefix</str>
-      <str name="lookupImpl">FuzzyLookupFactory</str>
-      <str name="nonFuzzyPrefix">3</str>
-      <str name="suggestAnalyzerFieldType">textSuggest</str>
-      <str name="buildOnCommit">true</str>
-      <str name="field">suggest</str>
-    </lst>
     <lst name="suggester">
       <str name="name">defaultAnalyzing</str>
       <str name="lookupImpl">AnalyzingInfixLookupFactory</str>
-      <str name="suggestAnalyzerFieldType">textSuggest</str>
-      <str name="buildOnCommit">true</str>
-      <str name="field">suggest</str>
-    </lst>
-    <lst name="suggester">
-      <str name="name">defaultBlended</str>
-      <str name="lookupImpl">BlendedInfixLookupFactory</str>
-      <str name="suggestAnalyzerFieldType">textSuggest</str>
-      <str name="buildOnCommit">true</str>
+      <str name="suggestAnalyzerFieldType">textSuggestAnalyzer</str>
+      <str name="buildOnCommit">false</str>
       <str name="field">suggest</str>
     </lst>
   </searchComponent>
