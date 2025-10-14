@@ -32,8 +32,10 @@
        <str name="echoParams">explicit</str>
        <str name="q.alt">*:*</str>
        <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
+       <!-- query slop -->
        <int name="qs">1</int>
-       <int name="ps">2</int>
+       <!-- phrase slop -->
+       <int name="ps">0</int>
        <float name="tie">0.01</float>
        <!-- this qf and pf are used by default, if not otherwise specified by
             client. The default blacklight_config will use these for the
@@ -42,38 +44,67 @@
             those searches. You may also be interested in:
             http://wiki.apache.org/solr/LocalParams
        -->
+        <!-- Fields listed in decreasing boost order-->
         <str name="qf">
+          title_tsim^1000
+          subtitle_tsim^950
+          alternative_title_tsim^950
+          translated_title_tsim^950
+          other_title_tsim^950
+          descriptions_tsim^900
+          methods_tsim^900
+          other_descriptions_tsim^900
+          creators_tsim^800
+          contributors_tsim^800
+          subjects_tsim^800
+          funders_tsim^700
+          publisher_tsi^700
+          variables_tsim^600
+          temporal_isim^500
           id
-          full_title_tsim
-          short_title_tsim
-          alternative_title_tsim
-          active_fedora_model_ssi
-          title_tsim
-          author_tsim
-          subject_tsim
           all_text_timv
         </str>
+        <!-- Boosting document scores based on query phrases in fields-->
         <str name="pf">
-          all_text_timv^10
+          title_tsim^1000
+          subtitle_tsim^950
+          alternative_title_tsim^950
+          translated_title_tsim^950
+          other_title_tsim^950
+          descriptions_tsim^900
+          methods_tsim^900
+          other_descriptions_tsim^900
+          creators_tsim^800
+          contributors_tsim^800
+          subjects_tsim^800
+          funders_tsim^700
+          publisher_tsi^700
+          variables_tsim^600
+          temporal_isim^500
+          all_text_timv
         </str>
-
        <str name="author_qf">
-          author_tsim
+          creators_tsim
+          contributors_tsim
        </str>
        <str name="author_pf">
+          creators_tsim
+          contributors_tsim
        </str>
        <str name="title_qf">
           title_tsim
-          full_title_tsim
-          short_title_tsim
+          subtitle_tsim
           alternative_title_tsim
+          translated_title_tsim
+          other_title_tsim
        </str>
        <str name="title_pf">
        </str>
        <str name="subject_qf">
-          subject_tsim
+          subjects_tsim
        </str>
        <str name="subject_pf">
+          subjects_tsim
        </str>
 
        <str name="fl">
