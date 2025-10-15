@@ -62,7 +62,7 @@
           variables_tsim^600
           temporal_isim^500
           id
-          all_text_timv
+          all_text
         </str>
         <!-- Boosting document scores based on query phrases in fields-->
         <str name="pf">
@@ -81,7 +81,7 @@
           publisher_tsi^700
           variables_tsim^600
           temporal_isim^500
-          all_text_timv
+          all_text
         </str>
        <str name="author_qf">
           creators_tsim
