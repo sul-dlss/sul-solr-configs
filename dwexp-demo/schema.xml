@@ -194,7 +194,7 @@
     <dynamicField name="*suggest" type="textSuggest" indexed="true" stored="false" multiValued="true" />
 
     <!-- you must define copyField source and dest fields explicity or schemaBrowser doesn't work -->
-    <field name="all_text_timv" type="text" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <field name="all_text" type="text_en" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
 
 
   </fields>
@@ -205,25 +205,38 @@
       destination field is to use the dynamic field syntax.
       copyField also supports a maxChars to copy setting.  -->
 
-  <copyField source="*_tsim" dest="all_text_timv" maxChars="3000"/>
-  <copyField source="*_tesim" dest="all_text_timv" maxChars="3000"/>
-  <copyField source="*_ssim" dest="all_text_timv" maxChars="3000"/>
-  <copyField source="*_si" dest="all_text_timv" maxChars="3000"/>
+  <copyField source="*_tsim" dest="all_text" maxChars="3000"/>
+  <copyField source="*_tesim" dest="all_text" maxChars="3000"/>
+  <copyField source="*_ssim" dest="all_text" maxChars="3000"/>
+  <copyField source="*_si" dest="all_text" maxChars="3000"/>
 
   <copyField source="*_tsim" dest="suggest"/>
   <copyField source="*_tesim" dest="suggest"/>
   <copyField source="*_ssim" dest="suggest"/>
   <copyField source="*_si" dest="suggest"/>
 
-  <!-- TODO: Look into if these are actually being used. -->
   <copyField source="*_tsim" dest="spell"/>
   <copyField source="*_tesim" dest="spell"/>
   <copyField source="*_ssim" dest="spell"/>
   <copyField source="*_si" dest="spell"/>
 
-  <copyField source="author_tsim" dest="author_spell"/>
-  <copyField source="subject_ssim" dest="subject_spell"/>
+  <!-- For search, we want tokenized/text versions of specific string fields -->
+  <copyField source="creators_ssim" dest="creators_tsim"/>
+  <copyField source="contributors_ssim" dest="contributors_tsim"/>
+  <copyField source="subjects_ssim" dest="subjects_tsim"/>
+  <copyField source="funders_ssim" dest="funders_tsim"/>
+  <copyField source="publisher_ssi" dest="publisher_tsi"/>
+
+  <!-- These are used for field-specific spellchecking and search -->
+  <copyField source="creators_ssim" dest="author_spell"/>
+  <copyField source="contributors_ssim" dest="author_spell"/>
+  <copyField source="subjects_ssim" dest="subject_spell"/>
   <copyField source="title_tsim" dest="title_spell"/>
+  <copyField source="subtitle_tsim" dest="title_spell"/>
+  <copyField source="alternative_title_tsim" dest="title_spell"/>
+  <copyField source="translated_title_tsim" dest="title_spell"/>
+  <copyField source="other_title_tsim" dest="title_spell"/>
+
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
