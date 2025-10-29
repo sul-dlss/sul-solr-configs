@@ -167,7 +167,10 @@
   <copyField source="id"       dest="layer_slug_ti"       maxChars="100"/>
 
   <!-- core text search -->
-  <copyField source="*_s"                dest="text" />
+  <copyField source="dct_format_s"                     dest="text" />
+  <copyField source="dct_issued_s"                     dest="text" />
+  <copyField source="dct_title_s"                      dest="text" />
+  <copyField source="gbl_wxsIdentifier_s"              dest="text" />
   <copyField source="*_sm"               dest="text" />
 
   <!-- for sorting text fields -->
