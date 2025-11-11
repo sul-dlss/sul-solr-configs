@@ -34,6 +34,7 @@ AI, artificial intelligence, machine learning, ML
 LLM, Large Language Model
 humans, people, person, persons
 ICPSR => Inter-university Consortium for Political and Social Research
+climate change, global warming
 
 # Acronyms from https://research.unl.edu/majorawards/2024/federal-agency-abbreviations-and-acronyms/
 
