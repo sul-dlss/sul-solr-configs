@@ -29,3 +29,93 @@ Television, Televisions, TV, TVs
 # Synonym mappings can be used for spelling correction too
 pixima => pixma
 
+# Specific terms
+AI, artificial intelligence, machine learning, ML
+LLM, Large Language Model
+humans, people, person, persons
+ICPSR => Inter-university Consortium for Political and Social Research
+
+# Acronyms from https://research.unl.edu/majorawards/2024/federal-agency-abbreviations-and-acronyms/
+
+DHHS => Department of Health and Human Services
+ACF => Administration for Children and Families
+ASPR => Administration for Strategic Preparedness and Response
+CDC => Centers for Disease Control and Prevention
+HRSA => Health Resources and Services Administration 
+NCATS => National Center for Advancing Translational Sciences
+SAMHSA => Substance Abuse and Mental Health Services Administration
+DOC => Department of Commerce
+EDA => Economic Development Administration
+NIST => National Institute of Standards and Technology
+NOAA => National Oceanic and Atmospheric Administration
+DOD => Department of Defense
+AFOSR => Air Force Office of Scientific Research
+AFRL => Air Force Research Laboratory
+ARO => Army Research Office
+CDMRP => Congressionally Directed Medical Research Programs
+DPAA => Defense POW/MIA Accounting Agency
+DTRA => Defense Threat Reduction Agency
+DURIP => Defense University Research Instrumentation Program
+ERDC => Engineer Research and Development Center
+MURI => Multidisciplinary University Research Initiative
+NAVSEA => Naval Sea Systems Command
+NGA => National Geospatial-Intelligence Agency 
+ONR => Office of Naval Research
+STRATCOM => U.S. Strategic Command
+DOE => Department of Energy
+ARPA-E => Advanced Research Projects Agency-Energy
+EERE => Energy Efficiency and Renewable Energy
+NEUP => Nuclear Energy University Programs
+DOI => Department of Interior
+BR => Bureau of Reclamation
+FWS => Fish and Wildlife Service
+USGS => U.S. Geological Survey
+DOJ => Department of Justice
+BJA => Bureau of Justice Assistance
+NIJ => National Institute of Justice
+OVW => Office on Violence Against Women
+DOT => Department of Transportation
+FHWA => Federal Highway Administration
+FMCSA => Federal Motor Carrier Safety Administration
+FRA => Federal Railroad Administration
+NCHRP => National Cooperative Highway Research Program
+PHMSA => Pipeline and Hazardous Materials Safety Administration
+TRB => Transportation Research Board
+ED => Department of Education
+IES => Institute of Education Sciences
+EPA => Environmental Protection Agency
+EPSCoR => Established Program to Stimulate Competitive Research
+HUD => Housing and Urban Development
+NASA => National Aeronautics and Space Administration
+NEA => National Endowment for the Arts
+NEH => National Endowment for the Humanities
+NIH => National Institutes of Health
+NHLBI => National Heart, Lung and Blood Institute
+NIAAA => National Institute on Alcohol Abuse and Alcoholism
+NIAID => National Institute of Allergy and Infectious Diseases
+NIAMS => National Institute of Arthritis and Musculoskeletal and Skin Diseases
+NIBIB => National Institute of Biomedical Imaging and Bioengineering
+NICHD => National Institute of Child Health and Human Development
+NIDA => National Institute on Drug Abuse
+NIDCD => National Institute on Deafness and Communication Disorders
+NIDCR => National Institute of Dental and Craniofacial Research
+NIDDK => National Institute of Diabetes, Digestive and Kidney Disease
+NIGMS => National Institute of General Medical Sciences
+NIMH => National Institute of Mental Health
+NIMHD => National Institute on Minority Health and Health Disparities
+NINDS => National Institute of Neurological Disorders and Stroke
+NSF => National Science Foundation
+USAID => United States Agency for International Development
+USDA => United States Department of Agriculture
+AFRI => Agriculture and Food Research Initiative
+AMS => Agricultural Marketing Service
+APHIS => Animal and Plant Health Inspection Service
+ARS => Agricultural Research Service
+FAS => Foreign Agricultural Service
+FNS => Food and Nutrition Service
+FS => Forestry Service
+FSA => Farm Service Agency
+NIFA => National Institute for Food and Agriculture
+SARE => Sustainable Agriculture Research and Education Program
+NRCS => Natural Resources Conservation Service
+OCE => Office of the Chief Economist
