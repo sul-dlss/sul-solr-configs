@@ -318,9 +318,21 @@
 
     <!-- A text field with defaults appropriate for English -->
     <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
-      <analyzer>
+      <analyzer type="index">
         <tokenizer class="solr.ICUTokenizerFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.EnglishPossessiveFilterFactory"/>
+        <!-- EnglishMinimalStemFilterFactory is less aggressive than PorterStemFilterFactory: -->
+        <filter class="solr.EnglishMinimalStemFilterFactory"/>
+        <!--
+        <filter class="solr.PorterStemFilterFactory"/>
+        -->
+        <filter class="solr.TrimFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.SynonymGraphFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
         <filter class="solr.EnglishPossessiveFilterFactory"/>
         <!-- EnglishMinimalStemFilterFactory is less aggressive than PorterStemFilterFactory: -->
         <filter class="solr.EnglishMinimalStemFilterFactory"/>
