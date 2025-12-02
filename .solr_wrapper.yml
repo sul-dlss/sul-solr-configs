@@ -2,5 +2,5 @@
 collection:
   dir: <%= ENV['collection'] %>
   name: <%= ENV['collection'] %>
-version: 9.6.1
+version: 9.10.0
 port: 8983
