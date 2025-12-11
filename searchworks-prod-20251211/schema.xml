@@ -13,7 +13,7 @@
     <field name="created" type="date" indexed="true" stored="true" default="NOW/SECOND" docValues="true" />
     <field name="last_updated" type="date" indexed="true" stored="true" default="NOW/SECOND" docValues="true"/>
     <!-- entire marc bib record -->
-    <field name="marcxml" type="string" indexed="false" stored="true" large="true" />
+    <field name="marcxml" type="string" indexed="false" stored="true" large="true" docValues="false" />
     <!-- all_search: catch-all field for searchable text; stored for hit highlighting />-->
     <field name="all_search" type="text" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true"/>
     <field name="all_unstem_search" type="textNoStem" indexed="true" stored="false" />
@@ -252,7 +252,7 @@
 
     <!-- *************** additional fields for DOR objects  ****************** -->
     <field name="druid" type="string_punct_stop" indexed="true" stored="true" />
-    <field name="modsxml" type="string" indexed="false" stored="true" large="true" />
+    <field name="modsxml" type="string" indexed="false" stored="true" large="true" docValues="false" />
     <!-- collection (facet and display): "sirsi" or, for DOR items, the id of their parent coll -->
     <field name="collection" type="string" indexed="true" stored="true" multiValued="true" omitNorms="true" />
     <!-- collection_with_title: easy way to indicate item's parent coll title in UI (may be deprecated in future) -->
