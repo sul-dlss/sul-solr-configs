@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'schema.xml' do
+RSpec.describe 'schema.xml' do
   shared_examples 'a solr cloud-ready schema' do
     it 'is valid XML' do
       expect(subject.errors).to be_empty

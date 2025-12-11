@@ -5,7 +5,7 @@ require 'json'
 require 'fileutils'
 require 'securerandom'
 
-describe 'integration with solr 8' do
+RSpec.describe 'integration with solr 8' do
   let(:solr) { @solr }
   let(:collection) { @collection }
 
