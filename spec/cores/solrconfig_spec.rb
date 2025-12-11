@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'solrconfig.xml' do
+RSpec.describe 'solrconfig.xml' do
   shared_examples 'a solr cloud-ready solrconfig' do
     it 'is valid XML' do
       expect(subject.errors).to be_empty
