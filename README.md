@@ -22,26 +22,18 @@ Schema API: https://solr.apache.org/guide/8_11/schema-api.html
 
 If you want to add or update configurations, you should make a pull request.
 
-Once the pull request is merged, pull the changes into the deployed repository, push them to the Zookeeper cluster, and have solr update or create the collection. There is a script located at `sul-solr-a:/home/lyberadmin/bin/upconfig` that will perform these steps, or you can:
+Once the pull request is merged, pull the changes into the deployed repository, push them to the Zookeeper cluster, and have solr update or create the collection. There is a script located at `sul-solr-(prod|test)-a:/home/lyberadmin/bin/upconfig` that you can run to perform these steps on a given collection (the first/only arg to the script), or you can:
 
-```
+```shell
+$ cd /home/lyberadmin/sul-solr-configs
 $ git pull
-$ /usr/share/java/solr/server/scripts/cloud-scripts/zkcli.sh -zkhost <zkhost_here>:2181 -cmd upconfig -confname <collectionname_here> -confdir <repo_dirname_here>
+$ cp <collectionname_here>/schema.xml <collectionname_here>/managed-schema
+$ /opt/solr/server/scripts/cloud-scripts/zkcli.sh -zkhost <zkhost_here>:2181 -cmd upconfig -confname <collectionname_here> -confdir <repo_dirname_here>
+# If this is an existing collection, then run:
+$ curl "http://<solr_server>/solr/admin/collections?action=RELOAD&name=<collectionname_here>"
+# Else, create it via:
+$ curl "http://<solr_server>/solr/admin/collections?action=CREATE&name=<collectionname_here>&numShards=1&replicationFactor=3"
 ```
-
-then
-
-```
-$ curl "https://<solr_server>/solr/admin/collections?action=CREATE&name=<collectionname_here>&numShards=1&replicationFactor=3"
-```
-
-or
-
-```
-$ curl "https://<solr_server>/solr/admin/collections?action=RELOAD&name=<collectionname_here>""
-```
-
-If you find that changes haven't propagated to the collection, check to see whether the `schema.xml` of the collection matches the `managed-schema`. In one case, before re-running the above process, reconciling the two with a `cp schema.xml managed-schema` propagated the changes.
 
 ## Testing configurations
 
