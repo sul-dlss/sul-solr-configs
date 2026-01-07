@@ -12,7 +12,7 @@ RSpec.describe 'integration with solr' do
   let(:collection) { @collection }
 
   before(:all) do
-    @solr = SolrWrapper::Instance.new port: nil, version: ENV.fetch('SOLR_VERSION', '9.6.1')
+    @solr = SolrWrapper::Instance.new port: nil, version: ENV.fetch('SOLR_VERSION', '9.10.0')
     @solr.send(:extract)
     solr_dir = @solr.instance_dir
     test_solr_xml = File.expand_path('../solr/solr.xml', __dir__)
@@ -72,7 +72,7 @@ RSpec.describe 'integration with solr' do
     end
   end
 
-  solr_collections.reject { |x| x =~ /earthworks/ }.each do |name|
+  solr_collections.each do |name|
     describe name do
       let(:dir) { name }
       include_examples 'works in solr'
