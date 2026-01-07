@@ -16,6 +16,13 @@ RSpec.describe 'solrconfig.xml' do
       expect(subject.xpath('/config/requestHandler[@name="/get"][@class="solr.RealTimeGetHandler"]')).not_to be_empty
     end
 
+    it 'does not enable remote streaming' do
+      skip('-prod collections temporarily permitted during testing') if collection.match?(/[-_]prod/)
+
+      remote_streaming = subject.xpath('/config/requestDispatcher/requestParsers/@enableRemoteStreaming').text
+      expect(remote_streaming).not_to eq('true')
+    end
+
     describe 'replication handler' do
       let(:replication_handler) do
         subject.xpath('/config/requestHandler[@name="/replication"][@class="solr.ReplicationHandler"]')
@@ -35,6 +42,7 @@ RSpec.describe 'solrconfig.xml' do
 
   solr_collections.each do |name|
     describe name do
+      let(:collection) { name }
       subject { Nokogiri::XML(File.read(File.join(name, 'solrconfig.xml'))) }
       include_examples 'a solr cloud-ready solrconfig'
     end
