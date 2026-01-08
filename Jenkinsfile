@@ -3,6 +3,7 @@ pipeline {
 
   environment {
     PROJECT = 'sul-dlss/sul-solr-configs'
+    SOLR_ADMIN_BASE_URL = credentials("sul-solr-admin-url")
   }
 
   stages {
@@ -14,13 +15,15 @@ pipeline {
       steps {
         checkout scm
 
-        sshagent (['sul-devops-team', 'sul-continuous-deployment']){
+        sshagent (['sul-devops-team']){
           sh '''#!/bin/bash -l
+
+          bundle install
 
           git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT $GIT_COMMIT | 
             xargs dirname | sort | uniq |
             grep -v "spec/" | grep -v "plugins" | grep -v "\\." |
-            xargs -I {} sh -c "echo 'Deploying {}'; ssh -o StrictHostKeyChecking=no lyberadmin@sul-solr-prod-a.stanford.edu -- bin/upconfig {}"
+            xargs -I {} bundle exec rake upconfig collection="{}"
           '''
         }
       }

@@ -2,8 +2,9 @@
 
 source 'https://rubygems.org'
 
+gem 'faraday'
+
 group :test do
-  gem 'faraday'
   gem 'nokogiri'
   gem 'rake'
   gem 'rspec'

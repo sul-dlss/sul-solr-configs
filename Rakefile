@@ -15,3 +15,59 @@ RuboCop::RakeTask.new(:rubocop) do |task|
 end
 
 task default: :spec
+
+task :upconfig, [:collection, :solr_url] do |t, args|
+  require 'tempfile'
+  require 'faraday'
+  require 'json'
+
+  args.with_defaults collection: ENV['collection'],
+                     solr_url: ENV.fetch('solr_url', ENV['SOLR_ADMIN_BASE_URL'] || 'http://localhost:8983')
+  collection = args[:collection]
+  solr_url = args[:solr_url]
+
+  unless File.directory?("./#{collection}")
+    warn "Collection directory ./#{collection} does not exist"
+    exit 1
+  end
+
+  warn "Packaging collection config: #{collection} ..."
+
+  # Package the new config data
+  tmpdir = Dir.mktmpdir
+  FileUtils.cp_r("./#{collection}/.", tmpdir)
+  FileUtils.mv("#{tmpdir}/schema.xml", "#{tmpdir}/managed-schema") if File.exist?("#{tmpdir}/schema.xml")
+
+  tmpzip = Tempfile.new([collection, '.zip'])
+  system("(cd #{tmpdir} && zip -r - *) > #{tmpzip.path}")
+
+  warn 'Uploading config ...'
+  # Upload the new config data to Solr
+  conn = Faraday.new(solr_url)
+  response = conn.post('/solr/admin/configs') do |req|
+    req.params['overwrite'] = 'true'
+    req.params['cleanup'] = 'true'
+    req.params['action'] = 'UPLOAD'
+    req.params['name'] = collection
+    req.headers['Content-Type'] = 'application/octet-stream'
+    req.body = File.read(tmpzip.path)
+  end
+
+  unless response.success?
+    warn "Response: #{response.code} #{response.body}"
+    exit 1
+  end
+
+  # Identify + reload any collections using this config
+  warn 'Reloading collections ...'
+
+  response = conn.get('/solr/admin/collections', action: 'CLUSTERSTATUS')
+
+  data = JSON.parse(response.body)
+
+  data.dig('cluster', 'collections').select { |_key, config| config['configName'] == collection }.each_key do |col|
+    warn " ... #{col}"
+    conn.get('/solr/admin/collections', action: 'RELOAD', name: col)
+    warn "Response: #{response.code} #{response.body}" unless response.success?
+  end
+end
