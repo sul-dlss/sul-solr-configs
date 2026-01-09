@@ -299,7 +299,8 @@
         <tokenizer class="solr.WhitespaceTokenizerFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/>
         <!-- NFKC, case folding, diacritics removed -->
-        <filter class="solr.WordDelimiterFilterFactory" splitOnCaseChange="1" generateWordParts="1" catenateWords="1" splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1" catenateAll="0" preserveOriginal="0" stemEnglishPossessive="0"/>
+        <filter class="solr.WordDelimiterGraphFilterFactory" splitOnCaseChange="1" generateWordParts="1" catenateWords="1" splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1" catenateAll="0" preserveOriginal="0" stemEnglishPossessive="0"/>
+        <filter class="solr.FlattenGraphFilterFactory"/>
         <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
       </analyzer>
     </fieldtype>
