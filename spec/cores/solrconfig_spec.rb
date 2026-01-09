@@ -17,8 +17,6 @@ RSpec.describe 'solrconfig.xml' do
     end
 
     it 'does not enable remote streaming' do
-      skip('-prod collections temporarily permitted during testing') if collection.match?(/[-_]prod/)
-
       remote_streaming = subject.xpath('/config/requestDispatcher/requestParsers/@enableRemoteStreaming').text
       expect(remote_streaming).not_to eq('true')
     end
