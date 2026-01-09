@@ -4,3 +4,5 @@ collection:
   name: <%= ENV['collection'] %>
 version: 9.10.0
 port: 8983
+env:
+  SOLR_OPTS: '-Dsolr.config.lib.enabled=true'
