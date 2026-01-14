@@ -35,7 +35,7 @@
     <dynamicField name="*_ipsi"   type="intPoint" stored="true"  indexed="true"  multiValued="false"/>
     <dynamicField name="*_ipsidv" type="intPoint" stored="true"  indexed="true"  multiValued="false" docValues="true"/>
     <dynamicField name="*_ipsim"  type="intPoint" stored="true"  indexed="true"  multiValued="true"/>
-    
+
     <!-- Long field (_lp...) (64-bit signed integer). (very efficient searches for specific values, or ranges of values.) -->
     <!-- For single valued fields, docValues="true" must be used to enable sorting. -->
     <dynamicField name="*_lpi"    type="longPoint" stored="false" indexed="true"  multiValued="false" docValues="true"/>
@@ -307,7 +307,7 @@
     <!-- DEPRECATED:  use textEnglish, as more aggressive stemming desired.  A text field with defaults appropriate for English -->
     <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
       <analyzer>
-        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
         <filter class="solr.EnglishPossessiveFilterFactory"/>
         <!-- EnglishMinimalStemFilterFactory is less aggressive than PorterStemFilterFactory: -->
