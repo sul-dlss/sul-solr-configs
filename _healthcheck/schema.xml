@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema name="minimal" version="1.5">
+<schema name="minimal" version="1.7">
   <uniqueKey>id</uniqueKey>
 
   <fields>
@@ -13,10 +13,9 @@
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
-    <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
-    <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="long" class="solr.LongPointField" />
+    <fieldType name="date" class="solr.DatePointField" />
     
   </types>
   
 </schema>
-
