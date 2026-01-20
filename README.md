@@ -22,18 +22,7 @@ Schema API: https://solr.apache.org/guide/8_11/schema-api.html
 
 If you want to add or update configurations, you should make a pull request.
 
-Once the pull request is merged, pull the changes into the deployed repository, push them to the Zookeeper cluster, and have solr update or create the collection. There is a script located at `sul-solr-(prod|test)-a:/home/lyberadmin/bin/upconfig` that you can run to perform these steps on a given collection (the first/only arg to the script), or you can:
-
-```shell
-$ cd /home/lyberadmin/sul-solr-configs
-$ git pull
-$ cp <collectionname_here>/schema.xml <collectionname_here>/managed-schema
-$ /opt/solr/server/scripts/cloud-scripts/zkcli.sh -zkhost <zkhost_here>:2181 -cmd upconfig -confname <collectionname_here> -confdir <repo_dirname_here>
-# If this is an existing collection, then run:
-$ curl "http://<solr_server>/solr/admin/collections?action=RELOAD&name=<collectionname_here>"
-# Else, create it via:
-$ curl "http://<solr_server>/solr/admin/collections?action=CREATE&name=<collectionname_here>&numShards=1&replicationFactor=3"
-```
+Once the pull request is merged, Jenkins will take care of deploying changes to Solr and reloading collections.
 
 ## Testing configurations
 
