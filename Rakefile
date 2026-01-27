@@ -36,7 +36,7 @@ task :upconfig, [:collection, :solr_url] do |t, args|
   # Package the new config data
   tmpdir = Dir.mktmpdir
   FileUtils.cp_r("./#{collection}/.", tmpdir)
-  FileUtils.mv("#{tmpdir}/schema.xml", "#{tmpdir}/managed-schema") if File.exist?("#{tmpdir}/schema.xml")
+  FileUtils.cp("#{tmpdir}/schema.xml", "#{tmpdir}/managed-schema") if File.exist?("#{tmpdir}/schema.xml")
 
   tmpzip = Tempfile.new([collection, '.zip'])
   system("(cd #{tmpdir} && zip -r - *) > #{tmpzip.path}")
