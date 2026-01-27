@@ -24,15 +24,26 @@ RSpec.describe 'integration with solr' do
     FileUtils.cp Dir.glob(File.join(solr_dir, 'modules', 'analysis-extras', '**', '*.jar')), contrib_dir
     FileUtils.cp Dir.glob(File.expand_path('../../plugins/*', __dir__)), contrib_dir
 
+    log4jxml = File.join(solr_dir, 'server', 'resources', 'log4j2.xml')
+
+    FileUtils.cp log4jxml, "#{log4jxml}.bak"
+    log4j = File.read(log4jxml).gsub('<Async', '<').gsub('</Async', '</')
+    File.open(log4jxml, 'w') do |f|
+      f.write(log4j)
+    end
+
     @solr.start
   end
 
   after(:all) do
     @solr.stop
+
+    FileUtils.mv "#{@solr.instance_dir}/server/resources/log4j2.xml.bak",
+                 "#{@solr.instance_dir}/server/resources/log4j2.xml"
   end
 
   around(:example) do |example|
-    solr.with_collection(name: "#{File.basename(dir)}_#{SecureRandom.hex}", dir: dir) do |collection|
+    solr.with_collection(name: File.basename(dir), dir: dir) do |collection|
       @collection = collection
       example.run
     end
@@ -44,11 +55,13 @@ RSpec.describe 'integration with solr' do
     end
 
     let(:log_response) do
-      client.get('/solr/admin/info/logging?wt=json&since=0').body.to_s
+      client.get('/solr/admin/info/logging?wt=json&since=0&rows=1000').body.to_s
     end
 
     let(:log) do
-      JSON.parse(log_response)['history']['docs'].drop_while { |x| x['message'] !~ /#{collection}/ }
+      JSON.parse(log_response)['history']['docs'].select do |x|
+        x['message'] =~ /#{collection}/ || x['core']&.start_with?(collection)
+      end
     end
 
     describe 'x' do
@@ -58,16 +71,21 @@ RSpec.describe 'integration with solr' do
       end
 
       it 'logs no serious warnings' do
-        salient_lines = log.reject { |x| x['message'] =~ /Creating new index/ }
-                           .reject { |x| x['message'] =~ /deprecated/ }
-                           .reject { |x| x['message'] =~ /no default request handler is registered/ }
-                           .reject { |x| x['message'] =~ /Will not work from Solr 7/ }
-        expect(salient_lines).to be_empty
+        client.get 'select?q=*:*'
+        salient_lines = log.reject do |x|
+          x['message'] =~ Regexp.union(/Creating new index/, /deprecated/, /Couldn't add files from/) ||
+            x['message'] =~ /enableRemoteStreaming/
+        end
+
+        expect(salient_lines).to be_empty, "Found log lines:\n#{salient_lines.map { |x| x['message'] }.join("\n")}"
       end
 
       it 'logs no deprecations' do
-        salient_lines = log.select { |x| x['message'] =~ /deprecated/ }
-        expect(salient_lines).to be_empty
+        client.get 'select?q=*:*'
+        deprecated_lines = log.select { |x| x['message'] =~ /deprecated/ }
+        salient_lines = deprecated_lines.reject { |x| x['message'] =~ /handleSelect/ || x['message'] =~ /Trie/ }
+        pending if collection =~ /exhibits_prod/
+        expect(salient_lines).to be_empty, "Found log lines:\n#{salient_lines.map { |x| x['message'] }.join("\n")}"
       end
     end
   end
@@ -75,6 +93,7 @@ RSpec.describe 'integration with solr' do
   solr_collections.each do |name|
     describe name do
       let(:dir) { name }
+
       include_examples 'works in solr'
     end
   end

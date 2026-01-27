@@ -27,20 +27,35 @@
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" /> 
 
   <requestDispatcher handleSelect="true" >
-    <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="2048" />
+    <requestParsers multipartUploadLimitInKB="2048" />
   </requestDispatcher>
 
-  <requestHandler name="standard" class="solr.StandardRequestHandler" default="true">
+  <!-- Primary search handler, expected by most clients, examples and UI frameworks -->
+  <requestHandler name="/select" class="solr.SearchHandler">
     <lst name="defaults">
-      <str name="defType">lucene</str>
-      <str name="df">id</str>
-      <str name="q.alt">*:*</str>
+      <str name="echoParams">explicit</str>
+      <int name="rows">10</int>
     </lst>
   </requestHandler>
 
-<requestHandler name="/update" class="solr.UpdateRequestHandler"  />
+  <!-- A request handler that returns indented JSON by default -->
+  <requestHandler name="/query" class="solr.SearchHandler">
+    <lst name="defaults">
+      <str name="echoParams">explicit</str>
+      <str name="wt">json</str>
+      <str name="indent">true</str>
+    </lst>
+  </requestHandler>
 
-     
+  <!-- Shared parameters for multiple Request Handlers -->
+  <initParams path="/update/**,/query,/select,/spell">
+    <lst name="defaults">
+      <str name="df">_text_</str>
+    </lst>
+  </initParams>
+
+  <requestHandler name="/update" class="solr.UpdateRequestHandler"  />
+
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
     <!-- configure a healthcheck file for servers behind a loadbalancer -->
   <str name="healthcheckFile">server-enabled.txt</str>
