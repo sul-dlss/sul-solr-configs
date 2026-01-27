@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Config deploy') {
       when {
-        branch 'master'
+        branch 'main'
       }
 
       steps {
