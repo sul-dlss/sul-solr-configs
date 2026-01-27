@@ -54,7 +54,7 @@ task :upconfig, [:collection, :solr_url] do |t, args|
   end
 
   unless response.success?
-    warn "Response: #{response.code} #{response.body}"
+    warn "Response: #{response.status} #{response.body}"
     exit 1
   end
 
@@ -68,7 +68,7 @@ task :upconfig, [:collection, :solr_url] do |t, args|
   data.dig('cluster', 'collections').select { |_key, config| config['configName'] == collection }.each_key do |col|
     warn " ... #{col}"
     conn.get('/solr/admin/collections', action: 'RELOAD', name: col)
-    warn "Response: #{response.code} #{response.body}" unless response.success?
+    warn "Response: #{response.status} #{response.body}" unless response.success?
     sleep 10
   end
 end
