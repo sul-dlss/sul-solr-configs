@@ -24,11 +24,22 @@ RSpec.describe 'integration with solr' do
     FileUtils.cp Dir.glob(File.join(solr_dir, 'modules', 'analysis-extras', '**', '*.jar')), contrib_dir
     FileUtils.cp Dir.glob(File.expand_path('../../plugins/*', __dir__)), contrib_dir
 
+    log4jxml = File.join(solr_dir, 'server', 'resources', 'log4j2.xml')
+
+    FileUtils.cp log4jxml, "#{log4jxml}.bak"
+    log4j = File.read(log4jxml).gsub('<Async', '<').gsub('</Async', '</')
+    File.open(log4jxml, 'w') do |f|
+      f.write(log4j)
+    end
+
     @solr.start
   end
 
   after(:all) do
     @solr.stop
+
+    FileUtils.mv "#{@solr.instance_dir}/server/resources/log4j2.xml.bak",
+                 "#{@solr.instance_dir}/server/resources/log4j2.xml"
   end
 
   around(:example) do |example|
@@ -44,7 +55,6 @@ RSpec.describe 'integration with solr' do
     end
 
     let(:log_response) do
-      sleep 1 # solr logging is now asynchronous; give it a moment...
       client.get('/solr/admin/info/logging?wt=json&since=0&rows=1000').body.to_s
     end
 
