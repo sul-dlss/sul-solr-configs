@@ -31,7 +31,7 @@ task :upconfig, [:collection, :solr_url] do |t, args|
     exit 0
   end
 
-  unless File.directory?("./#{collection}/solrconfig.xml")
+  unless File.exist?("./#{collection}/solrconfig.xml")
     warn "Collection ./#{collection} does not have a solrconfig.xml file"
     exit 0
   end
