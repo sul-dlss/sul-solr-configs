@@ -60,7 +60,7 @@
   </requestHandler>
 
   <requestDispatcher handleSelect="true" >
-    <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="2048" />
+    <requestParsers multipartUploadLimitInKB="2048" />
   </requestDispatcher>
 
   <!-- config for the admin interface -->

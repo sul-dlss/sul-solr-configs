@@ -27,7 +27,7 @@
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" /> 
 
   <requestDispatcher handleSelect="true" >
-    <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="2048" />
+    <requestParsers multipartUploadLimitInKB="2048" />
   </requestDispatcher>
 
   <!-- Primary search handler, expected by most clients, examples and UI frameworks -->

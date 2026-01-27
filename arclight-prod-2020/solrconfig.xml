@@ -44,7 +44,7 @@
   <dataDir>${solr.blacklight-core.data.dir:}</dataDir>
 
   <requestDispatcher handleSelect="true" >
-    <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="2048" />
+    <requestParsers multipartUploadLimitInKB="2048" />
   </requestDispatcher>
 
   <updateHandler class="solr.DirectUpdateHandler2">
