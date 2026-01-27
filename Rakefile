@@ -69,5 +69,6 @@ task :upconfig, [:collection, :solr_url] do |t, args|
     warn " ... #{col}"
     conn.get('/solr/admin/collections', action: 'RELOAD', name: col)
     warn "Response: #{response.code} #{response.body}" unless response.success?
+    sleep 10
   end
 end
