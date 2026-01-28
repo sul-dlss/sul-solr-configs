@@ -234,7 +234,7 @@ Boats,boating,Boat,Boating,Ferries,ferry,lighthouse,Coasts,lighthouses,Coasts,lo
 
 intelligenceMilitary,International relations,Armistices,Crises,Army,bioterrorism,Crises,CIA,Installation,Installations,Military,Navy
 
-boundaries,Administrative,political divisions,administrative,administrativeBoundaries,barrios,border,Borders,boundariesAdministrative,canton,cantons,colony,Counties,countries,county,Countyline,distirct,district,Districts,emirates,lgas,Macroregions,nations,precinct,precincts,Prefectures,province,Provinces,Redistrict,sovereignties,subdistricts,Subdivision,subdivisions,submunicipalities,subregions
+boundaries,administrative,barrios,border,canton,colony,county,countyline,district,nations,precinct,subdivision,province,subdistrict,subregion,submunicipalities
 
 Politics,government,commonwealth,Congress,Congressional,constituency,councils,deregulation,election,Elections,Elections--Massachusetts,Electoral,embassies,Governates,Government,legislation,Legislative,Legislators,Legislature,Parliament,political,Regulation,republic,republics,Senate,States,vote,Voting
 
