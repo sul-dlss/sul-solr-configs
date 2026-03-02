@@ -84,7 +84,6 @@ RSpec.describe 'integration with solr' do
         client.get 'select?q=*:*'
         deprecated_lines = log.select { |x| x['message'] =~ /deprecated/ }
         salient_lines = deprecated_lines.reject { |x| x['message'] =~ /handleSelect/ || x['message'] =~ /Trie/ }
-        pending if collection =~ /exhibits_prod/
         expect(salient_lines).to be_empty, "Found log lines:\n#{salient_lines.map { |x| x['message'] }.join("\n")}"
       end
     end
