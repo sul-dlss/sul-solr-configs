@@ -12,7 +12,7 @@ RSpec.describe 'integration with solr' do
   let(:collection) { @collection }
 
   before(:all) do
-    @solr = SolrWrapper::Instance.new port: nil, version: ENV.fetch('SOLR_VERSION', '9.10.0')
+    @solr = SolrWrapper::Instance.new port: 8983, version: ENV.fetch('SOLR_VERSION', '10.0.0')
     @solr.send(:extract)
     solr_dir = @solr.instance_dir
     test_solr_xml = File.expand_path('../solr/solr.xml', __dir__)
@@ -73,7 +73,8 @@ RSpec.describe 'integration with solr' do
       it 'logs no serious warnings' do
         client.get 'select?q=*:*'
         salient_lines = log.reject do |x|
-          x['message'] =~ Regexp.union(/Creating new index/, /deprecated/, /Couldn't add files from/) ||
+          x['message'] =~ Regexp.union(/Creating new index/, /deprecated/, /Couldn't add files from/,
+                                       /The schema has been upgraded to managed/, /CallbackRegistration/) ||
             x['message'] =~ /enableRemoteStreaming/
         end
 
