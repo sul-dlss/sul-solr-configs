@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema name="SearchWorks vectors" version="1.7">
+  <uniqueKey>id</uniqueKey>
+
+  <fields>
+    <field name="_version_" type="long" indexed="true" stored="true"/>
+    <field name="id" type="string" indexed="true" stored="true" required="true"/>
+    <field name="embedding_vector" type="embedding_vector_768" indexed="true" stored="true"/>
+    <field name="embedding_input_hash_ss" type="string" indexed="false" stored="true"/>
+    <field name="embedding_model_ss" type="string" indexed="false" stored="true"/>
+    <field name="embedding_schema_version_ssi" type="string" indexed="true" stored="true"/>
+    <field name="embedding_source_ss" type="string" indexed="false" stored="true"/>
+    <field name="embedding_dimensions_is" type="int" indexed="false" stored="true"/>
+  </fields>
+
+  <types>
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+    <fieldType name="long" class="solr.LongPointField"/>
+    <fieldType name="int" class="solr.IntPointField"/>
+    <fieldType name="embedding_vector_768" class="solr.DenseVectorField"
+               vectorDimension="768" similarityFunction="cosine"/>
+  </types>
+</schema>
