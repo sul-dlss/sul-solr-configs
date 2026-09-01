@@ -110,7 +110,9 @@
       <str name="q.alt">*:*</str>
       <str name="qf">
         text^1
+        id^1
         dct_description_tmi^2
+        dct_identifier_tmi^2
         dct_creator_tmi^3
         dct_publisher_tmi^3
         dct_isPartOf_tmi^4
@@ -122,12 +124,11 @@
         dct_provider_ti^8
         gbl_resourceClass_tmi^9
         gbl_resourceType_tmi^9
-        layer_slug_ti^10
-        dct_identifier_tmi^10
       </str>
       <str name="pf"><!-- phrase boost within result set -->
         text^1
         dct_description_tmi^2
+        dct_identifier_tmi^2
         dct_creator_tmi^3
         dct_publisher_tmi^3
         dct_isPartOf_tmi^4
@@ -139,8 +140,6 @@
         dct_provider_ti^8
         gbl_resourceClass_tmi^9
         gbl_resourceType_tmi^9
-        layer_slug_ti^10
-        dct_identifier_tmi^10
       </str>
       <bool name="facet">true</bool>
       <int name="facet.mincount">1</int>
