@@ -3,7 +3,7 @@
   <uniqueKey>id</uniqueKey>
   <types>
     <fieldType name="_bbox_coord" class="solr.DoublePointField" docValues="true" stored="false"/>
-    <fieldType name="_nest_path_" class="solr.NestPathField" maxCharsForDocValues="-1" omitNorms="true" omitTermFreqAndPositions="true" stored="false" multiValued="false"/>
+    <fieldType name="_nest_path_" class="solr.NestPathField" omitNorms="true" omitTermFreqAndPositions="true" stored="false" multiValued="false"/>
     <fieldType name="alphaSort" class="solr.TextField" omitNorms="true" sortMissingLast="true">
       <analyzer>
         <tokenizer class="solr.KeywordTokenizerFactory"/>
