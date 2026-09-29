@@ -15,6 +15,10 @@ RSpec.describe 'solrconfig.xml' do
     it 'has a real-time get handler' do
       expect(subject.xpath('/config/requestHandler[@name="/get"][@class="solr.RealTimeGetHandler"]')).not_to be_empty
     end
+    
+    it 'has a ping handler' do
+      expect(subject.xpath('/config/requestHandler[@name="/admin/ping"]')).not_to be_empty
+    end
 
     it 'does not enable remote streaming' do
       remote_streaming = subject.xpath('/config/requestDispatcher/requestParsers/@enableRemoteStreaming').text
