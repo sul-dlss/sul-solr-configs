@@ -104,7 +104,7 @@
     </fieldType>
 
     <!-- for alpha sorting as a single token -->
-    <fieldType name="text_sort" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+    <fieldType name="text_sort" class="solr.TextField" sortMissingLast="true" omitNorms="true" uninvertable="true">
       <analyzer>
         <tokenizer class="solr.KeywordTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory" />
