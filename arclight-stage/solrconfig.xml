@@ -118,6 +118,8 @@
          ead_identifier_match^40
          name_teim^10
          place_teim^10
+         abstract_tesim^5
+         scopecontent_tesim^3
          subject_teim^2
          identifier_search
          container_teim
@@ -132,6 +134,8 @@
          ead_identifier_match^80
          name_teim^20
          place_teim^20
+         abstract_tesim^10
+         scopecontent_tesim^6
          subject_teim^5
          identifier_search^2
          container_teim^2
